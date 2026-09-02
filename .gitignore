@@ -1,0 +1,15 @@
+# Windows & System Metadata
+*Zone.Identifier*
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Node / Build artifacts
+node_modules/
+dist/
+build/
+*.log
+
+# Python artifacts
+__pycache__/
+*.pyc
