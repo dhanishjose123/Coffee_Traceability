@@ -1,0 +1,2335 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{graphicx} % in preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}  
+\usepackage{algorithm}
+\usepackage{algpseudocode}               % for author–year citations
+\bibliographystyle{apalike}    
+\usepackage{xcolor}
+\usepackage{soul}
+
+\usepackage{xurl}
+\sethlcolor{yellow}
+\usepackage{amsmath}
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=5em, text centered, inner sep=0pt]
+\usepackage{authblk}
+\usepackage{subcaption}
+\usepackage[toc,page]{appendix}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.misc,fit,calc}
+\usepackage{lipsum} % for dummy text
+\DeclareUnicodeCharacter{202F}{\,} % or simply a regular space: {\ }
+\tikzset{
+	entity/.style={rectangle, draw, rounded corners, minimum height=1cm, minimum width=2.5cm, align=center},
+	process/.style={ellipse, draw, minimum height=1cm, minimum width=3cm, align=center, fill=blue!10},
+	data/.style={rectangle, draw, minimum height=1cm, minimum width=2.5cm, align=center, fill=yellow!20}
+}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\usepackage{setspace}
+%\setstretch{2}
+
+\title{Hyperledger Fabric Framework for Residue-Safe Coffee Supply Chains and Smart Payments}
+
+
+
+\author{Dhanish Jose and Pradeepmon T G}  
+\affil{Department of Mechanical Engineering, National Institute of Technology Calicut, India}
+
+
+\date{}
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		The coffee supply chain is plagued by the lack of transparency and indiscriminate use of pesticides, which results in produce containing pesticide limits far above the permissible levels. Furthermore, in traditional auction systems, which are opaque and lack price transparency, farmers often receive unfair or below-market prices for their produce. The present study proposes a blockchain-based system that uses Hyperledger Fabric to record the complete journey of coffee from farmers to end consumers along with facilitating a decentralized auction system to sell and purchase the produce. To reduce the storage pressure of the blockchain, the Interplanetary File System (IPFS) is also integrated into it. The system supports role-based access control, ensures immutable records, and offers packet-code-driven real-time tracking, smart contract-driven payments, competitive price discovery, and incentive-driven market access for farmers. The proposed system enhances traceability and transparency in financial transactions and builds trust among stakeholders by providing a tamper-proof shared ledger where financing terms and payments are visible to all parties, ensuring fairness, reducing disputes, and allowing each participant to verify transactions independently. The system was functionally validated and tested using a benchmarking tool called Hyperledger Caliper under varying transaction loads, with smart contracts specifically written to avoid multiple version concurrency errors—a major bottleneck in Hyperledger Fabric. This approach reduced transaction conflicts and improved throughput, confirming the system’s feasibility, scalability, and potential to enhance trust, traceability, and fairness in the coffee trade ecosystem.
+	\end{abstract}
+	
+	
+	
+	
+	
+	\section*{Keywords}
+	Coffee supply chain; Blockchain; Hyperledger Fabric; Smart contracts; 
+	Traceability; Agri-food finance; InterPlanetary File System (IPFS); 
+	Auction system; Hyperledger Caliper
+	
+	
+	\newpage
+	\section{Introduction}
+	
+	.
+	
+	Small coffee (Elettaria coffeeum (L.) Maton; Zingiberaceae), often referred to as the "Queen of Spices," is a high-value perennial crop widely cultivated in tropical regions. It belongs to the family Zingiberaceae and is valued for its aromatic seeds used in culinary and medicinal applications. India is the second largest producer as well as the largest consumer of coffee, consuming around 24,463 tonnes of dried coffee (\citet{nafeesa_pesticide_2024}). Among all the states in India, Kerala is the largest producer, contributing around 90 percent of the total production with 40,345 ha under cultivation, followed by Karnataka and Tamil Nadu (\citet{nafeesa_pesticide_2024}). In the last few decades, the coffee industry has witnessed a surge in areas under cultivation and a substantial increase in productivity. A study analyzing productivity trends in the Coffee Hills region of Kerala reported a notable rise in yields from about 130 kg per hectare in 1997 to 400 kg per hectare by 2016, representing a near threefold increase over ~20 years (\citet{cabi_productivity_2016}). Novel agricultural practices, modern fertilizers, and pesticides enabled this productivity surge. But this rapid rise in production levels entailed a host of problems, with farmers resorting to indiscriminate application of pesticides to forestall any kind of pest attack.
+	
+	
+	
+	Proliferation of insects and pests has forced farmers to rely on pesticides rather than employing sustainable practices. Almost all the plantations apply a cocktail of pesticides every 20-30 days to prevent any kind of pest attacks (\citet{reshma_prevalence_2020}). This practice has been condemned by the agricultural scientists who issued warnings about the severe health hazards it entails (\citet{kuruvila_product_2022}). Indian farmers widely use the pesticides and herbicides banned by the European Union to control pest attacks. Indian coffee exports are concentrated in the Middle East, with their share of global exports declining from 28\% in 1988 to 9\% in 2020 by quantity and from 42.5\% to 9\% by value. In 2019, India's contribution to Saudi Arabia's imports decreased primarily due to the rejection of shipments that contained higher concentrations of hazardous pesticide residues (\citet{nafeesa_pesticide_2024}). The produce that gets rejected in the global market finds its way into the Indian markets, where food safety often takes a backseat because of limited financial resources, lack of traceability, and slack government interventions (\citet{thomas_case_2024}). The end consumers remain ignorant about pesticide content and the health hazards it entails. On 4 January 2023, a food testing laboratory in Trivandrum released a report, finding pesticide residues beyond permissible limits in coffee used in Aravana payasam, the famous sacred food given to devotees at the Sabarimala Lord Ayyappa Temple (\citet{express_news_service_kerala_2023}). The Kerala High Court raised concerns about the pesticide residue in coffee and its implications on public health. Many of the problems largely lie in the lack of transparency in the coffee supply chain and the end consumers, who largely remain oblivious to the provenance of the food. The lack of transparency also affects the importers, who often get deceived by the fraudulent exporters who mix the low-quality coffee with the premium-grade coffee (\citet{mohiuddin_health_2019}). 
+	
+	In addition to safety concerns, the coffee sector also faces serious financial challenges. Farmers often fall victim to delayed payments or outright fraud in auction centers, where buyers sometimes collect produce without honoring payment commitments. These financial irregularities increase the vulnerability of smallholders, who already operate with limited bargaining power and no real-time visibility in the transaction trail. Most of the sales occur through regional auction centers, where the produce is auctioned by the auction center after charging considerable fees. These auctions occur without any transparency and do not give the farmer a choice to accept the bid price. Auctioneers exploit this loophole by colluding to slash the bid price, resulting in lower prices for farmers. In 2018, the Spices Board flagged a major auctioneer for forged documents and delayed payments (\citet{express_news_service_buyer_2024}). Sales through local traders are also fraught with risks. In August 2024, Idukki district coffee farmers filed 32 complaints against a buyer who collected produce from around 1,400 bills but failed to pay, a scam totaling approximately 18 crore Indian rupees (\citet{express_news_service_buyer_2024}).
+	
+	
+	
+	
+	
+	Incentivizing farmers to produce coffee with minimal application of pesticides and empowering consumers to trace the provenance of the food can be an effective strategy to curb the indiscriminate application of pesticides. Although digital technologies like Near Field Communication (NFC), Radio Frequency Identification (RFID), and Quick Response (QR) codes have been widely used in the supply chain to track and trace the product, they are ineffective for fragmented data and lack user-friendliness. Furthermore, most food supply chains rely on centralized data management systems that are vulnerable to single points of failure and data tampering and offer no accountability in the event of product recalls. In addition, traditional payment systems often lack transparency and delay settlements, leaving farmers undercompensated and financially insecure (\cite{anveshana_india_coffee_2019}). A decentralized and tamper-proof traceability platform that integrates quality verification, transaction transparency, and payment traceability can address food safety concerns and mitigate financial exploitation, enhancing trust and equity for all stakeholders.
+	
+	Blockchain is a system that not only enables traceability but also facilitates secure, transparent, and automated financial transactions, effectively addressing many of the aforementioned challenges and uniting various stakeholders on one platform. Although many organizations like the World Wide Fund (WWF) and the Food and Agriculture Organization of the United Nations (FAO) have successfully deployed blockchain-based traceability systems to trace the produce (\citet{world_wildlife_fund_wwf_wwf_2019}), no such initiatives have been taken to address the challenges facing the coffee supply chain. Therefore, a blockchain-based supply chain system, which offers unique capabilities of immutability, transparency, and decentralization, has the potential to address the challenges facing the coffee industry.
+	
+	This paper proposes a blockchain-based traceability system for the coffee supply chain implemented using Hyperledger Fabric. The proposed system mainly employs the blockchain technology to trace the produce, bringing together various stakeholders like farmers, consumers, aggregators, retailers, etc., enabling the end consumers to track the produce with the help of a packet code printed on the packets. Beyond traceability, the platform integrates smart contract–driven auctions for competitive price discovery and an incentive mechanism where farmer ratings improve with pesticide-compliant lots, encouraging safer practices. The design of the proposed platform encourages farmers to produce coffee with minimal pesticide limits. It also offers role-based access to various stakeholders and enables the real-time tracking of the product and facilitates secure, transparent, and automated financial transactions. This research mainly focuses on addressing the aforementioned challenges. First, the traceability challenges in the coffee supply chain were addressed by designing a blockchain-based system architecture that encompasses all the stakeholders, including farmers, aggregators, retailers, and consumers. Secondly, modular smart contracts were specifically written to facilitate transparency and traceability in the supply chain. Thirdly, developers have created a web-based interface and a Representational State Transfer (REST) Application Programming Interface (API) layer to enable stakeholder interactions and provide end-to-end visibility. In addition to improving traceability, this study integrates a financial transaction layer that facilitates timely payments to farmers from retailers. Separate wallets are created for the stakeholders through which the users can send and receive money. All the payments between the stakeholders are smart contract driven, which enables timely and secure money transfer. Furthermore, the system was rigorously benchmarked using Hyperledger Caliper to evaluate throughput and latency under varying workloads, and MVCC-related concurrency issues were mitigated through optimized append-only data structures and conflict-aware transaction design, enhancing system scalability.
+	
+	
+	\section{Related Work}
+	
+	An agri-food supply chain represents the interconnected processes that move agricultural products from producers to final consumers (\citet{weerabahu_challenges_2022}). It involves multiple stakeholders, including farmers, agro-processors, distributors, retailers, and consumers (\citet{nayal_antecedents_2021}). Ensuring food safety, transparency, and traceability has become a critical requirement in modern agri-food systems (\citet{hidayati_sustainable_2021}). In the context of the coffee supply chain, maintaining pesticide levels within permissible limits and ensuring product authenticity are key challenges. Enhancing traceability allows consumers to verify product quality and holds producers accountable. Blockchain technology has emerged as a promising solution for improving transparency, traceability, and trust in agri-food supply chains (\citet{zhao_blockchain_2019,shahid_blockchain-based_2020}). Additionally, by reducing dependency on intermediaries, blockchain can streamline operations and reduce transaction costs (\citet{teoh_blockchain_2022}).
+	
+	\subsection{Blockchain Framework}
+	
+	Blockchain provides a decentralized and tamper-resistant ledger for recording transactions, ensuring data integrity and transparency. Based on access control, blockchain systems are broadly categorized into permissionless and permissioned networks. While permissionless platforms such as Ethereum offer openness and decentralization, permissioned frameworks like Hyperledger Fabric provide enhanced privacy, scalability, and controlled access, making them suitable for enterprise applications (\citet{crosby_blockchain_2016,namasudra_revolution_2020}). Hyperledger Fabric, in particular, supports modular architecture, fine-grained access control, and efficient consensus mechanisms, making it well-suited for complex supply chain systems (\citet{marchese_agri-food_2021}).
+	
+	
+	
+	
+	\subsection{Hyperledger-Based Applications in Agricultural Supply Chains}
+	
+	Initial research utilizing Hyperledger Fabric as a core blockchain platform, as detailed in Table \ref{tab:fabric_agri_core}, has predominantly focused on the architectural feasibility of permissioned networks to ensure end-to-end traceability for food safety and regulatory compliance. While foundational works—such as those by \cite{marchese_blockchain-based_2022} successfully established the infrastructure for secure data sharing, these implementations remain largely qualitative. Their focus remains confined to 'track-and-trace' logic, often without addressing the economic complexities inherent in agricultural trade. Furthermore, even advanced IoT-integrated models, such as the system proposed by \cite{zhang_information_2022}, frequently operate in siloed or controlled environments that fail to account for the dynamic, multi-stakeholder nature of real-world agri-food ecosystems. Consequently, a significant research gap persists in transitioning these passive traceability models into active, transactional platforms capable of supporting automated financial logic, incentive mechanisms, and fair price discovery for farmers.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Core Hyperledger Fabric-Based Agricultural Supply Chain Systems}
+		\label{tab:fabric_agri_core}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|p{2cm}|p{2.65cm}|p{5cm}|p{5cm}|}
+				\hline
+				\textbf{Author} & \textbf{Methodology} & \textbf{Key Contribution} & \textbf{Research Gap} \\
+				\hline
+				
+				\cite{marchese_blockchain-based_2022} & System design and prototype implementation & 
+				Proposes a blockchain-based architecture for improving transparency and traceability in agri-food supply chains using permissioned networks & 
+				focuses solely on logistics; lacks automated payment triggers (Smart Contracts) to link physical delivery with immediate financial settlement. \\
+				
+				\hline
+				\cite{zhang_information_2022}
+				XXin Zhang et al. & Implementation with experimental validation & 
+				Develops a secure traceability system integrating blockchain with IoT data for monitoring agricultural products & 
+				Focuses on historical data logging rather than real-time trade; there is no provision for automated auction mechanisms that allow buyers to bid on products based on live IoT-verified conditions. \\
+				
+				\hline
+				
+				
+				\cite{iftekhar_blockchain-based_2021}. & System development and case study & 
+				Implements a decentralized system to enhance trust, data integrity, and traceability across stakeholders & 
+				Lack of incentive-driven engagement; does not provide a reputation-based or tokenomic reward system to encourage active and honest data participation by stakeholders. \\
+				
+				\hline
+				\cite{joo_evidence_2021}
+				Hu et al. & Prototype implementation with validation & 
+				Proposes a blockchain-based food safety system ensuring end-to-end traceability and tamper-proof records & 
+				Static financial model; lacks automated payment settlement and financial integration, missing the link between physical product tracking and fiscal automation. \\
+				
+				\hline
+				
+			\end{tabular}
+		}
+	\end{table}
+	
+	
+	
+	The comparison in Table~\ref{tab:sota_agri_comparison} highlights a key gap in integrating market dynamics with quality-driven incentives. Existing systems (e.g., Rani et al., 2025; IJERT, 2026) support dynamic pricing and secure bidding but fail to link produce quality with market access. They also lack rigorous benchmarking under concurrent workloads and do not address critical scalability issues such as MVCC conflicts.
+	
+	In contrast, the proposed system integrates a decentralized auction with smart-contract-driven payments, explicitly designed to mitigate MVCC conflicts through append-only updates. It further introduces an incentive-driven model where pesticide compliance directly influences farmer visibility and bidding outcomes. Combined with structured performance benchmarking, this ensures scalable operation, fair price discovery, and economic deterrence against non-compliant practices.
+	
+	
+	
+	
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Comparison of State-of-the-Art (SOTA) Blockchain Systems (2023--2026)}
+		\label{tab:sota_agri_comparison}
+		\small
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|p{2cm}|p{2.5cm}|p{5cm}|p{5cm}|}
+				\hline
+				\textbf{Author} & \textbf{Methodology} & \textbf{Key Contribution} & \textbf{Research Gap} \\
+				\hline
+				
+				\cite{rani_stp_2025} & STP framework with HLF + IPFS & 
+				Integrates dynamic pricing and traceability for seafood supply chains using automated pricing smart contracts & 
+				Lacks a decentralized auction mechanism and specialized MVCC conflict resolution for high-frequency bidding \\
+				
+				\hline
+				
+				\cite{talib_blockchain-enabled_2026} & System design with Caliper benchmarking & 
+				Develops an end-to-end halal certification system with IPFS integration and detailed performance evaluation & 
+				Focus is limited to tracking/certification; does not address concurrency bottlenecks or trading-driven transaction loads \\
+				
+				\hline
+				\cite{zhang_blockchain-based_2023}
+				Yuan Zhang et al. (2023) & HLF + ML integration & 
+				Proposes a traceability model using machine learning for outlier detection and lightweight storage via IPFS & 
+				Explicitly identifies MVCC and concurrency issues as unresolved bottlenecks for large-scale agricultural deployment \\
+				
+				\hline
+				
+				\cite{iyer_dual-mode_2026} & Security-centric system design & 
+				Proposes a dual-mode auction system for general agriculture using zk-SNARKs for enhanced transaction privacy & 
+				High computational overhead due to zero-knowledge proofs; lacks quantitative Caliper-based throughput validation \\
+				
+				\hline
+				
+				\cite{keo_secure_2025} & Pricing transparency and IPFS integration & 
+				Implements a Hyperledger Fabric-based rubber supply chain in Cambodia; uses IPFS for large data storage and enhances pricing transparency for smallholders & 
+				Focuses primarily on high-level traceability; lacks specific smart-contract optimizations for handling high-concurrency auction bidding \\ 
+				
+				\hline
+				
+				\cite{chen_hyperledger_2023} & Anti-counterfeiting and Caliper testing & 
+				Proposes a tea traceability scheme using Hyperledger Fabric and IPFS; provides initial Hyperledger Caliper benchmarks for read/write operations & 
+				Benchmarking is limited to low transaction rates; does not address MVCC-related failure patterns in competitive auction scenarios \\ 
+				
+				\hline
+				
+				
+			\end{tabular}
+		}
+	\end{table}
+	
+	
+Table~\ref{tab:blockchain_performance_refined} presents a comparison of existing studies focusing on the performance evaluation of blockchain-based systems. Prior works have predominantly employed benchmarking tools such as Hyperledger Caliper or simulation-based approaches to analyze throughput and latency. For instance, \cite{kaushal_convergence_2025} evaluate an IoT-integrated blockchain system using Caliper, while \cite{thakkar_performance_2018} provide foundational insights into Hyperledger Fabric performance under varying workloads. Similarly, \cite{talib_blockchain-enabled_2026} conduct end-to-end benchmarking of a certification system, and \cite{sugandh_approach_2023} report relatively high throughput in a simulated traceability environment. Additionally, \cite{el_hajji_optimization_2024} analyze Fabric performance under different block sizes and endorsement policies, though without considering application-level contention or MVCC conflicts.
+	
+	However, despite these contributions, several limitations remain evident. Most studies focus on moderate transaction rates or controlled environments and do not perform stress testing under high transaction loads or distributed network conditions. Furthermore, existing benchmarking efforts largely overlook application-specific transaction patterns, particularly those involving high-frequency financial interactions such as auctions. A critical gap is the lack of analysis of concurrency control mechanisms in Hyperledger Fabric, especially Multi-Version Concurrency Control (MVCC), which significantly impacts transaction validity under concurrent workloads. Existing works either ignore MVCC conflicts or do not propose system-level optimizations to mitigate them.
+	
+	The proposed study adopts a Caliper-driven benchmarking framework to evaluate a coffee auction system under high transaction rates. By incorporating smart contract design optimizations that minimize MVCC conflicts through an append-only transaction model, the system achieves improved concurrency and higher transaction success rates. This approach bridges the gap between realistic high-frequency transaction workloads and the inherent performance constraints of Hyperledger Fabric.	
+	
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Evaluation and Benchmarking of Blockchain-Based Systems}
+		\label{tab:blockchain_performance_refined}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|p{2cm}|p{2.5cm}|p{5cm}|p{5cm}|}
+				\hline
+				\textbf{Author} & \textbf{Methodology} & \textbf{Key Contribution} & \textbf{Research Gap} \\
+				\hline
+				
+				\cite{kumar_integrating_2026} & System design with Caliper benchmarking & 
+				Implements a multi-organization Fabric system with load balancing, achieving 117 TPS and 100\% success rates & 
+				Tested on a limited two-organization setup; lacks large-scale multi-channel validation and high-concurrency conflict analysis (MVCC) \\
+				
+				\hline
+				\cite{kaushal_convergence_2025}
+				et al. (2025) & Experimental evaluation with Caliper + IPFS & 
+				Integrates blockchain, IoT, and IPFS for decentralized records, evaluating throughput and latency metrics & 
+				Lacks stress testing under extreme transaction rates and does not address state database contention issues \\
+				
+				\hline
+				
+				\cite{thakkar_performance_2018} & Experimental benchmarking using Caliper & 
+				Provides a foundational analysis of Hyperledger Fabric throughput and latency bottlenecks & 
+				Focuses on generic chaincode; lacks application-specific logic (e.g., auctions) and real-world supply chain workloads \\
+				
+				\hline
+				
+				\cite{el_hajji_optimization_2024} & Experimental evaluation of Hyperledger Fabric & 
+				Analyzes performance of Hyperledger Fabric under different block sizes and endorsement policies for agri-food & 
+				Does not consider application-level contention or MVCC conflicts arising from concurrent transaction workloads \\
+				
+				\hline
+				
+			\end{tabular}
+		}
+	\end{table}
+	
+	To address all the above limitations, this study first develops a blockchain-based coffee supply chain system that integrates traceability, smart contract–driven financial transactions, incentive mechanisms, and auction-based price discovery within a unified Hyperledger Fabric framework. The system is designed with a concurrency-aware architecture, employing an append-only transaction model and composite-key structures to minimize MVCC conflicts under concurrent workloads.
+	
+	Subsequently, the implemented system is evaluated using a Hyperledger Caliper–based benchmarking framework under high transaction rates. The evaluation considers realistic, application-specific transaction patterns involving frequent bidding, payments, and asset transfers. Experimental results demonstrate improved concurrency handling, reduced MVCC conflicts, and higher transaction success rates, thereby bridging the gap between real-world high-frequency workloads and the inherent performance constraints of Hyperledger Fabric.
+	
+	
+	
+	
+	\section{Methodology: Blockchain-Enabled Supply Chain Solution}
+	
+	This study proposes a blockchain-based solution that facilitates the movement of coffee across various entities in the supply chain, ensuring traceability and decentralized finance in the supply chain by fusing blockchain technology with smart contracts based on Hyperledger Fabric. The system architecture is designed to ensure traceability across all stages of the coffee supply chain and also facilitate smart contract-driven financial transactions.
+	
+	
+	
+	\subsection{System Overview}
+	
+	The proposed system is a blockchain-based architecture tailored for the coffee supply chain. It leverages core capabilities of blockchain—such as immutability, smart contracts, and decentralized data management—to address critical challenges like lack of transparency, traceability gaps, and inefficient stakeholder coordination.
+	
+	The blockchain network is implemented using Hyperledger Fabric, a permissioned private blockchain network platform that supports identity management, private channels, and fine-grained access control. The participating organizations include farmers, aggregators, retailers, banks, and consumers. Each participant operates through a dedicated peer node of an organization, and all the transactions are recorded in a shared ledger accessible across the network. Figure~\ref{fig:system_overview} illustrates the system architecture, showing all stakeholder roles and the flow of interactions between them.
+	
+	
+	\begin{figure}[htbp]
+		
+		\centering
+		
+		\includegraphics[width=0.9\textwidth]{Figure_1.png}
+		
+		\caption{System Overview}
+		
+		\label{fig:system_overview}
+		
+	\end{figure}
+	\subsubsection{Traceability Workflow}
+	
+	The traceability workflow begins with the farmer who submits coffee produce through the system using a decentralized app by filling in the details of the produce, like the number of bags and weight, and selecting the aggregator to which the produce needs to be submitted for testing. The produce is then tested and graded by the aggregator for any pesticide residues above the maximum residual limit (MRL), and the entire process is recorded and stored off-chain in the InterPlanetary File System (IPFS). The hash of the video, along with the results of the test, is recorded on-chain in the blockchain system for tamper-proof video validation. The approved produce with pesticide limits below the MRL can be procured by the retailer.
+	
+	
+	\subsubsection{Auction and Retailer Workflow}
+	
+	The retailers can make an offer to the farmer, who may accept the highest offer from the retailers. Once approved, the money is transferred from the retailer wallet to the farmer wallet. The system incorporates an online, on-chain open ascending auction in which authenticated retailers place successive offers, and the highest eligible offer determines the winner.  Then the retailer packs the produce into small-sized packets, and the entire process is recorded and stored off-chain in IPFS. The video hash is entered on-chain in the blockchain system. Each packet is assigned a unique packet code linked to the blockchain record, enabling consumers to verify the full life cycle of the product. The consumer can purchase the packets through this system. The overall auction and retailer workflow is 
+	illustrated in Figure~\ref{fig:auction}. 
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=190mm]{Figure_2.pdf}
+		\caption{\textbf{Auction mechanism}}
+		\label{fig:auction}
+	\end{figure}  
+	\subsubsection{Incentive Mechanism}
+	
+	The system also incorporates a performance-based incentive mechanism. Each time a farmer's produce is tested, the outcome is recorded immutably. This updates a dynamic rating for the farmer based on the ratio of approved lots to total submitted lots. This rating is accessible to retailers and influences their bidding decisions, thereby encouraging farmers to adhere to safe pesticide practices. The incentive mechanism is 
+	illustrated in Figure~\ref{fig:rating-incentive}. 
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=190mm]{Figure_3.pdf}
+		\caption{\textbf{Incentive Mechanism}}
+		\label{fig:rating-incentive}
+	\end{figure}
+	
+	
+	
+	\subsubsection{Web Platform Access}
+	
+	The system is accessible using a web-based platform built using React.js, providing role-based access for the stakeholder. Farmers can submit the produce, aggregators can test and record the results, and consumers can view the details, including the complete lifecycle of the produce, using the packet code and purchase the packet.
+	
+	\subsubsection{Security and Authentication}
+	
+	By integrating blockchain and IPFS with role-specific workflows, the proposed system ensures traceability, food safety compliance, and consumer trust in the coffee supply chain. The proposed system strictly adheres to the logic of the chaincode and utilizes certificates and private keys for user authentication, ensuring that only authorized personnel can access the network and perform operations.
+	
+	
+	
+	
+	
+	
+	
+	
+	\subsection{Stakeholder Roles and Process Flow}
+	
+	The proposed stakeholder system brings together some key stakeholders to ensure transparency, accountability, and quality verification at every stage of the supply chain. Each stakeholder plays a specific role in the lifecycle of a coffee lot, and their interactions are governed by smart contracts on the Hyperledger Fabric platform. 
+	
+	
+	• Farmer
+	
+	The farmer, who is the initial participant in the coffee supply chain, cultivates coffee plants and harvests produce based on seasonal cycles. The system begins with the commodity asset that includes the metadata related to the produce, such as weight, location, timestamp, and batch ID, entered by the farmer using a decentralized blockchain application (DApp). All the details are recorded immutably in the blockchain ledger.
+	
+	•Aggregator
+	
+	The commodity asset is transferred to the aggregators, who test the commodity to find the amounts of various pesticide residues, moisture content, color, and grade. The videos of the testing procedure are uploaded to IPFS. A tested produce asset is created by updating the original record with the details of the test results along with the video hash and the grading details. Only tested and approved lots are eligible for purchase by retailers.
+	
+	• Retailer
+	
+	The tested produce asset, which passed the quality tests by the aggregator, is bought by the retailers through the Decentralized Application (DApp) and is packed into desired consumer-friendly units of coffee, generates packet codes with traceability metadata, and associates each packet with the original produce and test data. Retailers submit packet details to the blockchain via the DApp, including packet ID, size, linked batch ID, and packaging timestamp.
+	
+	• Consumer
+	
+	The consumers, who are the final stakeholders in the traceability chain, can access the full lifecycle information of the product—from farm to retail—including farmer identity, testing history, packaging details, and approval status using the packet code printed on the coffee packet using a mobile DApp, which also facilitates the purchase of the packets through it.
+	
+	• Bank
+	
+	Apart from the above stakeholders, the bank is also a stakeholder, which creates wallets and deposits money in the wallets upon the request of the above stakeholders.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\subsection{System Architecture}
+	
+	
+	
+	The blockchain system is developed using open-source technologies, decentralized storage, and modern web development frameworks. Hyperledger Fabric 2.5, a permissioned blockchain platform, serves as the core framework, enabling role-based access control across organizations such as farmers, aggregators, retailers, banks, and consumers. Its modular and scalable architecture allows fine-grained management of identities and transaction visibility. Smart contracts are implemented using JavaScript-based chaincode, which governs essential operations like produce submission, pesticide testing, grading, packet assignment, and transaction automation within the supply chain. The user interface is developed with React.js to deliver dynamic and responsive role-based dashboards, while the backend is built on Node.js to manage REST API endpoints, interact with the blockchain network, invoke chaincode, and integrate with services such as IPFS for video storage and QR code generation. CouchDB is used as the state database to support rich queries, including filtering produce by farmer or status of the lot. Large media files like grading and packaging videos are stored off-chain in IPFS, with their content-addressed hashes stored on-chain for tamper-proof verification. The system incorporates a native token-based internal wallet mechanism, avoiding the use of external cryptocurrencies. Wallets are assigned to each participant, enabling secure, verifiable transfers of virtual tokens for payments related to testing, purchase, and packaging, all monitored under the authority of the bank organization.
+	
+	
+	% === New subsection after 3.3 Stakeholder Roles and Process Flow ===
+	\subsection{Asset Lifecycle and Traceability Architecture}
+	\label{sec:asset-lifecycle}
+	
+	The asset lifecycle in the proposed blockchain-enabled supply chain begins with a
+	lot submitted by a farmer, tested by an aggregator, sold to a retailer,
+	and finally packed into smaller packets. Each packet maintains its own
+	status (e.g., AVAILABLE, PURCHASED) and immutable trace
+	information (farmer ID, test results, packing details, buyer identity), enabling
+	end-to-end transparency. Figure~\ref{fig:lot-packet-status} illustrates this
+	transition, showing stakeholder roles (left), lot and packet statuses (center),
+	and packet-level outcomes (right).
+	
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=190mm]{Figure_4.pdf}
+		\caption{Lifecycle of coffee lots from submission to auction and packetization.}.
+		\label{fig:lot-packet-status}
+	\end{figure}
+	
+	
+	
+	
+	
+	\subsection{Network Architecture}
+	
+	
+	
+	
+	The network consists of organizations that form a consortium, and the transactions between these organizations are made secure and transparent with the help of Hyperledger Fabric. The organizations in this network are farmers, aggregators, retailers, consumers, and banks. The supply chain participants are linked using a secure communication channel called the coffee channel.
+	
+	
+	
+	Each organization in the network employs a Membership Service Provider (MSP), which controls the identity of network users and manages digital certificates required for access control and authentication. The MSP also manages the private keys. The digital certificates and private keys for authenticating the network users are issued by the Certificate Authority (CA). Each organization employs its own CA for issuing digital certificates and managing private keys.
+	
+	The network employs a leader-based protocol called Raft, a consensus process that ensures the consistency and integrity of the ledger. In this network, the orderer, or the ordering node, is tasked with accepting and ordering the transactions and ensuring that the transactions are committed to the ledger properly. Each organization in the network has a peer or a network node who is responsible for confirming the transactions, committing them to the ledger, and enabling communication with the peers. In addition to these, the network consists of chaincode, which defines the logic for the transactions and is installed in each peer node. The network architecture is illustrated  in Figure~\ref{fig:network_peer}.
+	
+	
+	
+	The Hyperledger Fabric network used in this study was deployed by extending the default Fabric test-network configuration to support multiple supply chain participants. To enable flexible network deployment, customized configuration files were generated for the participating organizations, including Farmers, Aggregators, Retailers, Consumers, and Bank. Each organization was defined with its own peer node, Membership Service Provider (MSP), and cryptographic identities.
+	
+	The network configuration files, including the Docker Compose deployment configuration, channel configuration (\textit{configtx.yaml}), and cryptographic material configuration (\textit{crypto-config.yaml}), were generated dynamically using parameterized templates. Organizational parameters such as organization names, peer ports, and MSP identifiers were defined in an environment configuration file, which was used to automatically generate the corresponding YAML configuration files required for network deployment.
+	
+	This approach enables scalable network configuration, allowing new organizations to be added to the system without manually modifying multiple configuration files. The generated configuration files were then used to deploy the network components as Docker containers and to create the application channel for executing the smart contracts.
+	
+	\begin{figure}[htbp]
+		
+		\centering
+		
+		\includegraphics[width=0.9\textwidth]{Figure_5.png}
+		
+		\caption{Network Architecture}
+		
+		\label{fig:network_peer}
+		
+	\end{figure}
+	
+	
+	
+	\subsection{Transaction Flow}
+	
+	In the Hyperledger Fabric, transactions are initiated by the client, who submits a transaction proposal to the specific endorsing peer, who executes the chaincode function to simulate the transaction and validate the client signature. The peer returns the signed responses and the required endorsements, which are submitted by the client to the orderer, who packages the transactions into a block and sends it to the peers. Peers validate each transaction for endorsement-policy compliance and multi-version concurrency control (MVCC) version conflicts. Valid transactions are then committed to the blockchain and applied to the world state. This type of transaction flow ensures consistency, concurrency control, and traceability in the coffee supply chain. 
+	
+	
+	
+	\subsection{Sequence of Operations and Chaincode Logic}
+	
+	This section describes the sequence of operations implemented in the proposed Hyperledger Fabric-based coffee supply chain. Each function call is mapped to a stakeholder action, ensuring traceability, accountability, and integrity. The operations span across wallet management, produce submission, testing and grading, market offers, retail packing, consumer purchase, and analytics. The sequence of interactions between stakeholders and smart contract functions is illustrated in Figure~\ref{fig:chaincode_flow}. The detailed pseudocode for each smart contract function is provided in Appendix A to support reproducibility and to map stakeholder actions to chaincode implementations.
+	
+	\begin{figure}[htbp]
+		
+		\centering
+		
+		\includegraphics[width=\textwidth]{Figure_6.png}
+		
+		\caption{Sequence of stakeholder actions and smart contract functions in the coffee supply chain.}
+		
+		\label{fig:chaincode_flow}
+		
+	\end{figure}
+	
+	
+	
+	\subsubsection{Wallet Management}
+	
+	
+	
+	The proposed system implements a token-based wallet mechanism within the smart contract to facilitate financial transactions among supply chain participants. In this system, monetary values are represented using digital tokens, where each token corresponds to a unit of real-world currency. This abstraction simplifies transaction management within the blockchain environment while maintaining a clear mapping between on-chain tokens and off-chain monetary value.
+	
+	A wallet is created for each participant by invoking the \textit{createWallet()} smart contract function, as described in Algorithm~1 in Figure~\ref{fig:create_deposit}. The wallet is uniquely associated with the participant's organization and user identifier and maintains a ledger of transaction entries, including deposits, transfers, and payments related to supply chain activities.
+	
+	Funds are introduced into the system through the \textit{depositMoney()} function, which can only be executed by the bank organization, as presented in Algorithm~2 in Figure~\ref{fig:create_deposit}. When a participant deposits money through the bank, the equivalent amount of tokens is credited to the participant's wallet according to the defined conversion rule (1 token = 1 INR). These tokens are subsequently used for payments such as testing fees, purchase offers, and settlement of produce transactions.
+	
+	Financial transactions between participants are executed using the \textit{transfer()} function, which follows a dual-entry append-only transaction mechanism, as described in Algorithm~5 in in Figure~\ref{fig:create_deposit}. This ensures that both debit and credit operations are recorded consistently in the ledger.
+	
+	In addition to basic wallet operations, the system incorporates a wallet consolidation mechanism to efficiently manage transaction logs and maintain accurate balances. Instead of directly updating wallet balances for every transaction, the system records each financial operation (deposit, debit, or credit) as an individual transaction entry in the ledger.
+	
+	To optimize performance and reduce computational overhead during balance queries, a \textit{consolidateWallet()} function is introduced, as shown in Algorithm~3 in in Figure~\ref{fig:wallet_consolidation_balance}. This function aggregates all transaction entries associated with a wallet, computes the net balance, and updates the wallet state with the consolidated value. Additionally, it maintains a \textit{consolidation counter} to track the number of consolidation cycles performed.
+	
+	The current wallet balance is retrieved using the \textit{getWalletBalance()} function, which performs incremental computation by combining the consolidated base balance with the most recent transaction batch, as described in Algorithm~4 in in Figure~\ref{fig:wallet_consolidation_balance}.
+	
+	Furthermore, the system adopts a cycle-based transaction segmentation strategy, where transaction entries are grouped according to the current consolidation cycle. New transaction keys are dynamically generated using cycle-based prefixes (e.g., \texttt{walletTx\_0}, \texttt{walletTx\_1}), ensuring that each cycle maintains an isolated set of transaction records.
+	
+	This design improves scalability and concurrency handling by minimizing Multi-Version Concurrency Control (MVCC) conflicts during high transaction loads. It also preserves a complete audit trail of financial transactions while enabling efficient balance retrieval.
+	
+	The frontend dashboard allows authorized participants to view their wallet balance and initiate wallet-related operations through backend API calls. The backend server submits the corresponding smart contract transactions to the Hyperledger Fabric network, where the wallet logic is executed within the chaincode.
+
+	\subsubsection{Produce Submission and Testing Fee Transfer}
+	
+	The \textit{submitProduce()} smart contract function is invoked by the farmer to submit produce lots. This function internally invokes the \textit{transfer()} function, which deducts the testing fee from the farmer's wallet and transfers it to the aggregator's wallet, as described in Algorithm~6 in Figure~\ref{fig:transfer_submit}.
+	
+
+	\subsubsection{Quality Testing and Grading}
+	
+	The \textit{testCoffee()} smart contract function is invoked by aggregators to record test results and, optionally, grading details (e.g., size grades, moisture, and liter weight). Based on the test outcome, the status of the lot is updated to either APPROVED or REJECTED, as described in Algorithm~7 in Figure~\ref{fig:test_offer}.
+
+	\subsubsection{Offer Creation and Acceptance}
+	
+	
+	The \textit{makeOffer()} smart contract function is invoked by retailers to place offers on approved lots, implementing an open ascending auction in which the highest eligible offer wins (with an optional reserve price $R$, and ties resolved by the earliest on-ledger timestamp or transaction ID), as described in Algorithm~8 in Figure~\ref{fig:offer_selection_acceptance}. The overall auction workflow is illustrated in Figure~\ref{fig:auction}.
+	
+	Prior to submitting an offer, the retailer's available balance is verified using the \textit{getWalletBalance()} function to ensure sufficient funds for the proposed bid, as described in Algorithm~4 in Figure~\ref{fig:wallet_consolidation_balance}. Additionally, the current highest offer for the lot is retrieved using the \textit{getHighestOfferForLot()} function, as described in Algorithm~9 in Figure~\ref{fig:offer_selection_acceptance}, enabling the retailer to place a competitive bid. These checks ensure both financial validity and informed participation in the auction process.
+	
+	To maximize concurrency and avoid Multi-Version Concurrency Control (MVCC) conflicts, each offer is stored as a distinct append-only record under a composite key (e.g., \texttt{offer:lotId:retailerId:txId}), rather than being appended to a shared \texttt{lot.offers[]} array. This design eliminates shared-key rewrites, enabling multiple retailers to submit offers on the same lot without contention on the lot state.
+	
+	Subsequently, the \textit{acceptOffer()} function allows farmers to confirm the highest valid offer, as described in Algorithm~10 in Figure~\ref{fig:offer_selection_acceptance}. The function performs a minimal state transition on the lot, including status update and ownership transfer, and triggers payment using append-only \textit{walletTx} logs, ensuring MVCC-safe financial transactions.
+	
+
+	\subsubsection{Retail Packing}
+	
+	
+	Using the \textit{packLotIntoPackets()} smart contract function, retailers specify packet \emph{sizes} (in grams), a percentage \emph{split} that sums to 100\%, and per-size \emph{prices}. The contract validates inputs, allocates counts per size from the lot’s total weight, assigns any remaining quantity to the smallest size, and writes each packet (with full traceability information and video hashes) as an individual ledger record, as described in Algorithm~11 in Figure~\ref{fig:packing_purchase}.
+	
+	
+	
+	
+	\subsubsection{Consumer Purchase}
+	
+	Using the \textit{purchasePacket()} function, a consumer purchases an available packet. The corresponding payment is transferred to the retailer, ownership is updated, and the purchase timestamp is recorded, as described in Algorithm~12 in Figure~\ref{fig:packing_purchase}.
+	
+	\subsubsection{Get Full Lifecycle of a Packet}
+	
+	The \textit{getPacketLifecycle()} function retrieves the complete lifecycle of a packet by leveraging the historical transaction log available in Hyperledger Fabric, as described in Algorithm~15 in Figure~\ref{fig:lifecycle_rating}. Instead of querying the world state, which only stores the latest snapshot of an asset, this function utilizes the \textit{getHistoryForKey()} API to access the immutable ledger and reconstruct all past state transitions.
+	
+	Initially, the function invokes \textit{reconstructPacketLifecycle()}, which iterates over the transaction history of the packet using \textit{getHistoryForKey()}, as described in Algorithm~14 in Figure~\ref{fig:lifecycle_reconstruction}. This enables the identification of key lifecycle events such as creation, packing, ownership transfers, and final purchase. Each historical record includes metadata such as transaction ID, timestamp, and state changes, allowing accurate reconstruction of the packet’s evolution over time.
+	
+	In addition, the function extracts the associated \textit{lotId} by scanning the packet’s historical records. This linkage enables a second-level reconstruction, where the lifecycle of the corresponding lot is retrieved using the \textit{reconstructLotLifecycle()} function, as described in Algorithm~15 in Figure~\ref{fig:lifecycle_reconstruction}. By combining both packet-level and lot-level histories, the system provides a comprehensive end-to-end traceability view.
+	
+	This approach ensures that provenance information is derived directly from the blockchain ledger rather than the world state, thereby guaranteeing immutability, auditability, and resistance to tampering. The use of ledger-based history retrieval is particularly critical for supply chain applications where full traceability and transparency are required.
+	
+	
+	
+
+	\subsubsection{Get Farmer Rating Based on Lot Status}
+	\paragraph{}
+	The \textit{getFarmerRating()} smart contract function computes a farmer’s rating by iterating through all submitted lots, filtering those belonging to the farmer, and calculating the proportion of non-rejected lots, as described in Algorithm~17 in Figure~\ref{fig:lifecycle_rating}. The resulting percentage reflects the farmer’s quality consistency.
+	
+	This rating is directly tied to the system’s incentive mechanism: higher ratings attract premium bids, enable faster settlements, and improve market access, while repeated rejections reduce opportunities. Figure~\ref{fig:rating-incentive} illustrates this feedback loop between testing outcomes, farmer ratings, and incentive-driven offers.
+	
+
+	
+	\subsubsection{Querying Produce and Packets from Ledger}
+	
+	Before presenting the retrieval algorithms, it is important to highlight their role in reducing query overhead on the blockchain network. As the ledger continuously grows with new records of produce lots and packets, fetching all entries without filtering would require scanning the entire world state, resulting in higher latency and unnecessary data transfer.
+	
+	To address this, the smart contract defines two dedicated retrieval functions, \textit{getAllProduce()} and \textit{getAllPackets()}, as described in Algorithm~17 and Algorithm~18 in Figure~\ref{fig:data_retrieval}. Both functions support \textbf{status-based filtering}, which allows stakeholders to retrieve only the records relevant to their operations—for example, farmers viewing SUBMITTED lots, aggregators accessing PENDING tests, retailers filtering APPROVED lots for purchase, or consumers listing only AVAILABLE packets. This selective retrieval reduces the load on the network, decreases query latency, and enhances system responsiveness as transaction volumes increase.
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	\subsection{ REST API and Fabric SDK}
+	
+	In the proposed system, the transaction proposals are submitted by the clients utilizing a web platform (frontend), which is connected to Fabric Software Development Kit (SDK) using an intermediary called Representational State Transfer Application Programming Interface (REST API), which acts as the backend layer and exposes the HTTP endpoints like /submit-produce, /test-coffee, etc. The Membership Service Provider (MSP), private keys, and digital certificates are kept in a wallet with the help of the Hyperledger Fabric SDK to guarantee secure network access. Transaction proposals are executed by invoking the functions in the chaincode with the specified arguments by gaining access to the network channel using Fabric SDK utilizing the appropriate identity stored in the wallet. The SDK then calls the chaincode function containing the relevant contract with the specified arguments and executes the transaction. The responses of the executed transaction are sent back to the REST layer and frontend. The interaction between the frontend, REST API, Fabric SDK, and the underlying blockchain network is illustrated in Figure~\ref{fig:fabric-interaction}, showing the complete flow from user input to ledger update.
+	
+	Communication between the backend application and the Hyperledger Fabric network is performed using the gRPC protocol, which is the default communication framework used in Fabric. The Fabric Gateway SDK utilizes gRPC to transmit transaction proposals, endorsements, and ledger queries between the client application and peer nodes. This mechanism enables efficient remote procedure calls using HTTP/2 and Protocol Buffers for serialization. gRPC enables the client application to interact directly with peer nodes through well-defined service interfaces, supporting operations such as proposal submission, endorsement collection, and ledger queries in a secure and efficient manner.
+	
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=190mm]{Figure_7.pdf}
+		\caption{Interaction between Frontend, Fabric SDK, and the Hyperledger Fabric Network}
+		\label{fig:fabric-interaction}
+	\end{figure} 
+	
+	\subsubsection{Integration of Blockchain and IPFS}
+	
+	Multimedia files generated during testing and packing operations (e.g., quality inspection videos and packing process recordings) are stored using the InterPlanetary File System (IPFS) to avoid the overhead of storing large binary data directly on the blockchain.
+	
+	The integration is implemented through the backend server using the IPFS HTTP client API. When a file is uploaded from the frontend, the backend invokes the \textit{ipfs.add()} function, which stores the file in the distributed IPFS network and returns a unique Content Identifier (CID). The CID is a cryptographic hash of the file content, ensuring that any modification to the file results in a different identifier, thereby guaranteeing data integrity.
+	
+	Once the CID is generated, it is recorded on the blockchain by invoking the corresponding smart contract function using the Hyperledger Fabric Gateway SDK. Specifically, the backend uses the \textit{submitTransaction()} API to persist the CID along with transaction metadata (e.g., lot ID, packet ID, timestamps, and participant details) in the ledger state.
+	
+	For retrieval, the backend invokes the smart contract using the \textit{evaluateTransaction()} API to fetch the stored CID from the blockchain. The CID is then used to access the file from the IPFS network via a public gateway or local IPFS node.
+	
+	This design ensures a clear separation between on-chain and off-chain data. The blockchain stores only lightweight, immutable references (CIDs), while IPFS handles large multimedia content in a distributed manner. The combination of blockchain immutability and IPFS content-addressing guarantees end-to-end data integrity, as any tampering with the off-chain file would result in a mismatch with the on-chain stored CID.
+	
+	Furthermore, this integration supports efficient traceability. During provenance queries, the system retrieves both structured transaction data from the blockchain and associated multimedia evidence from IPFS using the stored CID, enabling complete verification of each stage in the supply chain lifecycle.
+	
+	
+	\subsubsection{Frontend Implementation and Role-Based Access}
+	
+	The web interface of the proposed system is implemented using the \textit{React.js} framework. Each stakeholder in the supply chain---\textit{farmers, aggregators, retailers, consumers, and banks}---accesses the platform through role-specific dashboards implemented as separate React components. These dashboards provide functionalities tailored to the operational responsibilities of each participant.
+	
+	The frontend communicates with the backend server through \textit{RESTful API} endpoints implemented using a \textit{Node.js Express} server. The backend interacts with the Hyperledger Fabric network using the \textit{Fabric Gateway SDK}, which enables secure invocation and evaluation of smart contract functions. User actions initiated through the web interface are transmitted to the backend, which processes the request and submits the corresponding chaincode transaction to the blockchain network.
+	
+	In the Hyperledger Fabric network, participant identities are managed through digital certificates issued by the \textit{Fabric Certificate Authority (CA)}. Each user receives an X.509 certificate that contains the participant's organizational membership information, which is used by the network to authenticate transactions and determine the corresponding Membership Service Provider (MSP). These certificates are securely stored in the Fabric wallet and are used by the backend application when submitting transactions to the blockchain.
+	
+	To ensure secure system operation, \textit{Role-Based Access Control (RBAC)} is implemented at both the application and blockchain levels. Access to dashboards and application functions is restricted according to the participant's organizational role within the Hyperledger Fabric network. Each participant is associated with a specific \textit{Membership Service Provider (MSP)}, such as \textit{FarmersMSP}, \textit{AggregatorsMSP}, \textit{RetailersMSP}, \textit{ConsumersMSP}, or \textit{BankMSP}. The frontend presents only the functionalities permitted for the authenticated role, while the smart contract enforces additional access control by verifying the \textit{MSP identity of the invoking client} before executing role-specific transactions.
+	
+	The system implements authentication using a token-based mechanism. Users log into the web interface using their credentials, after which the backend server issues a \textit{JSON Web Token (JWT)}. The token is used to authenticate subsequent API requests sent from the frontend to the backend server. Each authenticated user is mapped to a corresponding blockchain identity stored in the \textit{Hyperledger Fabric wallet}. When a transaction request is received, the backend dynamically loads the associated identity from the wallet and submits the transaction to the Hyperledger Fabric network using the Fabric Gateway SDK. This mechanism enables the smart contract to verify the invoking participant through the associated \textit{MSP identity}, thereby enforcing role-based access control during transaction execution.
+	
+	\subsubsection{Farmer Interface}
+	
+	Through this platform, the farmer can submit their produce to the aggregator for testing by selecting the aggregator. Also, the farmer can approve the purchase requests from the retailers. All the lots submitted by the farmer are displayed in the dashboard. The wallet balance and the rating of the farmer based on the history of the submitted lots are also displayed (see Appendix Fig.~\ref{fig:farmer})..
+	
+	
+	
+	\subsubsection{Aggregator Interface}
+	
+	The aggregators can see the lots submitted by the farmer through this dashboard. The test results, along with the quality details, can be entered through this interface. Furthermore, the aggregator can set the testing fees (see Appendix Fig.~\ref{fig:aggregator-interface}).
+	
+	\subsubsection{Retailer Interface}
+	
+	The retailer can make purchase requests of the approved lots (tested by the aggregator). The quality details of the approved lots are displayed in the lot section. There is also an option to pack the lots sold by the farmer to the aggregators by entering the details of the prices at which the packets are to be sold. The video hash of the packing video also needs to be entered to complete the packing process (see Appendix Fig.~\ref{fig:retailer-interface}).
+	
+	
+	
+	
+	
+	\subsubsection{Consumer Interface}
+	
+	The consumer can view the entire life history of the packet using the packet code and purchase the packet through the interface (see Appendix Fig.~\ref{fig:consumer-interface}).
+	
+	
+	
+	\subsubsection{Bank Interface}
+	
+	
+	
+	Through this interface, the bank can create the wallet and deposit money in the wallets of the users (see Appendix Fig.~\ref{fig:bank-interface}).
+	
+	
+	
+	
+	\section{System Testing and Validation}
+	
+	Following the implementation of the proposed blockchain system, functional validation was performed to verify the correctness of smart contract logic and the consistency of data flow among participating stakeholders.
+	
+	\subsection{Test Environment Setup}
+	
+	The smart contract was deployed on a test network for Hyperledger Fabric v2.5 using Docker containers. The network consists of five organizations—FarmersMSP, BankMSP, AggregatorsMSP, RetailersMSP, and ConsumersMSP—with one orderer node and corresponding Certificate Authorities. All smart contract functions were written in JavaScript and tested via both Command Line Tool (CLI) and REST API calls. Due to storage limitations, IPFS was used to store large video files and provide verifiable hashes for traceability. The system also includes a decentralized web application (DApp) built with React.js, which was used to simulate real-world interactions by each stakeholder. This frontend enabled role-based access for farmers, aggregators, retailers, consumers, and banks and was tested alongside the backend via REST API calls.
+	
+	\subsection{Functional Validation}
+	
+	The functional correctness of the proposed system was validated through a combination of manual testing and automated transaction execution. Initially, individual smart contract functions were invoked through the web-based decentralized application (DApp) and command-line interface to verify correct behaviour under realistic user interactions. Subsequently, automated execution was performed using scripted transaction flows to ensure consistency and stability under repeated operations.
+	
+	Validation focused on verifying correct state transitions and data integrity across the blockchain ledger. Each transaction was followed by corresponding query operations to confirm that the expected state updates were successfully recorded. The verification process included checking ownership changes, wallet balance updates, status transitions of lots and packets, and consistency of stored metadata.
+	
+	The functional validation process covered all major operational components of the proposed blockchain-based system. The correctness of produce submission was verified by ensuring that farmer-initiated transactions resulted in accurate creation of produce records on the ledger. The recording of testing results and grading information by aggregators was validated by confirming consistent updates to quality parameters and lot status.
+	
+	The enforcement of role-based access control was examined using MSP identifiers to ensure that only authorized stakeholders could invoke specific smart contract functions. Wallet-related transactions were validated by verifying correct balance deductions, transfers, and updates across participating entities.
+	
+	The offer management mechanism was tested to confirm that retailers could successfully create offers and that farmers could accurately select and accept valid offers, triggering appropriate financial settlements. The packetization process was validated by ensuring the correct generation of packets with unique identifiers and traceable metadata recorded on-chain.
+	
+	Finally, the purchase workflows for both produce and packets were verified to ensure successful transaction execution, correct ownership transfer, and accurate financial processing across all stakeholders.
+	
+	
+	In addition, the integration of IPFS was validated by ensuring that generated hashes were correctly stored on-chain and could be used to retrieve corresponding external data such as testing and packing videos. All retrieved data remained consistent with on-chain records throughout the transaction lifecycle.
+	
+	Ledger consistency was further verified using query functions such as \textit{getAllProduce()}, \textit{getPacketDetails()}, and wallet balance queries. These checks ensured that all committed transactions produced the expected outcomes and that no inconsistencies occurred during execution.
+	
+	\subsection{Smart Contract Execution Summary}
+	
+	To further validate the robustness and correctness of the developed smart contract, each core function was executed under realistic workflow scenarios involving multiple stakeholder roles, including farmers, aggregators, retailers, banks, and consumers. The validation process simulated real-world transaction flows within the Hyperledger Fabric network to ensure correct execution of business logic, financial transactions, and traceability mechanisms.
+	
+	The outcomes of each function were systematically verified by comparing expected state transitions with actual ledger updates obtained through query operations. This included verification of wallet balance changes, ownership updates, lot and packet status transitions, and consistency of metadata recorded on-chain.
+	
+	Table~\ref{tab:smartcontract-validation} summarizes the primary smart contract functions and their corresponding validated outcomes. The validation confirms correct implementation of wallet initialization, produce submission and testing workflows, auction-based offer negotiation, packet generation with traceable identifiers, and consumer-side purchasing operations. Analytical query functions were also validated to ensure correct aggregation of system-level statistics.
+	
+	
+	\begin{table}[ht]
+		\centering
+		\caption{Smart Contract Execution Validation}
+		\label{tab:smartcontract-validation}
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{|p{4cm}|p{9cm}|}
+			\hline
+			\textbf{Function} & \textbf{Validated Outcome} \\
+			\hline
+			\texttt{createWallet()}, \texttt{depositMoney()}  & Wallets were successfully created and token balances initialized for all stakeholders. \\
+			\hline
+			\texttt{submitProduce()} & Farmers submitted produce lots; testing fees were correctly deducted and transferred to aggregators. \\
+			\hline
+			\texttt{testCoffee()}  & Test results and grading data were recorded; lot status updated based on quality evaluation. \\
+			\hline
+			\texttt{makeOffer()}, \texttt{acceptOffer()} & Retailers submitted offers; farmers accepted valid offers and payments were transferred accordingly. \\
+			\hline
+			\texttt{packLotIntoPackets()} & Retailers generated traceable packets (100g–1kg) with associated metadata stored on-chain. \\
+			\hline
+			\texttt{purchasePacket()} & Consumers purchased packets and corresponding financial transactions were successfully executed. \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	Figure~\ref{fig:blockchain-flow} illustrates the complete smart contract execution lifecycle, showcasing the interaction flow among stakeholders—starting from wallet creation to produce submission, testing, auction-based sale, and final packet purchase by the consumer.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_8.pdf}
+		\caption{Overview of Stakeholder Interactions in the Blockchain System}
+		\label{fig:blockchain-flow}
+	\end{figure}
+	
+	The outcomes of each function were systematically verified through corresponding ledger queries and API responses to ensure that the expected state transitions were correctly reflected in the blockchain state.
+	
+	The integrity of on-chain records was validated by cross-verifying ledger entries with smart contract outputs and REST API responses. Query functions confirmed correct updates to the world state following each transaction. Additionally, IPFS hashes corresponding to testing and packing videos were verified against stored content, ensuring consistency between on-chain references and off-chain data. These validations confirm the reliability of the end-to-end traceability mechanism from farm-level production to consumer-level packet delivery.
+	
+	No inconsistencies or unintended state transitions were observed during validation, confirming the functional correctness and reliability of the proposed blockchain system.
+	
+	
+	
+	
+	
+	\section{Performance Benchmarking with Hyperledger Caliper}
+	
+	To evaluate the operational efficiency, scalability, and runtime behaviour of the proposed Hyperledger Fabric-based coffee supply chain framework, a structured benchmarking methodology was adopted using Hyperledger Caliper with a workload configuration employing 5 concurrent workers to generate transaction load across the network. Caliper was selected because it supports configurable workload generation, concurrent client emulation, and automatic computation of key blockchain performance indicators such as throughput, latency, send rate, and transaction success or failure counts. This benchmarking design was formulated in line with recent Hyperledger Fabric performance evaluation studies that explicitly define workload generation, worker configuration, transaction-rate control, and metric collection procedures.
+	
+	\subsection{Benchmarking Objectives}
+	
+	The benchmarking study was designed to evaluate four aspects of system performance.
+	
+	First, the reliability of transaction execution was assessed by verifying whether submitted transactions were successfully committed and retrievable from the ledger.
+	
+	Second, the write-path performance of the blockchain was evaluated by measuring the throughput and latency of major smart contract functions that modify ledger state, such as produce submission, testing, offer creation, offer acceptance, packet generation, and packet purchase.
+	
+	Third, the read-path performance was analysed by benchmarking retrieval-oriented functions under increasing concurrent demand.
+	
+	Fourth, the scalability and runtime behaviour of the system were studied by progressively increasing transaction load and by observing the effect of dataset growth on retrieval latency, throughput, and resource utilization.
+	
+	\subsection{Experimental Environment}
+	
+	
+	The experimental evaluation was conducted on a workstation equipped with a 12th Gen Intel Core i7-12700 processor featuring 20 logical cores (10 physical cores with hyper-threading). The system was provisioned with 32 GB of RAM, of which approximately 31.19 GB was available to the Docker environment.
+	
+	The operating environment consisted of Ubuntu 24.04.3 LTS deployed on Windows Subsystem for Linux (WSL2), running a Linux kernel version 6.6.87.2. Docker Desktop version 4.49.0 was used for container orchestration, with Docker Engine version 28.5.1 configured with the \textit{overlayfs} storage driver. The container runtime environment utilized \texttt{containerd} version 1.7.27 and \texttt{runc} version 1.2.5.
+	
+	The Hyperledger Fabric network was deployed using Docker containers and consisted of five organizations—\textit{FarmersMSP}, \textit{BankMSP}, \textit{AggregatorsMSP}, \textit{RetailersMSP}, and \textit{ConsumersMSP}. Each organization was represented by one peer node, and the network included a single Raft-based ordering service node. All peers were connected through a single application channel, which facilitated consistent ledger synchronization and enabled transaction endorsement, ordering, and validation across all participating organizations. TLS was enabled across all components to ensure secure communication.
+	
+	
+	
+	The benchmarking experiments were executed using Hyperledger Caliper integrated with Node.js. The system maintained a total of 63 active containers during execution, reflecting the full deployment of peer, orderer, and supporting services. Resource utilization, including CPU and memory consumption, was monitored using Docker statistics during benchmark execution.
+	
+	The storage environment consisted of a 1 TB virtual disk allocated to the Linux subsystem, ensuring sufficient capacity for ledger data, container images, and benchmarking logs. All experiments were conducted under controlled conditions to ensure reproducibility and consistency of performance results.
+	
+	
+	
+	All experiments were executed in a controlled single-host Docker environment to ensure repeatability. Accordingly, the reported results should be interpreted as controlled laboratory measurements of relative function behaviour rather than production-scale distributed deployment performance. This setup does not fully capture wide-area network latency, geographically distributed endorsement delay, or real multi-host consensus overhead. However, it is adequate for comparative analysis of function-level performance, concurrency behaviour, query scalability, and resource pressure under reproducible conditions. Therefore, the reported performance results are specific to the experimental setup and should not be directly generalized to large-scale, multi-node production deployments.
+	
+	\subsubsection{Network Latency Configuration}
+	
+	To evaluate system performance under varying network conditions, experiments were conducted under two configurations: (i) baseline conditions without artificial delay, and (ii) network-impaired conditions incorporating latency, jitter, and packet loss.
+	
+	Network impairments were introduced at the container level within the Docker environment, allowing controlled injection of fixed delay, variable delay (jitter), and packet loss between peer and orderer nodes. Jitter was used to simulate fluctuations in network latency, while packet loss emulated transient communication failures that may occur in real-world distributed systems.
+	
+	The configuration was applied consistently across relevant containers and verified during execution to ensure stable and reproducible conditions throughout the benchmarking process. This setup enables a comprehensive comparison of system behavior under ideal conditions and under realistic network disturbances.
+	
+	\subsection{Benchmarking Phases}
+	
+	The performance evaluation was conducted in three phases.
+	
+	\subsubsection{Phase I: Reliability Validation}
+	
+	In the first phase, reliability was assessed by injecting a fixed number of transactions into the blockchain network and subsequently verifying that all successfully submitted records were retrievable from the ledger. This phase ensured that the network, chaincode, and client integration operated correctly under repeated execution. This approach follows prior Hyperledger Fabric studies in which reliability is validated by comparing the number of transmitted and committed transactions after benchmark execution. 
+	
+	\subsubsection{Phase II: Function-wise Write Performance Evaluation}
+	
+	In the second phase, the major write-intensive smart contract functions were benchmarked individually under controlled workloads. The benchmarked functions included \textit{submitProduce()}, \textit{testCoffee()}, \textit{makeOffer()}, \textit{acceptOffer()}, \textit{packLotIntoPackets()}, and \textit{purchasePacket()}. Each function was executed in isolation so that its throughput, latency, send-rate behaviour, and success characteristics could be observed without interference from unrelated workloads. This phase enabled identification of the endorsement and commit overhead associated with each individual smart contract function.
+	
+	\subsubsection{Phase III: Function-wise Read Performance Evaluation}
+	
+	In the third phase, retrieval-oriented functions such as \textit{getAllProduce()}, \textit{getAllPackets()}, and provenance-related lookup functions were benchmarked under increasing concurrent load and increasing dataset size. This phase was essential because blockchain retrieval performance is often more sensitive to ledger growth, state-database access, and composite-key iteration than simple write operations. It also directly addressed reviewer concerns regarding the effect of historical data volume on query latency and overall scalability.
+	
+	\subsection{Workload Module Design}
+	
+	Custom Hyperledger Caliper workload modules were developed for each benchmarked smart contract function. Each workload module emulated the activity of a specific stakeholder role, such as farmer, aggregator, retailer, consumer, or bank. The modules generated valid transaction arguments, selected the correct blockchain identity, and submitted transactions through the Fabric Gateway connector.
+	
+	Write-path workloads simulated realistic business operations, including produce submission by farmers, testing and grading by aggregators, bid placement by retailers, offer acceptance by farmers, packet generation by retailers, and consumer-side packet purchase. Read-path workloads executed operational queries and provenance-oriented lookups using existing ledger records.
+	
+	This design ensured that the benchmark traffic reflected realistic application behaviour rather than synthetic low-level ledger access only. Similar role-driven workload construction has been used in recent Hyperledger Fabric benchmarking studies to emulate realistic client behaviour under concurrent execution. 
+	
+	\subsection{Transaction Load and Concurrency Design}
+	
+To determine the performance limits and scalability of the proposed system, the transaction load was progressively increased across multiple benchmark rounds. Rather than restricting the analysis to low-rate experiments, the workload was scaled across a wide range of transaction rates so that saturation effects, throughput degradation, and latency growth could be systematically observed..
+	
+	For each smart contract function, benchmark rounds were executed at increasing configured send rates (e.g., 50, 100, 200, 300, 400, and 500 TPS). Each round employed a fixed-rate workload model in Hyperledger Caliper, where the transaction generation rate was explicitly controlled to maintain a constant target send rate throughout execution.
+	
+	A fixed number of 5000 transactions were submitted in each benchmark round to ensure consistency of workload size across all experiments. Concurrency was introduced using 5 worker processes, where each worker represented an independent client generating transaction requests. This configuration enabled controlled parallelism and realistic simulation of multiple users interacting with the blockchain network simultaneously.
+	
+	To isolate performance characteristics, each smart contract function was benchmarked independently, allowing accurate measurement of throughput, latency, and failure behaviour without interference from other operations. All experiments were repeated multiple times, and average values were reported to reduce measurement variability and ensure result reliability.
+	
+	This controlled benchmarking configuration ensured reproducibility of test conditions and enabled systematic identification of the system’s throughput saturation point, as well as analysis of latency growth under increasing concurrency.
+	\subsection{Payload Size Disclosure}
+	
+	Transaction payload size was recorded as part of the benchmarking methodology because payload complexity directly influences endorsement cost, serialization overhead, communication delay, and commit latency. For each benchmarked smart contract function, the approximate payload size in kilobytes was determined from the serialized request body submitted by the client.
+	
+	This was particularly important in the present study because different smart contract functions carry substantially different payload structures. For example, \textit{submitProduce()} involves relatively compact transaction metadata, whereas \textit{testCoffee()} may include grading-related JSON data, and \textit{packLotIntoPackets()} may involve multiple structured parameters describing packet sizes, percentages, and prices. Retrieval functions may return significantly larger response payloads than write transactions. Reporting payload size therefore helps explain observed differences in throughput and latency across functions. 
+	
+	
+	\subsection{Dataset Scaling Strategy}
+	
+	To evaluate retrieval scalability under realistic ledger growth, the benchmark environment was preloaded with increasing volumes of historical records before executing read-heavy retrieval tests. Three dataset scales were considered: a small dataset, a medium dataset, and a large dataset, corresponding to ledger states containing hundreds, thousands, and several thousands of lot and packet records.
+	
+	After each dataset was prepared, retrieval workloads were executed under the same query-rate settings so that the effect of dataset size could be isolated from the effect of request rate. This design enabled the analysis of how ledger growth influences query latency, throughput, and overall response behaviour. 
+	
+	\subsection{Read-path Classification: World State versus Transaction History}
+	
+	Two categories of retrieval operations were distinguished in the performance evaluation.
+	
+	The first category consisted of operational queries such as \textit{getAllProduce()} and 
+	\textit{getAllPackets()}, which retrieve current records from the world state stored in CouchDB. These functions primarily rely on composite-key iteration, state filtering, and world-state access patterns.
+	
+	The second category consisted of provenance-oriented or history-based queries, such as \textit{getPacketLifecycle()}, which reconstruct the lifecycle of a packet by traversing the blockchain transaction log using history retrieval APIs. These queries involve iterative access to historical ledger data rather than direct key-based lookups. Since world-state queries and transaction-history queries rely on different data-access mechanisms and exhibit distinct performance characteristics, they were benchmarked separately.
+	
+	\subsection{Performance Metrics}
+	
+	For each benchmark round, the following metrics were recorded: number of successful transactions, number of failed transactions, configured send rate, achieved send rate, throughput, minimum latency, maximum latency, and average latency. In addition, the 95th percentile latency was computed to capture tail behaviour under concurrent load.
+	
+	Throughput was defined as the number of successfully committed transactions per second for write operations, or the number of completed query responses per second for read operations. For write transactions, latency was measured as the elapsed time between transaction submission and transaction confirmation. For read transactions, latency was measured as the elapsed time between query submission and response receipt. Send rate was defined as the effective rate at which the client side submitted transactions during a benchmark round. These definitions are consistent with established practices in blockchain performance benchmarking using Hyperledger Caliper, as reported in prior journal studies on Hyperledger Fabric performance evaluation (\cite{kaushal_convergence_2025};\cite{kumar_integrating_2026}).
+	
+	The throughput and latency metrics were computed as follows:
+	
+	\begin{equation}
+		\text{Throughput}_{write} = \frac{\text{Number of successfully committed write transactions}}{\text{Total benchmark duration (s)}}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Throughput}_{read} = \frac{\text{Number of successfully completed read transactions}}{\text{Total benchmark duration (s)}}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Latency}_{write} = \text{Transaction confirmation time} - \text{Transaction submission time}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Latency}_{read} = \text{Query response time} - \text{Query submission time}
+	\end{equation}
+	
+	\begin{equation}
+		\text{Send Rate} = \frac{\text{Successful transactions} + \text{Failed transactions}}{\text{Last submission time} - \text{First submission time}}
+	\end{equation}
+	
+	\subsection{Runtime Resource Utilization Measurement}
+	
+	Runtime resource utilization was monitored throughout each benchmark round to analyse system behaviour under increasing load. CPU usage was captured at the system level using the Linux \texttt{top} command in batch mode (\texttt{top -b -d 1}), which records CPU statistics at one-second intervals. In parallel, container-level metrics including CPU and memory usage for peer, orderer, CouchDB, and Caliper client containers were collected using \texttt{docker stats}, which reports resource consumption as a percentage of allocated host resources. These metrics were continuously logged during execution and later processed to compute average and peak utilization values. This approach enabled correlation of throughput and latency variations with resource pressure on blockchain components.
+	
+	
+	\subsection{Benchmarking Repetitions and Result Reporting}
+	
+	Each benchmark scenario was repeated multiple times under the same configuration, and the average results were reported. Repeated execution was necessary to reduce the effect of transient runtime variability and to improve reproducibility of observed trends. For each function and transaction-rate setting, the final reported values therefore represent the average of repeated benchmark runs rather than a single isolated observation.
+	
+	The performance results were then presented separately for write-intensive functions, retrieval-oriented functions, dataset-scaled retrieval tests, and runtime resource-utilization behaviour. This reporting structure enabled clearer comparison between ledger-update operations, world-state queries, and history-based provenance lookups.
+	
+	\subsection{Methodological Justification}
+	
+	The benchmarking methodology was designed to provide a comprehensive and rigorous evaluation of system performance under varying workload conditions. It incorporates explicit workload design, a wide range of transaction-rate scaling, payload-size disclosure, dataset-size scaling, clear separation of world-state and history-based retrieval operations, and runtime resource monitoring. These elements ensure that the performance analysis extends beyond basic throughput measurement at low load levels and enables a detailed assessment of scalability, query behaviour, and execution overhead across different operational scenarios.
+	
+	
+	
+	\subsection{Performance Results}
+	
+	\subsubsection{Phase 1: Function-wise Performance Testing}
+	
+	In the first phase of testing, each core function of the smart contract was evaluated in isolation under increasing transaction loads using Hyperledger Caliper. Functions such as \textit{submitProduce()}, \textit{testCoffee()}, \textit{makeOffer()}, \textit{acceptOffer()}, \textit{packLotIntoPackets()}, and \textit{purchasePacket()} were tested separately across send rates ranging from 50 to 500 transactions per second (TPS) to measure their individual scalability, latency, and throughput characteristics under controlled load conditions.
+	Tables~\ref{tab:submitproduce-loadtest}--\ref{tab:testcoffee-loadtest}--\ref{tab:acceptoffer-loadtest} summarize the performance of moderately complex transaction functions, including \textit{submitProduce()}, \textit{testCoffee()}, and \textit{acceptOffer()}. These functions exhibit stable performance with near-linear throughput scaling and minimal latency up to 200~TPS. However, beyond this threshold, performance degradation becomes evident. The maximum achievable throughput for these functions lies in the range of approximately 260--310~TPS, after which the system approaches saturation, leading to increased latency, reduced throughput efficiency, and higher failure rates.
+	
+	For both \textit{testCoffee()} and \textit{acceptOffer()}, transaction failures begin to appear at 300~TPS, accompanied by a noticeable increase in latency. This trend is consistent with the behaviour observed in \textit{submitProduce()}, indicating a common system-level limitation. At higher loads (300--500~TPS), latency increases significantly and throughput deviates from the configured send rate, reflecting growing resource contention and network saturation.
+	
+	
+	
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{submitProduce} (Payload: 64 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				submitproduce & 50  & 5000 & 0 & 50.0  & 1.33 & 0.00 & 0.11 & 50.0 \\
+				submitproduce & 100 & 5000 & 0 & 100.0 & 1.31 & 0.00 & 0.09 & 99.9 \\
+				submitproduce & 200 & 5000 & 0 & 200.0 & 1.11 & 0.00 & 0.07 & 199.6 \\
+				submitproduce & 300 & 4996 & 4 & 298.9 & 2.09 & 0.00 & 0.31 & 266.4 \\
+				submitproduce & 400 & 4997 & 3 & 399.8 & 4.01 & 0.08 & 2.64 & 308.4 \\
+				submitproduce & 500 & 4994 & 6 & 495.2 & 6.91 & 0.10 & 4.45 & 294.8 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:submitproduce-loadtest}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{testCoffee} (Payload: 483 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				testcoffee & 50  & 5000 & 0 & 50.0  & 0.72 & 0.00 & 0.10 & 50.0  \\
+				testcoffee & 100 & 5000 & 0 & 100.0 & 1.33 & 0.00 & 0.09 & 99.9  \\
+				testcoffee & 200 & 5000 & 0 & 199.8 & 0.15 & 0.00 & 0.08 & 199.4 \\
+				testcoffee & 300 & 4996 & 4 & 298.4 & 2.07 & 0.07 & 0.80 & 266.5 \\
+				testcoffee & 400 & 4996 & 4 & 371.5 & 4.66 & 0.10 & 3.25 & 288.4 \\
+				testcoffee & 500 & 4992 & 8 & 422.9 & 6.11 & 0.11 & 4.27 & 295.2 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:testcoffee-loadtest}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{acceptOffer} (Payload: 35 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				acceptoffer & 50  & 5000 & 0 & 50.0  & 1.33 & 0.00 & 0.11 & 50.0  \\
+				acceptoffer & 100 & 5000 & 0 & 99.9  & 1.00 & 0.00 & 0.09 & 99.8  \\
+				acceptoffer & 200 & 5000 & 0 & 199.2 & 1.49 & 0.00 & 0.12 & 198.7 \\
+				acceptoffer & 300 & 4999 & 1 & 299.8 & 2.08 & 0.00 & 0.29 & 267.1 \\
+				acceptoffer & 400 & 4996 & 4 & 398.6 & 6.52 & 0.09 & 4.45 & 263.2 \\
+				acceptoffer & 500 & 4996 & 4 & 497.8 & 9.21 & 0.09 & 6.48 & 261.4 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:acceptoffer-loadtest}
+	\end{table}
+	
+	
+	Table~\ref{tab:makeoffer-loadtest} presents the performance of the \textit{makeOffer()} function under varying transaction loads. The function demonstrates near-linear scalability, operating without failures and with low latency up to 200~TPS. At higher loads (300--500~TPS), only minimal failures are observed, while average latency remains below 0.1~seconds and throughput closely follows the configured send rate. The function achieves a maximum throughput of approximately 416~TPS without significant saturation, owing to its lightweight design with minimal state updates and low ledger write complexity.
+	
+	
+	
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{makeOffer} (Payload: 41 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				makeoffer & 50  & 5000 & 0 & 50.0  & 2.04 & 0.00 & 0.07 & 49.0  \\
+				makeoffer & 100 & 5010 & 0 & 100.3 & 2.04 & 0.00 & 0.05 & 96.5  \\
+				makeoffer & 200 & 5010 & 0 & 199.6 & 2.04 & 0.00 & 0.05 & 185.0 \\
+				makeoffer & 300 & 5009 & 1 & 299.9 & 2.04 & 0.00 & 0.06 & 267.7 \\
+				makeoffer & 400 & 5007 & 3 & 398.1 & 2.04 & 0.01 & 0.05 & 343.6 \\
+				makeoffer & 500 & 5005 & 5 & 499.4 & 0.26 & 0.01 & 0.09 & 416.3 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:makeoffer-loadtest}
+	\end{table}
+	
+	In contrast, Tables~\ref{tab:pack-loadtest} and~\ref{tab:purchase-loadtest} highlight the performance of more complex operations, namely \textit{packLotIntoPackets()} and \textit{purchasePacket()}. These functions exhibit significant performance degradation as the load increases. The \textit{packLotIntoPackets()} function shows a sharp rise in latency beyond 200~TPS due to the creation of multiple ledger entries per transaction, resulting in write amplification and increased computational overhead. Transaction failures begin to occur from 300~TPS onward, and the function reaches a throughput ceiling of approximately 130--140~TPS, indicating early system saturation under concurrent workloads.
+	
+	
+	The observed failures are primarily associated with endorsement-related issues, such as \textit{``no endorsement plan available''}, which occur when peer nodes are unable to process endorsement requests within the required time under high concurrency. These results suggest that while these functions perform efficiently under moderate workloads, their performance is constrained by endorsement and commit overhead at higher transaction rates.
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{packLotIntoPackets} (Payload: 91 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				pack & 50  & 5000 & 0 & 50.0  & 1.39 & 0.00 & 0.18 & 50.0  \\
+				pack & 100 & 5000 & 0 & 100.1 & 1.11 & 0.00 & 0.19 & 99.7  \\
+				pack & 200 & 5000 & 0 & 199.5 & 17.17 & 0.19 & 10.73 & 118.9 \\
+				pack & 300 & 4997 & 3 & 299.5 & 20.46 & 0.35 & 16.24 & 136.1 \\
+				pack & 400 & 4995 & 5 & 399.3 & 25.83 & 1.03 & 18.83 & 136.6 \\
+				pack & 500 & 4991 & 9 & 473.7 & 32.84 & 0.60 & 22.56 & 140.1 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:pack-loadtest}
+	\end{table}
+	
+	
+	The \textit{purchasePacket(} function demonstrates higher failure rates even at lower loads. These failures are primarily attributed to Multi-Version Concurrency Control (MVCC) conflicts, which occur when multiple clients attempt to purchase the same packet simultaneously. Since the \textit{purchasePacket()} function updates ownership of a shared asset, concurrent transactions operating on the same packet key result in version mismatches during validation, leading to transaction rejection. This behaviour is expected in blockchain systems employing MVCC-based validation and reflects real-world scenarios where multiple users compete for the same resource.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{purchasePacket} (Payload: 40 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				purchase & 50  & 4114 & 883 & 50.0  & 1.46 & 0.00 & 0.16 & 50.0  \\
+				purchase & 100 & 4113 & 887 & 99.9  & 2.05 & 0.04 & 0.11 & 96.2  \\
+				purchase & 200 & 4134 & 866 & 200.0 & 2.05 & 0.04 & 0.10 & 185.2 \\
+				purchase & 300 & 4105 & 895 & 299.8 & 2.08 & 0.05 & 0.12 & 267.3 \\
+				purchase & 400 & 4134 & 866 & 397.9 & 4.26 & 0.07 & 2.64 & 328.7 \\
+				purchase & 500 & 4078 & 922 & 496.7 & 6.66 & 0.09 & 4.21 & 300.2 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:purchase-loadtest}
+	\end{table}
+	
+	
+	
+	\subsubsection{Phase 2: Retrieval Function Benchmarking}
+	
+	In the second phase of benchmarking, read-only retrieval functions were evaluated to analyse the query performance of the smart contract. These functions include \textit{getAllProduce()}, \textit{getAllPackets()}, and \textit{getPacketLifecycle()}, which do not modify the ledger state but retrieve data from the blockchain using composite key scans, filtering logic, and history traversal.
+	
+	
+	The \textit{getAllProduce()} and \textit{getAllPackets()} functions retrieve data from the world state database using composite key scans and filtering logic, whereas \textit{getPacketLifecycle()} accesses the blockchain ledger by traversing historical transaction records. These two query types rely on different data-access mechanisms and exhibit distinct performance characteristics.
+	
+	Functions \textit{getAllProduce()} and \textit{getAllPackets()} return multiple records based on status-based filtering, making their performance sensitive to payload size. To evaluate scalability, these functions were tested with progressively increasing payload sizes. For \textit{getAllPackets()}, payload sizes of approximately 6.66, 13.2, 33, 66, 330, and 660 KB were used. Similarly, \textit{getAllProduce()} was evaluated with payload sizes of approximately 9.43, 18.81, 47.15, 94.3, 471.5, and 943 KB.
+	
+	Table~\ref{tab:getpacketlifecycle-loadtest} presents the performance of the \textit{getPacketLifecycle()} function under varying transaction loads. The function demonstrates excellent scalability and stability across all tested load levels, with no transaction failures observed from 50 to 500~TPS.
+	
+	The average latency remains consistently low, approximately 0.01--0.02~seconds, even under high concurrency. Throughput closely follows the configured send rate, reaching nearly 496~TPS at peak load, indicating near-linear scalability.
+	
+	This behaviour can be attributed to the read-only nature of the \textit{getPacketLifecycle()} function, which retrieves historical data from the blockchain ledger without modifying the world state. Since no endorsement validation or write operations are involved, the function avoids bottlenecks such as MVCC conflicts and commit overhead.
+	
+	These results demonstrate that provenance-based queries can scale efficiently under high concurrency, even when accessing transaction history, provided that ledger traversal and data reconstruction are efficiently implemented.
+	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{getPacketLifecycle} (Payload: 2908 bytes) under Varying Load}
+		
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Total Tx & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				getPacketLifecycle & 50  & 5000 & 0 & 50.0  & 0.06 & 0.00 & 0.01 & 50.0  \\
+				getPacketLifecycle & 100 & 4995 & 0 & 99.9  & 0.02 & 0.00 & 0.01 & 99.9  \\
+				getPacketLifecycle & 200 & 5000 & 0 & 199.8 & 0.50 & 0.01 & 0.01 & 199.8 \\
+				getPacketLifecycle & 300 & 5000 & 0 & 299.4 & 0.03 & 0.01 & 0.01 & 299.3 \\
+				getPacketLifecycle & 400 & 5000 & 0 & 377.8 & 1.19 & 0.00 & 0.01 & 373.6 \\
+				getPacketLifecycle & 500 & 5000 & 0 & 496.2 & 0.10 & 0.00 & 0.02 & 495.8 \\
+				\hline
+			\end{tabular}
+		}
+		
+		\label{tab:getpacketlifecycle-loadtest}
+	\end{table}
+	
+	
+	
+	
+	
+	
+	
+	
+	Table~\ref{tab:getallpackets-combined} present the performance of the \textit{getAllPackets()} function under varying payload sizes. The results clearly demonstrate the impact of data volume on read-path performance.
+	
+	For smaller payload sizes (66~KB), the function exhibits stable performance up to 300~TPS with negligible latency and no failures. Performance degradation begins beyond 300~TPS, where latency increases significantly and transaction failures start to appear, indicating system saturation.
+	
+	As the payload size increases to 330~KB, performance deteriorates considerably even at moderate load levels. Latency increases sharply, exceeding 10~seconds at 100~TPS, and transaction failures begin to appear from 200~TPS onward. Throughput deviates from the configured send rate, reflecting increased processing and data transfer overhead.
+	
+	For larger payload sizes (660~KB), the system exhibits severe performance degradation. Even at low load levels (50~TPS), latency exceeds 13~seconds, and failure rates increase drastically at higher loads. Beyond 400~TPS, all transactions fail, indicating that the system is unable to handle large data retrieval under high concurrency.
+	
+	This behaviour can be attributed to the increased cost of world-state traversal, data serialization, and network transmission as payload size grows. Since \textit{getAllPackets()} retrieves data from the world state using composite key scans, larger result sets significantly increase processing overhead. These results highlight that payload size is a critical factor influencing read performance in blockchain systems, and efficient data retrieval mechanisms are essential for scalable query operations.	
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{getAllPackets} under Varying Payload Sizes and Load}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline
+				TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 66 KB}} \\
+				\hline
+				50  & 5000 & 0    & 50.0  & 0.06 & 0.00 & 0.01 & 50.0  \\
+				100 & 5000 & 0    & 100.0 & 0.10 & 0.00 & 0.01 & 99.9  \\
+				200 & 5000 & 0    & 199.8 & 0.07 & 0.00 & 0.01 & 199.8 \\
+				300 & 5000 & 0    & 299.7 & 0.50 & 0.01 & 0.17 & 296.1 \\
+				400 & 5000 & 0    & 397.9 & 7.70 & 0.04 & 3.94 & 285.6 \\
+				500 & 4536 & 464  & 495.0 & 9.65 & 0.06 & 5.29 & 314.5 \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 330 KB}} \\
+				\hline
+				50  & 5000 & 0    & 50.0  & 0.58 & 0.00 & 0.05 & 50.0  \\
+				100 & 5000 & 0    & 100.0 & 19.27 & 0.11 & 10.81 & 77.4 \\
+				200 & 3690 & 1310 & 199.5 & 35.25 & 0.12 & 21.81 & 99.7 \\
+				300 & 3022 & 1978 & 299.6 & 34.36 & 0.22 & 23.37 & 118.4 \\
+				400 & 2721 & 2279 & 397.7 & 33.66 & 0.49 & 24.59 & 130.4 \\
+				500 & 2632 & 2368 & 497.9 & 36.23 & 0.47 & 27.31 & 125.8 \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 660 KB}} \\
+				\hline
+				50  & 5000 & 0    & 50.0  & 26.55 & 0.15 & 13.33 & 41.8 \\
+				100 & 1049 & 3941 & 99.8  & 45.19 & 0.00 & 17.10 & 74.5 \\
+				200 & 386  & 4614 & 200.1 & 38.95 & 10.57 & 25.43 & 99.9 \\
+				300 & 262  & 4733 & 299.2 & 29.89 & 11.41 & 20.21 & 110.2 \\
+				400 & 0    & 5000 & 398.1 & --    & --   & --    & 148.6 \\
+				500 & 0    & 5000 & 499.5 & --    & --   & --    & 148.2 \\
+				\hline
+				
+			\end{tabular}
+		}
+		\label{tab:getallpackets-combined}
+	\end{table}
+	Table~\ref{tab:getproduce-combined} presents the performance of the \textit{getProduce()} function under varying payload sizes. The results demonstrate a strong dependency of query performance on the volume of data retrieved.
+	
+	For smaller payload sizes (94.3~KB), the function maintains stable performance up to 200~TPS with negligible latency and no failures. However, at 300~TPS, a sharp increase in latency is observed, with average latency rising to over 6~seconds, indicating the onset of system saturation. At higher loads (400--500~TPS), transaction failures begin to appear, and throughput deviates from the configured send rate. This behavior is primarily caused by increasing queuing delays at the peer level, where incoming requests exceed the processing capacity of endorsement and query execution.
+	
+	As the payload size increases to 471.5~KB, performance degrades significantly even at moderate load levels. Latency increases sharply, exceeding 30~seconds at 100~TPS, and failure rates become substantial from this point onward. Throughput drops considerably, reflecting the combined impact of expensive world-state traversal, large data serialization, and increased network transfer overhead. The larger response size prolongs request processing time, leading to accumulation of concurrent requests in the system.
+	
+	For the largest payload size (943~KB), the system exhibits severe performance limitations. Even at low load levels (50~TPS), failure rates are high and latency exceeds 20~seconds. Beyond 200~TPS, all transactions fail, indicating that the system is unable to handle large-volume data retrieval under concurrent workloads. This failure behavior is further exacerbated by endorser concurrency saturation, where the number of in-flight requests exceeds the peer’s concurrency limit, resulting in request rejection (e.g., ``exceeding concurrency limit'' errors).
+	
+	This behaviour is primarily attributed to the increasing cost of world-state traversal, data aggregation, and response serialization as payload size grows. Since \textit{getProduce()} relies on composite key scans and filtering operations over the world state, larger result sets significantly increase computational and I/O overhead. These results highlight that payload size is a dominant factor influencing read performance and that large-scale data retrieval can become a critical bottleneck in blockchain-based applications.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Performance Results for \texttt{getProduce} under Varying Payload Sizes and Load}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline
+				TPS & Total Tx & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 94.3 KB}} \\
+				\hline
+				50  & 5000 & 0    & 50.0  & 0.10 & 0.00 & 0.01 & 50.0  \\
+				100 & 4996 & 0    & 99.9  & 0.04 & 0.00 & 0.01 & 99.8  \\
+				200 & 5000 & 0    & 199.8 & 0.27 & 0.00 & 0.06 & 199.7 \\
+				300 & 5000 & 0    & 299.1 & 14.07 & 0.02 & 6.84 & 191.5 \\
+				400 & 4265 & 735  & 399.4 & 13.50 & 0.10 & 7.31 & 243.0 \\
+				500 & 3518 & 1482 & 497.7 & 15.42 & 0.10 & 9.13 & 255.2 \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 471.5 KB}} \\
+				\hline
+				50  & 5000 & 0    & 50.0  & 1.28 & 0.00 & 0.41 & 49.9 \\
+				100 & 4215 & 785  & 100.1 & 53.97 & 0.18 & 32.32 & 55.2 \\
+				200 & 3085 & 1915 & 199.4 & 54.74 & 0.17 & 35.90 & 73.1 \\
+				300 & 2773 & 2227 & 282.5 & 55.16 & 0.23 & 37.70 & 80.4 \\
+				400 & 2609 & 2391 & 399.4 & 58.87 & 0.56 & 42.14 & 79.2 \\
+				500 & 2543 & 2457 & 498.5 & 65.63 & 0.54 & 48.86 & 73.2 \\
+				\hline
+				
+				\multicolumn{8}{|c|}{\textbf{Payload: 943 KB}} \\
+				\hline
+				50  & 1548 & 3452 & 50.0  & 58.88 & 0.27 & 21.66 & 47.9 \\
+				100 & 427  & 4573 & 100.0 & 36.51 & 0.32 & 16.37 & 93.3 \\
+				200 & 0    & 5000 & 200.1 & --    & --   & --    & 142.3 \\
+				300 & 0    & 5000 & 299.1 & --    & --   & --    & 136.5 \\
+				400 & 0    & 5000 & 398.8 & --    & --   & --    & 137.5 \\
+				500 & 0    & 5000 & 496.2 & --    & --   & --    & 138.0 \\
+				\hline
+				
+			\end{tabular}
+		}
+		\label{tab:getproduce-combined}
+	\end{table}
+	\subsubsection{Impact of Network Latency}
+	
+	To analyse the effect of network conditions on system performance, additional experiments were conducted by introducing controlled network impairments between Docker containers, including a fixed latency of 50~ms, jitter of 20~ms, and packet loss of 1\%. Since the impact of network variability becomes more pronounced at higher transaction rates, only the results at 500~TPS are presented to capture the worst-case performance degradation.
+	\begin{table}[h]
+		\centering
+		\caption{Performance Comparison of Smart Contract Functions at 500 TPS}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Failed & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				
+				submitProduce              & 500 & 4996 & 4    & 482.8 & 15.99 & 0.93 & 12.38 & 191.8 \\
+				testCoffee               & 500 & 4990 & 3    & 482.4 & 15.70 & 0.67 & 11.02 & 193.4 \\
+				makeOffer                  & 500 & 5880 & 8    & 443.8 & 5.63  & 0.00 & 1.79  & 368.5 \\
+				acceptOffer                & 500 & 4994 & 6    & 472.0 & 14.03 & 1.38 & 12.07 & 212.8 \\
+				packLotIntoPackets         & 500 & 4993 & 7    & 590.0 & 70.15 & 19.83 & 62.74 & 70.51 \\
+				purchasePacket             & 500 & 3346 & 1654 & 475.4 & 12.56 & 1.05 & 10.80 & 220.6 \\
+				
+				getProduce (13.2 KB)       & 500 & 804    & 4196 & 476 & 294.15    & 2.12   & 186.46    & 16.6 \\
+				getAllPackets (66 KB)      & 500 & 1385 & 3613 & 483.5 & 293.78 & 1.05 & 223.76 & 16.5 \\
+				
+				\hline
+			\end{tabular}
+		}
+		\label{tab:latency-500tps}
+	\end{table}
+	
+	
+	Table~\ref{tab:latency-500tps} presents the performance of key smart contract functions at 500~TPS under an induced network latency of 50~ms. The results clearly demonstrate the sensitivity of blockchain operations to communication delays, particularly for write-intensive transactions.
+	
+	Functions such as \textit{submitProduce()}, \textit{testCoffee()}, and \textit{acceptOffer()} exhibit a substantial increase in latency compared to the baseline configuration, with average latency rising to several seconds. This behavior is attributed to the cumulative delay introduced across multiple communication phases, including endorsement, ordering, and block commit.
+	
+	In contrast, \textit{makeOffer()} remains relatively unaffected, maintaining low latency and near-linear throughput. This indicates reduced dependency on multi-stage communication and lower computational complexity, making it more resilient to network delays.
+	
+	The \textit{packLotIntoPackets()} function shows severe performance degradation, with latency exceeding tens of seconds and significantly reduced throughput. This is primarily due to the combination of write amplification and prolonged transaction execution under delayed network conditions.
+	
+	Similarly, \textit{purchasePacket()} experiences a high rate of transaction failures, largely driven by MVCC conflicts. The increased transaction duration caused by network latency widens the window for concurrent access, thereby intensifying contention and conflict probability.
+	
+	The results indicate that the greatest performance degradation under latency-injected conditions occurs in retrieval functions such as \textit{getProduce()} and \textit{getAllPackets()}. These functions exhibit significantly higher failure rates and increased latency compared to other operations, as they involve transferring larger payloads over the network. Consequently, network impairments such as latency, jitter, and packet loss have a more pronounced impact on data-intensive retrieval operations than on lightweight transaction functions.
+	
+	In addition, at higher transaction rates, these retrieval operations trigger endorser-level saturation, leading to concurrency limit violations (e.g., exceeding the peer endorser request threshold). Due to the increased processing time of large payload queries, outstanding requests accumulate rapidly, resulting in the “too many requests for /protos.Endorser, exceeding concurrency limit” error. This behavior further amplifies failure rates and highlights that both payload size and request concurrency jointly constrain read-path scalability in Hyperledger Fabric networks.
+	
+	Overall, the results highlight that network latency disproportionately impacts complex and write-heavy operations, while lightweight and low-contention functions demonstrate greater resilience. These findings underscore the importance of optimizing transaction design and network conditions for scalable blockchain deployments.
+	
+	\subsubsection{Runtime Resource Utilization}
+	
+	The resource utilization results in Table~\ref{tab:resource-combined} provide a comprehensive view of system behavior across both transaction-oriented and retrieval-oriented smart contract functions. It can be observed that write operations generally exhibit an increase in CPU utilization with higher transaction loads, particularly for computationally intensive functions such as \textit{packLotIntoPackets()} and \textit{acceptOffer()}, which involve complex state updates and multiple ledger writes. In contrast, \textit{purchasePacke()t} maintains relatively low and stable CPU and memory usage across all load levels. This behavior can be attributed to the simplicity of its execution logic and limited state interactions.
+	Retrieval functions demonstrate a different pattern, where CPU utilization either remains stable or slightly decreases with increasing TPS, as observed in \textit{getProduce()} and \textit{getPacketDetails()}. This behavior indicates efficient read execution and caching effects within the Fabric peer nodes. However, retrieval operations incur significant network I/O, especially for functions returning large payloads such as \textit{getAllPackets()} and \textit{getProduce()}, due to the transmission of bulk ledger data.
+	
+	Memory usage across all functions remains within a stable range without any abnormal growth, indicating the absence of memory leaks or resource exhaustion. Network I/O scales proportionally with workload intensity, particularly for data-heavy operations. Overall, no resource saturation or bottlenecks were observed in CPU, memory, or network utilization, confirming that the system was adequately provisioned. These observations validate that the performance variations observed in throughput and latency are primarily driven by transaction complexity and data volume rather than infrastructure limitations.
+	
+	\begin{table}[h]
+		\centering
+		\caption{Runtime Resource Utilization of Smart Contract and Retrieval Functions at Representative Load Levels}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|}
+				\hline
+				Function & TPS & CPU Avg (\%) & CPU Peak (\%) & Mem Avg (MB) & Net I/O (MB) \\
+				\hline
+				
+				submitProduce & 100 & 17.94 & 88.9 & 366.18 & 7757.07 \\
+				submitProduce & 300 & 17.98 & 88.9 & 367.93 & 7758.49 \\
+				submitProduce & 500 & 26.58 & 82.8 & 369.37 & 7759.74 \\
+				\hline
+				
+				testCoffee & 100 & 17.93 & 88.8 & 285.96 & 5909.94 \\
+				testCoffee & 300 & 22.95 & 61.5 & 296.18 & 5910.84 \\
+				testCoffee & 500 & 27.44 & 78.5 & 208.56 & 5865.42 \\
+				\hline
+				
+				acceptOffer & 100 & 16.17 & 44.5 & 376.83 & 8215.11 \\
+				acceptOffer & 300 & 22.65 & 59.5 & 379.52 & 8300.10 \\
+				acceptOffer & 500 & 28.86 & 81.7 & 371.74 & 8400.26 \\
+				\hline
+				
+				makeOffer & 100 & 17.87 & 88.9 & 297.45 & 2760.23 \\
+				makeOffer & 300 & 17.96 & 89.0 & 297.45 & 2781.43 \\
+				makeOffer & 500 & 25.54 & 86.0 & 297.45 & 2681.62 \\
+				\hline
+				
+				packLotIntoPackets & 100 & 13.89 & 86.4 & 255.47 & 7401.76 \\
+				packLotIntoPackets & 300 & 21.15 & 80.7 & 392.00 & 8908.24 \\
+				packLotIntoPackets & 500 & 38.19 & 85.0 & 379.52 & 7017.50 \\
+				\hline
+				
+				purchasePacket & 100 & 11.34 & 81.2 & 248.86 & 2563.65 \\
+				purchasePacket & 300 & 10.74 & 81.2 & 245.89 & 2572.70 \\
+				purchasePacket & 500 & 9.96 & 79.3 & 243.63 & 2577.23 \\
+				\hline
+				
+				getAllPackets & 100 & 21.83 & 67.1 & 342.98 & 6864.39 \\
+				getAllPackets & 300 & 21.67 & 69.2 & 341.76 & 6891.12 \\
+				getAllPackets & 500 & 21.58 & 69.2 & 340.15 & 6974.11 \\
+				\hline
+				
+				getProduce & 100 & 16.38 & 51.4 & 337.29 & 7532.89 \\
+				getProduce & 300 & 14.34 & 50.8 & 324.58 & 7597.35 \\
+				getProduce & 500 & 12.04 & 51.1 & 305.59 & 7657.60 \\
+				\hline
+				
+				getPacketDetails & 100 & 9.39 & 49.1 & 238.68 & 2582.57 \\
+				getPacketDetails & 300 & 8.94 & 49.8 & 234.48 & 2585.68 \\
+				getPacketDetails & 500 & 8.43 & 49.3 & 231.02 & 2586.68 \\
+				\hline
+				
+			\end{tabular}
+		}
+		\label{tab:resource-combined}
+	\end{table}
+	
+	
+	\subsection{Optimization to Reduce MVCC Conflicts}
+	
+	A major source of performance degradation in Hyperledger Fabric networks is 
+	Multi-Version Concurrency Control (MVCC) conflicts, which occur when multiple 
+	transactions attempt to update the same ledger key concurrently. In the initial 
+	(unoptimized) design of the proposed system, two critical components were highly 
+	susceptible to such conflicts: wallet balance updates using the \textit{transfer()} 
+	function and lot-based offer management using \textit{makeOffer()}. In the baseline implementation, the transfer() function directly updated 
+	shared wallet keys by overwriting the balance field for both sender and receiver, 
+	as illustrated in Algorithm~19 in Figure~\ref{fig:transferandmakeoffer}. 
+	Similarly, the \textit{makeOffer()} function modified the \texttt{lot} asset by 
+	updating the highestOffer field within the same record as illustrated in Algorithm~20 in Figure~\ref{fig:transferandmakeoffer}. Consequently, 
+	multiple concurrent transactions followed a read–modify–write pattern on shared 
+	ledger keys, resulting in frequent MVCC conflicts.
+	
+	This behavior is evident in the experimental results presented in 
+	Table~\ref{tab:combined-performance}, where a high number of transaction 
+	failures is observed under a workload of 200 TPS. For instance, the 
+	\textit{acceptOffer()} and \textit{purchasePacket()} functions exhibit failure 
+	counts of 3963 and 3765 respectively, while \textit{submitProduce()} records 
+	3827 failures. Although \textit{makeOffer()} demonstrates comparatively better 
+	performance, it still incurs 380 failed transactions due to contention on the 
+	shared lot state. These results confirm that the naive state-overwrite approach 
+	does not scale under concurrent workloads.
+	
+	To address these limitations, the system design was revised to adopt an append-only 
+	model using composite keys, ensuring that each transaction generates a unique ledger 
+	entry instead of modifying shared state. To mitigate these issues, three key 
+	optimizations were introduced:
+	
+	\begin{itemize}
+		\item \textbf{Wallet transaction logs:} Instead of overwriting the wallet 
+		key with a new balance after each transfer, every debit or credit is stored as a 
+		distinct \texttt{walletTx} record under a unique composite key 
+		(\texttt{walletTx:Org:User:TxId}). The current balance is derived by replaying 
+		these transaction logs. This eliminates multiple concurrent writes to the same 
+		wallet key and ensures concurrency safety.
+		
+		\item \textbf{Decoupled offer assets:} In the baseline design, offers were 
+		embedded within the lot object, requiring the entire lot record to be rewritten 
+		for each new offer. This approach was highly susceptible to MVCC conflicts. 
+		The design was optimized by persisting each offer as a separate ledger asset 
+		with its own key (\texttt{offer:LotId:RetailerId:Timestamp}). As a result, 
+		multiple retailers can invoke \textit{makeOffer()} concurrently without 
+		contending on a shared lot record.
+		
+		\item \textbf{Optimized transfer function:} The \textit{transfer()} function 
+		was restructured to follow an append-only transaction model. Both debit and 
+		credit operations are recorded as new \texttt{walletTx} entries rather than 
+		updating a shared balance key, thereby eliminating conflicting writes.
+	\end{itemize}
+	
+	Following these optimizations, the system demonstrated significantly improved stability under concurrent Hyperledger Caliper workloads. The quantitative comparison presented in Table~\ref{tab:combined-performance} clearly shows a substantial reduction in MVCC-induced transaction failures between the unoptimized and optimized implementations. The optimized design significantly reduces write–write contention by eliminating shared-key updates, resulting in improved transaction success rates and more stable performance under high concurrency.
+	
+	In the optimized design, functions such as \textit{acceptOffer()}, 
+	\textit{submitProduce()}, \textit{makeOffer()}, and \textit{testCoffee()} 
+	achieve near-zero failure rates, compared to thousands of failures observed 
+	in the baseline implementation. For example, \textit{acceptOffer()} improves 
+	from 3963 failed transactions to zero failures, while \textit{submitProduce()} 
+	improves from 3827 failures to zero, demonstrating the effectiveness of 
+	eliminating shared-key updates.
+	
+	Although \textit{purchasePacket()} still exhibits a small number of failures 
+	(866), this represents a significant reduction compared to the baseline (3765), 
+	indicating partial mitigation of contention. Although \textit{purchasePacket()} still exhibits a small number of failures 
+	(866), this represents a significant reduction compared to the baseline (3765). 
+	The remaining failures are attributed to normal application-level contention, 
+	where multiple concurrent transactions attempt to purchase the same packet, 
+	leading to logical conflicts rather than MVCC conflicts arising from shared-key updates.
+	
+	Overall, these results provide strong quantitative evidence that the append-only 
+	design using composite keys effectively mitigates MVCC conflicts, improves 
+	concurrency stability, and enables reliable execution under high transaction loads. 
+	This confirms that eliminating shared-state overwrites is critical for achieving 
+	scalable transaction processing in Hyperledger Fabric networks.
+	
+	
+
+	\begin{table}[h]
+		\centering
+		\caption{Performance Comparison of Unoptimized and Optimized Chaincode at 200 TPS}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				Function & TPS & Success & Fail & Send Rate & Max Lat (s) & Min Lat (s) & Avg Lat (s) & Throughput \\
+				\hline
+				
+				\multicolumn{9}{|c|}{\textbf{Unoptimized Chaincode}} \\
+				\hline
+				
+				acceptOffer & 200 & 1037 & 3963 & 200.1 & 2.20 & 0.08 & 0.99 & 199.8 \\
+				makeOffer & 200 & 4630 & 380 & 200.4 & 2.05 & 0.00 & 0.05 & 185.5 \\
+				packLotIntoPackets & 200 & 5000 & 0 & 200.0 & 13.91 & 0.25 & 12.79 & 109.1 \\
+				purchasePacket & 200 & 1235 & 3765 & 199.4 & 2.84 & 0.05 & 0.10 & 179.4 \\
+				submitProduce & 200 & 1173 & 3827 & 199.7 & 0.91 & 0 & 0.10 & 199.2 \\
+				testCoffee & 200 & 5000 & 0 & 199.9 & 0.73 & 0.04 & 0.10 & 199.5 \\
+				
+				\hline
+				\multicolumn{9}{|c|}{\textbf{Optimized Chaincode}} \\
+				\hline
+				
+				acceptOffer & 200 & 5000 & 0 & 199.2 & 1.49 & 0.00 & 0.12 & 198.7 \\
+				makeOffer & 200 & 5010 & 0 & 199.6 & 2.04 & 0.00 & 0.05 & 185.0 \\
+				packLotIntoPackets & 200 & 5000 & 0 & 199.5 & 17.17 & 0.19 & 10.73 & 118.9 \\
+				purchasePacket & 200 & 4134 & 866 & 200.0 & 2.05 & 0.04 & 0.10 & 185.2 \\
+				submitProduce & 200 & 5000 & 0 & 200.0 & 1.11 & 0.00 & 0.07 & 199.6 \\
+				testCoffee & 200 & 5000 & 0 & 199.8 & 0.15 & 0.00 & 0.08 & 199.4 \\
+				
+				\hline
+			\end{tabular}
+		}
+		\label{tab:combined-performance}
+	\end{table}
+	
+	Another source of concurrency anomalies in the system arises from phantom-read–like conflicts, which occur when a transaction depends on dynamically retrieved data that may change during execution. In the baseline design, the \textit{makeOffer()} function introduces a phantom-read–like anomaly due to its dependency on dynamically retrieved offer data within the chaincode. Specifically, the function invokes \textit{getHighestOfferForLot()} during transaction execution to determine the current highest offer. Under concurrent workloads, multiple transactions may read the same snapshot of the ledger state and observe an identical highest offer value. However, before these transactions are committed, new offers from other transactions may be inserted into the ledger, altering the underlying dataset. As a result, transactions operate on stale information and make decisions based on outdated state, leading to inconsistencies. This behavior is analogous to phantom reads in database systems, where new records appear between the read and commit phases.
+	
+	To address this issue, the retrieval of the retrieving highest offer function is moved outside the chaincode and handled at the application (backend) layer. By removing the invocation of \textit{getHighestOfferForLot()} from within the transaction function, the chaincode no longer depends on a dynamically evolving dataset during execution. Consequently, the transaction logic becomes independent of concurrent insertions, effectively eliminating phantom-read–like inconsistencies. The algorithms for \textit{makeOffer()} and \textit{makeOffer\_modified()} are shown in Algorithms~21 and~22 (Figure~\ref{fig:makeoffer_compare}).
+	
+
+	\begin{table}[h]
+		\centering
+		\caption{Performance Comparison of Baseline and Modified Chaincode at 500 TPS}
+		\resizebox{\textwidth}{!}{
+			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+				\hline
+				\textbf{Function} & \textbf{TPS} & \textbf{Success} & \textbf{Fail} & \textbf{Send Rate} & \textbf{Max Lat (s)} & \textbf{Min Lat (s)} & \textbf{Avg Lat (s)} & \textbf{Throughput} \\
+				\hline
+				
+				makeOffer  & 500 & 5005 & 5  & 499.4 & 0.26 & 0.01 & 0.09 & 416.3  \\
+				
+				makeOffer\_modified & 500 & 4946 & 70 & 499.7 & 2.07 & 0.01 & 0.08 & 414.5  \\
+				
+				\hline
+			\end{tabular}
+		}
+	\end{table}
+	
+	
+	
+	
+	
+	
+	\section{Results and Discussion}
+	
+	
+	
+	\subsection{System Validation and Functional Execution}
+	
+	The results confirm that the proposed blockchain-based supply chain system operates correctly across all stakeholder roles, supporting end-to-end workflows including produce submission, quality testing, auction-based offer management, packet generation, and consumer purchase processes.
+	
+	The integration of IPFS for off-chain storage enables efficient handling of large multimedia data, such as testing and packaging videos, while maintaining only cryptographic hash references on the blockchain. This design ensures data integrity and tamper resistance while preserving ledger scalability.
+	
+	The automated payment mechanism, implemented through smart contract-based wallet operations, facilitates secure and transparent financial transactions among stakeholders. Payment flows, including deposits, transfers, and purchase settlements, are executed deterministically without manual intervention, thereby enhancing trust and eliminating reliance on intermediaries.
+	
+	In addition, the system demonstrates strong concurrency resilience across most operations. The adoption of concurrency-aware design patterns, such as append-only updates and avoidance of shared key overwrites, significantly reduces Multi-Version Concurrency Control (MVCC) conflicts. Except for expected contention in competitive purchase scenarios, the system maintains consistent and reliable execution under concurrent workloads.
+	
+	Overall, these findings indicate that the proposed system provides a robust and scalable foundation for blockchain-enabled agricultural supply chain management.
+	
+	\subsection{Performance Observations and Analysis}
+	
+	The benchmarking results demonstrate that the proposed system maintains stable performance across most smart contract functions under moderate transaction loads. The average throughput remained proportional to the configured send rates for lightweight operations, while latency remained within acceptable bounds for the majority of functions.
+	
+	However, \textit{packLotIntoPackets()} exhibited the highest latency and the lowest throughput among all evaluated functions. This behavior can be attributed to its computational complexity and intensive write operations, as the function generates multiple packet records, performs iterative state updates, and writes a large number of key-value entries to the ledger within a single transaction. These operations significantly increase endorsement execution time and block commit overhead. Notably, the latency of \textit{packLotIntoPackets()} is already high at moderate loads (e.g., 300 TPS), although it appears comparatively lower at 200 TPS due to transient system conditions such as batching and resource scheduling effects.
+	
+	In contrast, other functions such as \textit{submitProduce()}, \textit{testCoffee()}, \textit{makeOffer()}, and \textit{acceptOffer()} demonstrated strong concurrency resilience under moderate loads, with minimal failures and stable throughput. Their append-only and concurrency-aware design patterns contributed to reduced contention and improved execution stability.
+	
+	Across most functions, the average latency remained low and stable up to 300 TPS, with no transaction failures observed within this range. However, beyond 300 TPS, the system exhibited a sharp and exponential increase in latency, accompanied by transaction failures across almost all functions. These failures were primarily caused by the inability to generate a valid endorsement plan under high concurrency, resulting in \textit{No endorsement plan available} errors. This indicates that the network reached its concurrency limits, where peers were unable to process and endorse transactions within the required time constraints. Such behavior reflects system saturation rather than implementation flaws.
+	
+	Additionally, \textit{purchasePacket()} exhibited Multi-Version Concurrency Control (MVCC) conflicts during concurrent execution. When multiple consumers attempted to purchase the same packet simultaneously, only the first transaction successfully updated the packet status, while subsequent transactions were rejected due to stale read sets. This is an expected behavior in high-contention scenarios and ensures ledger consistency.
+	
+	
+	The performance of retrieval functions is strongly governed by the combined effect of transaction rate and payload size. As the transaction rate increases, latency remains minimal at lower loads but begins to rise sharply beyond the system’s processing threshold. For moderate payloads, latency remains stable up to approximately 200--300 TPS; however, once this threshold is exceeded, a rapid increase in response time is observed, indicating the onset of system saturation. This is particularly evident in getAllPackets (66 KB), where average latency increases from negligible levels to several seconds as the load approaches 400--500 TPS.
+	
+	Payload size has an even more dominant influence on retrieval performance. As the volume of data returned per query increases, latency escalates significantly even at moderate transaction rates. For instance, when the payload increases to 330 KB, latency rises sharply at just 100 TPS and continues to grow with increasing load, accompanied by a noticeable rise in transaction failures. At higher payload sizes such as 660 KB, the system exhibits severe degradation, with high latency even at low TPS and complete transaction failure at higher loads .
+	
+	A similar trend is observed for getProduce, where smaller payloads (94.3 KB) maintain stable latency up to 200 TPS, followed by a sharp increase at 300 TPS and the emergence of failures at higher loads. As the payload increases to 471.5 KB, latency becomes extremely high even at 100 TPS, and failure rates rise significantly across all load levels. For the largest payload (943 KB), the system becomes unstable even at low TPS, with failures dominating and complete breakdown occurring beyond 200 TPS 
+	
+	These results indicate that while increasing TPS introduces contention and queuing delays, payload size amplifies the computational and I/O overhead associated with query execution. Retrieval functions rely on composite key scans, data aggregation, and serialization of large result sets, all of which scale poorly with increasing dataset size. Consequently, the combined effect of high TPS and large payloads leads to exponential latency growth and eventual system failure.
+	
+	Overall, the degradation pattern demonstrates that payload size is the primary limiting factor in retrieval performance, while increasing TPS accelerates the onset of saturation. This highlights the necessity of controlling query payload size and optimizing data access patterns to ensure scalability in blockchain-based systems.
+	
+	
+	The observed performance degradation at higher transaction rates can be directly correlated with resource utilization patterns at the peer and chaincode container levels. Under moderate loads, CPU and memory usage remained within stable bounds, supporting consistent throughput and low latency. However, as the transaction rate increased beyond the system’s operational threshold, a noticeable rise in CPU utilization and network I/O was observed, leading to increased processing delays and queuing effects.
+	
+	In particular, write-intensive operations and large-payload retrieval functions imposed higher computational and memory overhead due to endorsement execution, state database access, and data serialization. This increased resource demand contributed to latency growth and reduced throughput efficiency at higher loads. Additionally, the inability to process endorsement requests under peak concurrency is consistent with CPU saturation and resource contention at the peer level.
+	
+	These observations indicate that system performance is not only constrained by smart contract logic but also by underlying infrastructure capacity. Therefore, optimizing resource allocation, scaling peer nodes, and improving query efficiency are critical for enhancing performance in high-load blockchain deployments.
+	
+	
+	It is important to note that all experiments were conducted in a single-node local environment using WSL2 and Docker. Consequently, the reported throughput values should not be interpreted as production-level performance metrics. Instead, the evaluation focuses on relative performance across smart contract functions and the impact of MVCC-aware design choices under controlled concurrent workloads.
+	
+	\subsection{Concurrency and Conflict Handling}
+	
+	The observed transaction failures in \textit{purchasePacket()} are primarily attributed to Multi-Version Concurrency Control (MVCC) conflicts, which occur when multiple transactions attempt to update the same ledger state concurrently. In such cases, only the first transaction is successfully committed, while subsequent transactions operating on stale read sets are rejected during validation. This behavior is inherent to Hyperledger Fabric and ensures data consistency under concurrent access.
+	
+	To mitigate concurrency-related issues in other functions, the smart contract design adopts an append-only update strategy, where transactions write to unique keys instead of overwriting shared state. This approach effectively eliminates write-write conflicts and prevents contention among concurrent transactions. As a result, functions such as \textit{submitProduce()}, \textit{makeOffer()}, and \textit{acceptOffer()} demonstrate strong concurrency resilience with no MVCC-related failures.
+	
+	Phantom read conflicts, which may arise from concurrent range or composite key queries, were minimized through careful query design and controlled data access patterns. By reducing reliance on large unfiltered scans and ensuring predictable read sets, the system avoids inconsistent query results under concurrent execution.
+	
+	Overall, these design choices highlight the importance of concurrency-aware smart contract development for achieving scalable and reliable blockchain applications.
+	
+	\subsection{System Behavior and Functional Insights}
+	
+	The system successfully supports all stakeholder roles—farmers, aggregators, retailers, consumers, and banks—with correct execution of core operations. Write-intensive functions maintained high throughput under controlled loads, while retrieval functions such as \textit{getAllPackets()} and \textit{getProduce()} exhibited increased latency as dataset size grew. This trend highlights the impact of ledger growth and result set size on read-path performance.
+	
+	Role-based access control enforced through MSP identity validation ensured secure and authorized execution of transactions. Traceability functions confirmed that lifecycle data was consistently preserved across all stages of the supply chain.
+	
+	
+	\subsection{Practical Implications}
+	
+	Although high TPS experiments provide insights into system limits, it is important to note that real-world agricultural auction systems typically operate at significantly lower transaction rates. In practical scenarios, transactions occur asynchronously and at relatively low loads, often below 10 TPS. Therefore, the observed performance under moderate loads is more representative of real deployment conditions.
+	
+	The system demonstrates reliable performance within these realistic operational ranges, making it suitable for real-world implementation. While extreme load conditions lead to endorsement and concurrency-related failures, such conditions are unlikely to occur in typical agricultural supply chain environments.
+	
+	Overall, the results validate the applicability of blockchain technology for enhancing transparency, traceability, and trust in agri-food supply chains. Future work may focus on optimizing high-load performance, improving read-path efficiency, and evaluating system behavior in large-scale distributed deployments.
+	
+	\section{Conclusion}
+	
+	In this study, we proposed and evaluated a blockchain-based system designed to enhance traceability and financial integrity within the agri-food supply chain. The system leverages a permissioned blockchain network to immutably record critical lifecycle events, including produce submission, pesticide testing outcomes, grading results, and financial transactions. By establishing a tamper-proof record of events, the system ensures transparency and accountability among all stakeholders—farmers, aggregators, retailers, banks, and consumers.
+	
+	Smart contracts are utilized to automate the enforcement of business rules, particularly for financial settlements. Payments are disbursed automatically based on predefined conditions such as passing pesticide tests or completing purchase agreements. This mechanism significantly reduces reliance on manual coordination, eliminates intermediaries, and minimizes delays in financial transactions. Moreover, the integration of on-chain pesticide compliance enforcement—via immutable test logs and traceable produce histories—acts as a regulatory check. It discourages the excessive use of harmful chemicals and promotes adherence to sustainable farming practices. Farmers are incentivized through faster payments, price premiums for pesticide-compliant lots, and access to broader export markets. In addition, positive compliance records can improve a farmer’s rating on the blockchain, which in turn enhances trust with buyers and financial institutions, enabling easier access to credit and future contracts.
+	
+	Furthermore, the system incorporates a blockchain-based auction mechanism in which retailers place ascending offers on approved lots. Each bid is immutably recorded on the ledger under a unique key, and the smart contract enforces that every new offer must exceed the previous highest bid. This ensures transparent and competitive price discovery, preventing exploitation in traditional opaque auction settings. By recording every bid immutably and validating bid increments on-chain, the mechanism discourages collusion, eliminates back-dating or bid withdrawal, and guarantees fairness. Farmers benefit by reliably receiving the best available price for their produce, while retailers gain confidence in the authenticity and quality of lots. Together with the incentive framework, the auction design not only enhances financial transparency but also aligns market behavior with sustainable and equitable trading practices. 
+	
+	The system underwent extensive validation, including both functional testing and performance benchmarking using Hyperledger Caliper. The results demonstrated its robustness, scalability, and fault tolerance under realistic workloads. While most operations performed reliably, the system exhibited occasional transaction failures—particularly in the purchasePacket() function due to Multi-Version Concurrency Control (MVCC) conflicts under high concurrency. Additionally, some retrieval-heavy functions, such as getAllPackets() and getProduce(), showed increased latency as the ledger size grew, indicating potential bottlenecks in read performance that could impact system responsiveness over time. Nonetheless, traceability and transaction correctness were consistently maintained across all scenarios.
+	
+	Looking ahead, future work will focus on integrating Internet of Things (IoT) technologies to further enhance the system’s capabilities. Real-time sensor data—such as color, moisture content, size uniformity, and contaminant levels—will be captured at the point of origin using embedded devices. This data will be securely transmitted to the blockchain via cryptographic hashes and authenticated APIs, ensuring tamper-proof provenance. Such integration will facilitate objective, data-driven grading and pesticide residue assessments, enabling dynamic pricing models based on quantifiable quality attributes. In parallel, the system can be extended to support supply chain finance, where verified quality records and transaction histories are leveraged to unlock credit from banks or cooperatives, reducing farmers’ dependence on informal lenders. Weather-indexed crop insurance can also be embedded, with smart contracts triggering automated payouts based on trusted meteorological feeds—such as rainfall or temperature deviations—to protect farmers against adverse weather events. In parallel, similar contract logic can use certified pesticide test results to settle claims related to produce rejection, thereby covering both climatic and compliance risks.. Together, these mechanisms establish a robust cyber-physical infrastructure that not only supports real-time quality control but also strengthens financial resilience, enhances stakeholder trust, and improves the agility and scalability of agri-food supply chains.
+	
+	\section*{Code Availability}
+	
+	The source code, configuration files, and benchmarking scripts used in this study are publicly available at:
+	
+	\url{https://github.com/dhanishjose123/fabric-traceability-coffee}
+	
+	
+	\section*{Declaration of generative AI and AI-assisted technologies in the writing process}
+	During the preparation of this work the author(s) used \textbf{DeepL} and \textbf{ChatGPT} in order to improve language and readability. 
+	After using these tools, the author(s) reviewed and edited the content as needed and take full responsibility for the content of the publication.
+	
+	\section*{CRediT authorship contribution statement}
+	% Replace with your actual author names and roles
+	Dhanish Jose: Writing – original draft, Writing – review \& editing, Validation, Methodology, Conceptualization.\\
+	Pradeepmon T G: Writing – review \& editing, Validation, Resources, Supervision.
+	
+	
+	\section*{Declaration of competing interest}
+	The authors declare that they have no known competing financial interests or personal relationships 
+	that could have appeared to influence the work reported in this paper.
+	
+	\section*{Data availability}
+	Data will be made available on request.
+	
+	\section*{Acknowledgements}
+	This work was supported by \textbf{National Institute of Technology Calicut (NIT Calicut)}.
+	
+	
+	\appendix
+	
+	\section{Algorithms}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Wallet Creation and MVCC-Safe Deposit Mechanisms}
+		\label{fig:create_deposit}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{createWallet()}
+				\begin{algorithmic}[1]
+					
+					\Require Organization, UserID
+					\Ensure Wallet initialized
+					
+					\State Verify invoking organization is BankMSP
+					\State Construct wallet key: \textit{org-userId-wallet}
+					\State Check wallet existence using \textit{getState()}
+					\State Retrieve transaction timestamp
+					
+					\State Initialize wallet object: owner, org, createdAt
+					\State Set balance = 0, lastUpdated, consolidationCount = 0
+					
+					\State Store wallet using \textit{putState()}
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{depositMoney() (MVCC-Safe)}
+				\begin{algorithmic}[1]
+					
+					\Require Organization, UserID, Amount
+					\Ensure Transaction log recorded
+					
+					\State Verify invoking organization is BankMSP
+					\State Validate deposit amount
+					\State Generate transaction ID using \textit{getTxID()}
+					\State Retrieve transaction timestamp
+					
+					\State Retrieve wallet using \textit{getState()}
+					\State Read consolidation count from wallet
+					\State Construct composite key: \textit{walletTx\_n(org, userId, txId)}
+					
+					\State Create transaction log entry (type = deposit, delta = amount, timestamp)
+					\State Store log entry using \textit{putState()}
+					
+					\State Balance is derived dynamically from transaction logs
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+	
+	\begin{figure}[h]
+		\centering
+		\caption{Wallet Consolidation and Balance Retrieval Mechanisms}
+		\label{fig:wallet_consolidation_balance}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{consolidateWallet()}
+				\begin{algorithmic}[1]
+					
+					\Require Organization, UserID
+					\Ensure Updated wallet snapshot
+					
+					\State Construct wallet key: \textit{wallet(org, userId)}
+					\State Retrieve wallet using \textit{getState()}
+					\State Initialize total balance = 0
+					
+					\State Retrieve all transaction logs using \textit{getStateByPartialCompositeKey()}
+					\For{each transaction entry}
+					\State Sum transaction deltas
+					\EndFor
+					
+					\State Update wallet balance = total
+					\State Update lastUpdated timestamp
+					\State Increment consolidationCount
+					\State Store updated wallet using \textit{putState()}
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getWalletBalance()}
+				\begin{algorithmic}[1]
+					
+					\Require Organization, UserID
+					\Ensure Current wallet balance
+					
+					\State Construct wallet key: \textit{org-userId-wallet}
+					\State Retrieve wallet snapshot using \textit{getState()}
+					\State Extract base balance from wallet
+					\State Read consolidation count
+					
+					\State Construct object type: \textit{walletTx\_n}
+					\State Retrieve current batch using \textit{getStateByPartialCompositeKey()}
+					
+					\For{each transaction entry}
+					\State Compute delta sum
+					\EndFor
+					
+					\State \Return baseBalance + deltaSum
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Transfer and Produce Submission Mechanisms}
+		\label{fig:transfer_submit}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{transfer() (MVCC-Safe)}
+				\begin{algorithmic}[1]
+					
+					\Require Sender (org.user), Receiver (org.user), Amount
+					\Ensure Debit and credit entries recorded
+					
+					\State Generate transaction ID using \textit{getTxID()}
+					\State Retrieve transaction timestamp
+					\State Validate transfer amount
+					\State Parse sender and receiver into (org, userId)
+					
+					\State Construct wallet keys for sender and receiver
+					\State Retrieve wallets using \textit{getState()}
+					\State Read consolidation counts
+					
+					\State Construct dynamic object types: \textit{walletTx\_n}
+					\State Create composite keys for debit and credit entries
+					
+					\State Create transaction entries:
+					\State \quad debit: $-$amount, credit: +amount
+					
+					\State Store both entries using \textit{putState()}
+					
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{submitProduce()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, FarmerID, Weight, Date, Bags, AggregatorID
+					\Ensure Lot recorded in ledger
+					
+					\State Verify invoking organization is FarmersMSP
+					\State Retrieve testing fee using \textit{getState()}
+					\State Validate and parse testing fee
+					
+					\State Invoke \textit{transfer()} to pay testing fee
+					\State Retrieve transaction timestamp
+					
+					\State Create lot object with status = SUBMITTED
+					\State Populate attributes: owner, weight, date, bags
+					\State Assign aggregator and testing fee
+					
+					\State Construct composite key: \textit{lot(lotId)}
+					\State Store lot using \textit{putState()}
+					
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Testing and Offer Mechanisms in Supply Chain}
+		\label{fig:test_offer}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{testCoffee()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, Result, VideoHash, GradingData
+					\Ensure Lot updated with test results
+					
+					\State Verify invoking organization is AggregatorsMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot existence
+					\State Generate timestamp using \textit{getTxTimestamp()}
+					
+					\State Update lot status: APPROVED or REJECTED
+					\State Assign test result and timestamp
+					\State Store video hash for traceability
+					
+					\If{grading data is provided}
+					\State Parse grading JSON
+					\State Validate size grade structure
+					\State Validate quality and metric fields
+					\State Assign grading data to lot
+					\EndIf
+					
+					\State Store updated lot using \textit{putState()}
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{makeOffer()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, RetailerID, OfferPrice
+					\Ensure Offer recorded in ledger
+					
+					\State Verify invoking organization is RetailersMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot existence
+					\State Verify lot status is APPROVED
+					
+					\State Validate offer price
+					
+					\State Retrieve current highest offer using \textit{getHighestOfferForLot(LotID)}
+					
+					\If{highestOffer exists \textbf{and} OfferPrice $\leq$ highestOffer.price}
+					\State \textbf{throw} error: "Offer must be higher than current highest offer"
+					\EndIf
+					
+					\State Compute total offer amount = OfferPrice $\times$ lot.weight
+					\State Generate timestamp
+					
+					\State Construct composite key: \textit{offer(lotId, retailerId, txId)}
+					\State Create offer object (price, totalAmount, timestamp, retailerId)
+					
+					\State Store offer using \textit{putState()}
+					
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Offer Selection and Acceptance Mechanisms}
+		\label{fig:offer_selection_acceptance}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getHighestOfferForLot()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID
+					\Ensure Highest offer object
+					
+					\State Validate input LotID
+					\State Retrieve all offers using \textit{getStateByPartialCompositeKey('offer', [LotID])}
+					\State Initialize highestOffer = null
+					
+					\For{each offer record}
+					\State Parse offer data
+					\State Compare offerPrice with current maximum
+					\If{higher value found}
+					\State Update highestOffer
+					\EndIf
+					\EndFor
+					
+					\State Close iterator
+					\State \Return highestOffer (retailerId, price, timestamp)
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{acceptOffer()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, SelectedRetailerID
+					\Ensure Lot sold and ownership updated
+					
+					\State Verify invoking organization is FarmersMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot existence
+					\State Ensure lot status is APPROVED
+					
+					\State Retrieve all offers using \textit{getStateByPartialCompositeKey('offer', [LotID])}
+					\State Validate that offers exist
+					
+					\For{each offer}
+					\State Identify highest offer
+					\EndFor
+					
+					\State Verify SelectedRetailerID matches highest offer retailer
+					\State Compute total amount = price $\times$ weight
+					\State Transfer payment using \textit{transfer()}
+					\State Generate transaction timestamp
+					
+					\State Update lot: owner, status = SOLD, soldAt
+					\State Record accepted offer details
+					\State Create packableLot entry for retailer
+					\State Store updated lot using \textit{putState()}
+					
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+	
+	\begin{figure}[h]
+		\centering
+		\caption{Comparison of Packing and Packet Purchase Mechanisms}
+		\label{fig:packing_purchase}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{packLotIntoPackets()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, Packet Prices, PackingVideoHash
+					\Ensure Packets created and stored
+					
+					\State Verify invoking organization is RetailersMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot existence
+					\State Ensure lot status is APPROVED or SOLD
+					\State Convert total weight to grams
+					\State Compute packet breakdown (1000g, 500g, 250g, 100g)
+					\State Parse and assign packet prices
+					\State Generate timestamp
+					
+					\For{each packet size}
+					\State Generate packet ID and composite key
+					\State Create packet object with traceability data
+					\State Store packet using \textit{putState()}
+					\EndFor
+					
+					\State Update lot with packetCounts and status = PACKED
+					\State Store updated lot using \textit{putState()}
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{purchasePacket()}
+				\begin{algorithmic}[1]
+					
+					\Require PacketID, CustomerID
+					\Ensure Packet ownership transferred
+					
+					\State Verify invoking organization is ConsumersMSP
+					\State Retrieve packet using \textit{getState()}
+					\State Validate packet existence
+					\State Ensure packet status is AVAILABLE
+					\State Determine packet price
+					\State Construct wallet identities (consumer and retailer)
+					\State Transfer payment using \textit{transfer()}
+					\State Generate transaction timestamp
+					\State Update packet owner and status = PURCHASED
+					\State Record purchase details in trace
+					\State Store updated packet using \textit{putState()}
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Packet and Lot Lifecycle Reconstruction Mechanisms}
+		\label{fig:lifecycle_reconstruction}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{reconstructPacketLifecycle()}
+				\begin{algorithmic}[1]
+					
+					\Require PacketID
+					\Ensure Packet lifecycle (creation, packing, ownership, sale)
+					
+					\State Construct packet key: \textit{packet(packetId)}
+					\State Retrieve full history using \textit{getHistoryForKey()}
+					\State Initialize lifecycle structure
+					\State Initialize previous owner = null
+					
+					\For{each historical record}
+					\State Parse record
+					\State Identify creation event (first occurrence)
+					\State Detect packing event using packedAt or event flag
+					\State Detect ownership changes by comparing owners
+					\State Record ownership transfers (from $\rightarrow$ to)
+					\State Detect sale event (status = PURCHASED)
+					\EndFor
+					
+					\State \Return lifecycle structure
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{reconstructLotLifecycle()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID
+					\Ensure Lot lifecycle (submission, testing, sale, ownership)
+					
+					\State Construct lot key: \textit{lot(lotId)}
+					\State Retrieve full history using \textit{getHistoryForKey()}
+					\State Initialize lifecycle structure
+					
+					\For{each historical record}
+					\State Identify SUBMITTED event
+					\State Identify TESTED event using testResult
+					\State Identify SOLD event
+					\State Append ownership history (owner, status, timestamp)
+					\EndFor
+					
+					\State Reverse ownership list to maintain chronological order
+					\State \Return lifecycle structure
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Packet Lifecycle Retrieval and Farmer Rating Mechanisms}
+		\label{fig:lifecycle_rating}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getPacketLifecycle()}
+				\begin{algorithmic}[1]
+					
+					\Require PacketID
+					\Ensure Packet and lot lifecycle data
+					
+					\State Invoke \textit{reconstructPacketLifecycle()}
+					\State Validate lifecycle existence
+					\State Retrieve packet history using \textit{getHistoryForKey()}
+					\State Extract \textit{lotId} from first record
+					\State Close iterator
+					\State Invoke \textit{reconstructLotLifecycle(lotId)}
+					\State Combine packet and lot lifecycle data
+					\State \Return lifecycle structure
+					
+				\end{algorithmic}
+				
+			\end{algorithm}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getFarmerRating()}
+				\begin{algorithmic}[1]
+					
+					\Require FarmerID
+					\Ensure Farmer rating
+					
+					\State Retrieve all lots using \textit{getStateByPartialCompositeKey()}
+					\State Initialize total and rejected counters
+					\For{each lot record}
+					\State Filter by FarmerID
+					\State Increment total count
+					\If{status = REJECTED}
+					\State Increment rejected count
+					\EndIf
+					\EndFor
+					\State Compute rating:
+					\[
+					\frac{(\text{total} - \text{rejected})}{\text{total}} \times 100
+					\]
+					\State \Return farmerId, total, rejected, rating
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Produce and Packet Retrieval Mechanisms}
+		\label{fig:data_retrieval}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getAllProduce()}
+				\begin{algorithmic}[1]
+					
+					\Require Optional limit
+					\Ensure Produce list with payload size
+					
+					\State Retrieve all lot entries using \textit{getStateByPartialCompositeKey()}
+					\State Initialize result list and counter
+					\State Set maximum records based on input limit
+					
+					\For{each lot entry}
+					\State Parse lot record
+					\State Append to result list
+					\State Increment counter
+					\If{limit reached}
+					\State Break
+					\EndIf
+					\EndFor
+					
+					\State Close iterator
+					\State Compute payload size
+					\State \Return record count and data
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{getAllPackets()}
+				\begin{algorithmic}[1]
+					
+					\Require Optional limit
+					\Ensure Packet list
+					
+					\State Retrieve all packet entries using \textit{getStateByPartialCompositeKey()}
+					\State Initialize packet list and counter
+					\State Set maximum records (default = 50)
+					
+					\For{each packet entry}
+					\State Parse packet record
+					\State Append to packet list
+					\State Increment counter
+					\If{limit reached}
+					\State Break
+					\EndIf
+					\EndFor
+					
+					\State Close iterator
+					\State \Return packet list
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Baseline Algorithms Exhibiting MVCC Conflicts in Wallet Updates and Offer Management}
+		\label{fig:transferandmakeoffer}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{\texttt{\_transfer()}}
+				\begin{algorithmic}[1]
+					
+					\Require From, To, Amount
+					\Ensure Transfer confirmation
+					
+					\State Construct wallet keys for sender and receiver
+					\State Retrieve sender and receiver wallet states
+					\State Validate wallet existence
+					\State Parse wallet data
+					
+					\If{sender has sufficient balance}
+					\State Deduct amount from sender wallet
+					\State Add amount to receiver wallet
+					\State Write updated sender wallet using \textit{putState()}
+					\State Write updated receiver wallet using \textit{putState()}
+					\EndIf
+					
+					\State \Return success message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{makeOffer()}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, RetailerID, OfferPrice
+					\Ensure Updated highest offer
+					
+					\State Validate invoking organization (RetailersMSP)
+					\State Retrieve lot using composite key
+					\State Validate lot status (APPROVED)
+					\State Validate offer price
+					
+					\State Compute total offer amount
+					\State Retrieve retailer wallet
+					\State Validate retailer wallet balance
+					
+					\State Retrieve current highest offer
+					\If{new offer is higher}
+					\State Update lot.highestOffer (retailerId, price, timestamp)
+					\State Set flag hasOffers = true
+					\State Write updated lot using \textit{putState()}
+					\EndIf
+					
+					\State \Return confirmation message
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+		\begin{figure}[h]
+		\centering
+		\caption{Baseline and Modified \texttt{makeOffer()} Algorithms}
+		\label{fig:makeoffer_compare}
+		
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{makeOffer() (Baseline)}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, RetailerID, OfferPrice
+					\Ensure Offer validated and stored
+					
+					\State Verify invoking org = RetailersMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot status = APPROVED
+					\State Validate offer price
+					
+					\State highestOffer $\gets$ \textit{getHighestOfferForLot()}
+					
+					\If{OfferPrice $\leq$ highestOffer}
+					\State Reject transaction
+					\EndIf
+					
+					\State totalAmount $\gets$ OfferPrice $\times$ lot.weight
+					\State timestamp $\gets$ getTxTimestamp()
+					
+					\State Construct composite key: 
+					\State \quad \textit{offer(lotId, retailerId)}
+					
+					\State Overwrite existing offer entry
+					\State Store offer using \textit{putState()}
+					
+					\State \Return confirmation
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{0.48\linewidth}
+			\vspace{0pt}
+			\centering
+			\begin{algorithm}[H]
+				\caption{makeOffer\_modified() (Append-Only)}
+				\begin{algorithmic}[1]
+					
+					\Require LotID, RetailerID, OfferPrice
+					\Ensure Offer safely recorded
+					
+					\State Verify invoking org = RetailersMSP
+					\State Retrieve lot using \textit{getState()}
+					\State Validate lot status = APPROVED
+					\State Validate offer price
+					
+					\State totalAmount $\gets$ OfferPrice $\times$ lot.weight
+					\State timestamp $\gets$ getTxTimestamp()
+					\State txID $\gets$ getTxID()
+					
+					\State Construct composite key:
+					\State \quad \textit{offer(lotId, retailerId, txID)}
+					
+					\State Create offer object
+					\State Store offer using \textit{putState()}
+					
+					\State Append new offer (no overwrite)
+					
+					\State \Return confirmation
+					
+				\end{algorithmic}
+			\end{algorithm}
+		\end{minipage}
+		
+	\end{figure}
+	
+	
+	\clearpage
+	\section{User Interfaces}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_9.png}
+		\caption{Farmer dashboard showing submission form and lot history}
+		\label{fig:farmer}
+	\end{figure}
+	
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_10.png
+		}
+		\caption{Aggregator dashboard for grading and testing}
+		\label{fig:aggregator-interface}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_11.png}
+		\caption{Retailer dashboard with packet view and traceability details}
+		\label{fig:retailer-interface}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_12.png}
+		\caption{Consumer dashboard with packet view and traceability details}
+		\label{fig:consumer-interface}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{Figure_13.png}
+		\caption{Bank interface for wallet management and fund deposits}
+		\label{fig:bank-interface}
+	\end{figure}
+	
+	
+	\bibliography{references}
+	% <-- REQUIRED line
+	
+\end{document}

@@ -1,0 +1,49 @@
+{
+    "name": "test-network-aggregators",
+    "version": "1.0.0",
+    "client": {
+        "organization": "aggregators",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "Orgaggregators": {
+            "mspid": "aggregatorsMSP",
+            "peers": [
+                "peer0.aggregators.example.com"
+            ],
+            "certificateAuthorities": [
+                "ca.aggregators.example.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.orgaggregators.example.com": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICdTCCAhygAwIBAgIRALzyy7sxmzHeQQalz1OR/VwwCgYIKoZIzj0EAwIwgYQx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSAwHgYDVQQKExdhZ2dyZWdhdG9ycy5leGFtcGxlLmNvbTEmMCQG\nA1UEAxMddGxzY2EuYWdncmVnYXRvcnMuZXhhbXBsZS5jb20wHhcNMjYwNzE3MDY1\nMDAwWhcNMzYwNzE0MDY1MDAwWjCBhDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNh\nbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIDAeBgNVBAoTF2FnZ3Jl\nZ2F0b3JzLmV4YW1wbGUuY29tMSYwJAYDVQQDEx10bHNjYS5hZ2dyZWdhdG9ycy5l\neGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABOnXWipO03hU8eQ+\nWmQ0w+P8oir06QlAeNMx7CHVjwPoZXb7OBdqlUtzRLrsmVJsrqfFiLozNTpZZ3Mp\nmvUYZxqjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYI\nKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgJBpR7bo/5BDQwVIl\nGUkyC5hGrE2ZGLIHWMdEYFAyXGIwCgYIKoZIzj0EAwIDRwAwRAIgTuLerTadsOuz\nq88fzFa/QJKCzwB55uKF7umTgwc62fICIF4cQtBJefSKFRF3G/uFZSq8vBxi3io5\n5/F+AHqT6ySz\n-----END CERTIFICATE-----"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.aggregators.example.com",
+                "hostnameOverride": "peer0.aggregators.example.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.orgaggregators.example.com": {
+            "url": "https://localhost:16051",
+            "caName": "ca-aggregators",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICbzCCAhagAwIBAgIRANqiwWmhzRF67Jmuzy5/TtMwCgYIKoZIzj0EAwIwgYEx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMSAwHgYDVQQKExdhZ2dyZWdhdG9ycy5leGFtcGxlLmNvbTEjMCEG\nA1UEAxMaY2EuYWdncmVnYXRvcnMuZXhhbXBsZS5jb20wHhcNMjYwNzE3MDY1MDAw\nWhcNMzYwNzE0MDY1MDAwWjCBgTELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlm\nb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xIDAeBgNVBAoTF2FnZ3JlZ2F0\nb3JzLmV4YW1wbGUuY29tMSMwIQYDVQQDExpjYS5hZ2dyZWdhdG9ycy5leGFtcGxl\nLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPXDfc2+vdb6iVGRfeHHtblZ\nUH4If2qpgwHL5C0Oyiz3DCkPBu73/d7gqCNoppjblCNN3GalMhnObm7R9Y30/SOj\nbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUH\nAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgzDlwoh6YljFQb2HU0AjKnXT6\nrJY0ZGUtMmoVkavUnoswCgYIKoZIzj0EAwIDRwAwRAIgMYFM9EDzuX3XSU8Wc+2E\nMzSy/+4BXFin7CHbQzaV0zsCIEp0iTXZIBbgO/l1htXwLJ7NMa0JFD3KjbLVW8ee\nfKQ4\n-----END CERTIFICATE-----"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

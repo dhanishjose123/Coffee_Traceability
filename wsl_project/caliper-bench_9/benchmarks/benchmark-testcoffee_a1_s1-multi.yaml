@@ -1,0 +1,160 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 1
+  rounds:
+
+    - label: testcoffee_a1_s1_round1@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round2@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round3@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round4@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round5@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round6@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round7@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round8@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500
+
+    - label: testcoffee_a1_s1_round9@500
+      description: Load @500 TPS for testcoffee_a1_s1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          aggregatorCount: 1
+          aggregatorStartIndex: 1
+          lotQueryLimit: 1500

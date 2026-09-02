@@ -1,0 +1,13 @@
+{
+  "predictorUrl": "http://127.0.0.1:5055/predict",
+  "failureRateThreshold": 0.2,
+  "criticalFailureRateThreshold": 0.35,
+  "minPredictedThroughput": 1,
+  "baseDelayMs": 1000,
+  "highRiskDelayMs": 3000,
+  "hotAssetDelayMs": 2000,
+  "hotAssetWindowMs": 5000,
+  "predictorTimeoutMs": 1500,
+  "defaultLatencyMs": 0,
+  "defaultCaliperWorkers": 1
+}

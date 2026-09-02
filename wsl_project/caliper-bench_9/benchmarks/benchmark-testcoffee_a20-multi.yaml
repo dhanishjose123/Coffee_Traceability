@@ -1,0 +1,23 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: testcoffee_a20_Load@400
+      description: Load @400 TPS for testcoffee_a20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 400
+      workload:
+        module: ./workload_9_cache_5/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          aggregatorCount: 20
+          lotQueryLimit: 150

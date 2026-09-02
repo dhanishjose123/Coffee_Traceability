@@ -1,0 +1,29 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: makeofferall_r5_f5_s11_Load@400
+      description: Load @400 TPS for makeofferall_r5_f5_s11
+      txDuration: 15
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 400
+      workload:
+        module: ./workload_9_cache_5/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel1707
+          userId: User1
+          farmerCount: 5
+          retailerCount: 5
+          farmerStartIndex: 11
+          retailerStartIndex: 11
+          minRetailerIndex: 11
+          allowedRetailerIndexes: 11,12,13,14,15
+          retailerSelectionMode: paired
+          lotQueryLimit: 1800

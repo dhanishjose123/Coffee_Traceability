@@ -1,0 +1,30 @@
+Multi-Version Concurrency Control (MVCC) in Hyperledger Fabric is a concurrency control technique employed to manage transaction conflicts effectively and maintain data consistency in the blockchain ledger. Hyperledger Fabric uses an Execute-Order-Validate (EOV) transaction model, where transactions are first executed by endorsing peers, then ordered and batched by the ordering service, and finally validated by the validating peers. Due to this workflow, MVCC conflicts arise when transactions attempt to read and write the same ledger keys simultaneously, potentially leading to write-write or read-write conflicts during the validation phase.
+
+MVCC in Hyperledger Fabric and Its Challenges
+MVCC ensures that each transaction reads from a consistent snapshot of the ledger state and that writes do not overwrite changes made by concurrent conflicting transactions. However, the conventional approach in Hyperledger Fabric detects MVCC conflicts only at the validation phase, after the ordering has been finalized. This late detection results in aborted transactions and the need for clients to resubmit, leading to increased latency and reduced throughput, especially in scenarios with high contention and concurrency (Stoltidis et al., 2024; Stoltidis et al., 2024; Trabelsi and Zhang, 2023).
+
+Early MVCC Conflict Detection Approaches
+To address these limitations, several research efforts have proposed moving MVCC conflict detection earlier in the transaction flow to identify conflicting transactions before reaching the validation phase. For example, the "Orderer Early MVCC" (OEMVCC) and its enhanced variant with Execution Avoidance (OEMVCC-EA) approach transfer MVCC checks into the ordering phase. This early detection mechanism reduces the overhead of processing invalid transactions and significantly improves throughput and latency for high-conflict workloads by preventing transactions doomed to fail from progressing farther into the pipeline (Stoltidis et al., 2024; Stoltidis et al., 2024).
+
+Another early detection approach (SyncMap) improves goodput by reducing the processing of conflicts via early MVCC conflict recognition implemented within the Fabric framework. This technique achieves up to a 23% increase in goodput and reduces transaction latency by 80% compared to the baseline Fabric implementation (Trabelsi and Zhang, 2023).
+
+Locking, Caching, and Control Strategies to Minimize MVCC Conflicts
+Other strategies to mitigate MVCC conflicts and improve concurrent transaction throughput include fine-grained resource access control, locking mechanisms, and cache-based methods:
+
+Locking Mechanisms: Introducing distributed locks on ledger keys at the beginning of the transaction flow allows early discovery of conflicting transactions, thereby avoiding costly aborts late in the pipeline. These locks can be implemented using external systems such as Redis and incorporate event listeners to detect transaction completions and release locks appropriately. This approach can significantly increase transaction throughput and reduce conflict-related aborts, especially under high concurrency (Xu et al., 2019; Xu et al., 2023; Xu et al., 2020).
+
+Access Control and Transaction Reordering: The use of attribute-based access control (ABAC) combined with dynamic priority reordering and chaincode caching (DPRC-Cache) frameworks can reduce transaction conflict rates by controlling resource locks more precisely and optimizing transaction processing order (Guo et al., 2025).
+
+Cache-Based Methods: Using a cache to speed up data reads and adding caching logs to ensure consistency can help reduce Read-Write conflicts, enabling faster transaction execution and better overall throughput (Xu et al., 2020).
+
+Transaction Repair Mechanisms for MVCC Conflicts
+Traditional MVCC implementations often abort and restart conflicting transactions from scratch upon detecting conflicts in the validation phase, a process that leads to inefficiencies, increased overhead, and a negative feedback loop in high-contention environments. Novel solutions propose repairing transactions partially rather than restarting them entirely by summarizing transaction operations in dependency graphs. This allows systems to detect conflict points accurately and selectively re-execute only the conflicting parts, thus maximizing computation reuse and improving throughput (Dashti et al., 2017; Dashti et al., 2016).
+
+Summary
+In summary, MVCC in Hyperledger Fabric is pivotal in ensuring ledger consistency and serializability amid concurrent transactions but presents performance challenges in high-conflict scenarios due to late conflict detection and transaction aborts. Contemporary solutions focus on:
+
+Early conflict detection by reallocating MVCC checks to the ordering or even execution phases (e.g., OEMVCC, SyncMap) to reduce abort overhead and improve latency and throughput.
+Lock-based concurrency control to prevent conflicts early by locking resources or keys during transaction initiation.
+Fine-grained access control and transaction sorting to reduce conflicts through optimization of resource access and transaction execution order.
+Transaction repair mechanisms that partially re-execute conflicting transactions rather than aborting fully, enhancing efficiency especially in in-memory database contexts connected to blockchain transaction processing.
+These enhancements contribute significantly to scaling Hyperledger Fabric for enterprise applications with high transaction concurrency and contention while keeping the performance impact minimal (Stoltidis et al., 2024; Trabelsi and Zhang, 2023; Xu et al., 2019; Xu et al., 2023; Dashti et al., 2017).

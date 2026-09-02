@@ -1,0 +1,99 @@
+@unpublished{Alexandros_Performance_2024,
+  doi = {10.48550/arxiv.2407.19732},
+  title = {Performance Optimization of High-Conflict Transactions within the Hyperledger Fabric Blockchain},
+  author = {Alexandros Stoltidis and Kostas Choumas and Thanasis Korakis},
+  journal = {arXiv (Cornell University)},
+  publisher = {Cornell University},
+  year = {2024}
+  abstract = {Hyperledger Fabric (HLF) is a secure and robust blockchain (BC) platform that supports high-throughput and low-latency transactions. However, it encounters challenges in managing conflicting transactions that negatively affect throughput and latency. This paper proposes a novel solution to address these challenges and improve performance, especially in applications incorporating extensive volumes of highly conflicting transactions. Our solution involves reallocating the Multi-Version Concurrency Control (MVCC) of the validation phase to a preceding stage in the transaction flow to enable early detection of conflicting transactions. Specifically, we propose and evaluate two innovative modifications, called Orderer Early MVCC (OEMVCC) and OEMVCC with Execution Avoidance (OEMVCC-EA). Our experimental evaluation results demonstrate significant throughput and latency improvements, providing a practical solution for high-conflict applications that demand high performance and scalability.},
+  url = {https://discovery.researcher.life/article/performance-optimization-of-high-conflict-transactions-within-the-hyperledger-fabric-blockchain/aee4a43b410f33609863e0efe9ea6327},
+}
+
+@conference{Alexandros_Performance_2024,
+  doi = {10.1109/brains63024.2024.10732190},
+  title = {Performance Optimization of High-Conflict Transactions within the Hyperledger Fabric Blockchain},
+  author = {Alexandros Stoltidis and Kostas Choumas and Thanasis Korakis},
+  journal = {},
+  publisher = {IEEE},
+  year = {2024}
+  abstract = {Hyperledger Fabric (HLF) is a blockchain (BC) platform that supports secure high-throughput and low-latency transactions. However, it encounters challenges in managing conflicting transactions that negatively affect throughput and latency. This paper proposes a novel solution to address these challenges and improve performance. Our solution involves reallocating the Multi-Version Concurrency Control (MVCC) from the validation phase to a preceding stage in the transaction flow in order to enable early detection of conflicting transactions. Specifically, we propose and evaluate two innovative modifications, called Orderer Early MVCC (OEMVCC) and OEMVCC with Execution Avoidance (OEMVCC-EA). Our experimental evaluation results demonstrate significant throughput and latency improvements, providing a practical solution for high-conflict applications that demand high performance.},
+  url = {https://discovery.researcher.life/article/performance-optimization-of-high-conflict-transactions-within-the-hyperledger-fabric-blockchain/934986034955357f9c44914264b6848a},
+}
+
+@conference{Ali_Smart_2021,
+  doi = {10.1109/smartiot52359.2021.00021},
+  title = {Smart Contract Design Considerations for SLA Compliance Assessment in the Context of IoT},
+  author = {Ali Alzubaidi and Karan Mitra and Ellis Solaiman},
+  journal = {},
+  publisher = {IEEE},
+  year = {2021}
+  abstract = {One of the main drivers behind blockchain adoption is a lack of trust among entities serving a common goal, but with different interests. Following the success of Bitcoin, several blockchain platforms have emerged, such as Ethereum and Hyperledger Fabric, to enable conducting distrusted processes in a non-repudiable manner. However, it is not safe to assume the applicability of conventional software design strategies to Blockchain-based solutions. In this paper, we assume an untrusted SLA (service level agreement) relationship between an IoT service provider and its consumer. We adopt Hyperledger Fabric for the purpose of implementing SLA compliance assessment. We design a smart contract that takes blockchain unique features into consideration. The design particularly accounts for the MVCC (multiversion concurrency control) mechanism, which while effective for resolving the double spending problem, causes read-write conflicts when high transmission rates are experienced between the IoT application and the blockchain. Using a fire station event monitoring scenario, we describe our smart contract design and solution for conflicting transactions. We experimentally evaluate our solution and demonstrate clear performance improvements in terms of throughput and latency.},
+  url = {https://discovery.researcher.life/article/smart-contract-design-considerations-for-sla-compliance-assessment-in-the-context-of-iot/946eb7b74b7836d3be908a1bbcf4e1e9},
+}
+
+@unpublished{Helmi_Early_2023,
+  doi = {10.48550/arxiv.2301.06181},
+  title = {Early Detection for Multiversion Concurrency Control Conflicts in Hyperledger Fabric},
+  author = {Helmi Trabelsi and Kaiwen Zhang},
+  journal = {arXiv (Cornell University)},
+  publisher = {Cornell University},
+  year = {2023}
+  abstract = {Hyperledger Fabric is a popular permissioned blockchain system that features a highly modular and extensible system for deploying permissioned blockchains which are expected to have a major effect on a wide range of sectors. Unlike traditional blockchain systems such as Bitcoin and Ethereum, Hyperledger Fabric uses the EOV model for transaction processing: the submitted transactions are executed by the endorsing peer, ordered and batched by the ordering services, and validated by the validating peers. Due to this EOV workflow, a well-documented issue that arises is the multi-version concurrency control conflict. This happens when two transactions try to writes and read the same key in the ledger at the same time. Existing solutions to address this problem includes eliminating blocks in favor of streaming transactions, repairing conflicts during the ordering phase, and automatically merging the conflicting transactions using CRDT (Conflict Free Replicated Data) techniques. In this paper, we propose a novel solution called Early Detection for MVCC Conflicts. Our solution detects the conflicting transactions at an early stage of the transaction execution instead of processing them until the validation phase to be aborted. The advantage of our solution is that it detects conflict as soon as possible to minimize the overhead of conflicting transaction on the network resulting in the reduction of the end-to-end transaction latency and the increase of the system's effective throughput. We have successfully implemented our solution in Hyperledger Fabric. We propose three different implementations which realize early detection. Our results show that our solutions all perform better than the baseline Fabric, with our best solution SyncMap which improves the goodput by up to 23% and reduces the latency by up to 80%.},
+  url = {https://discovery.researcher.life/article/early-detection-for-multiversion-concurrency-control-conflicts-in-hyperledger-fabric/32b81a4a86e23eafb240046cd27a9f2a},
+}
+
+@article{Máté_Transaction_2024,
+  doi = {10.1109/access.2024.3361318},
+  title = {Transaction Conflict Control in Hyperledger Fabric: A Taxonomy, Gaps, and Design for Conflict Prevention},
+  author = {Máté Debreczeni and Attila Klenik and Imre Kocsis},
+  journal = {IEEE Access},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  year = {2024}
+  abstract = {The execute-order-validate approach to blockchain consensus, most notably implemented by Hyperledger Fabric, facilitates highly scalable execution of smart contract &#x2013; in Fabric terminology, &#x201C;chaincode&#x201D; &#x2013; invocations in cross-organizational blockchains; at the expense of requiring multi-version concurrency control conflict handling during block validation. Consequently, the system-level goodput can be significantly lower than throughput. Although several solutions have been proposed for handling and avoiding conflicts in Hyperledger Fabric, a systematic and holistic approach is missing. We introduce the notion of conflict-controlled operation, propose a novel taxonomy of its means based on the codified principles of dependable computing, and categorize the known approaches. Based on this taxonomy, we identified the critical gaps in the state-of-the-art. Design-time conflict prevention is one such gap, and we propose the application of a model-driven engineering process for this purpose. For the last storage mapping stage of the process, we propose entity attribute partitioning for conflict prevention, describe a data mapper-style chaincode layer, and empirically evaluate our solution.},
+  url = {https://discovery.researcher.life/article/transaction-conflict-control-in-hyperledger-fabric-a-taxonomy-gaps-and-design-for-conflict-prevention/4ed03b1dbf0f30d1b5c4f836ff9c5891},
+}
+
+@unpublished{Sanyam_Dependency-Aware_2025,
+  doi = {10.48550/arxiv.2509.07425},
+  title = {Dependency-Aware Execution Mechanism in Hyperledger Fabric Architecture},
+  author = {Sanyam Kaul and Manaswini Piduguralla and Gayathri Shreeya Patnala and Sathya Peri},
+  journal = {ArXiv.org},
+  publisher = {Arxiv},
+  year = {2025}
+  abstract = {Hyperledger Fabric is a leading permissioned blockchain framework for enterprise use, known for its modular design and privacy features. While it strongly supports configurable consensus and access control, Fabric can face challenges in achieving high transaction throughput and low rejection rates under heavy workloads. These performance limitations are often attributed to endorsement, ordering, and validation bottlenecks. Further, optimistic concurrency control and deferred validation in Fabric may lead to resource inefficiencies and contention, as conflicting transactions are identified only during the commit phase. To address these challenges, we propose a dependency-aware execution model for Hyperledger Fabric. Our approach includes: (a) a dependency flagging system during endorsement, marking transactions as independent or dependent using a hashmap; (b) an optimized block construction in the ordering service that prioritizes independent transactions; (c) the incorporation of a Directed Acyclic Graph (DAG) within each block to represent dependencies; and (d) parallel execution of independent transactions at the committer, with dependent transactions processed according to DAG order. Incorporated in Hyperledger Fabric v2.5, our framework was tested on workloads with varying dependency levels and system loads. Results show up to 40% higher throughput and significantly reduced rejection rates in high-contention scenarios. This demonstrates that dependency-aware scheduling and DAG-based execution can substantially enhance Fabric's scalability while remaining compatible with its existing consensus and smart contract layers.},
+  url = {https://discovery.researcher.life/article/dependency-aware-execution-mechanism-in-hyperledger-fabric-architecture/d62b08574a8d34e9ae92775256db9f59},
+}
+
+@conference{Pingcheng_A_2020,
+  doi = {10.1145/3318464.3389693},
+  title = {A Transactional Perspective on Execute-order-validate Blockchains},
+  author = {Pingcheng Ruan and Dumitrel Loghin and Quang-Trung Ta and Meihui Zhang and Gang Chen and Beng Chin Ooi},
+  journal = {},
+  publisher = {ACM},
+  year = {2020}
+  abstract = {Smart contracts have enabled blockchain systems to evolve from simple cryptocurrency platforms, such as Bitcoin, to general transactional systems, such as Ethereum. Catering for emerging business requirements, a new architecture called execute-order-validate has been proposed in Hyperledger Fabric to support parallel transactions and improve the blockchain's throughput. However, this new architecture might render many invalid transactions when serializing them. This problem is further exaggerated as the block formation rate is inherently limited due to other factors beside data processing, such as cryptography and consensus. In this work, we propose a novel method to enhance the execute-order-validate architecture, by reducing invalid transactions to improve the throughput of blockchains. Our method is inspired by state-of-the-art optimistic concurrency control techniques in modern database systems. In contrast to existing blockchains that adopt database's preventive approaches which might abort serializable transactions, our method is theoretically more fine-grained. Specifically, unserializable transactions are aborted before ordering and the remaining transactions are guaranteed to be serializable. For evaluation, we implement our method in two blockchains respectively, FabricSharp on top of Hyperledger Fabric, and FastFabricSharp on top of FastFabric. We compare the performance of FabricSharp with vanilla Fabric and three related systems, two of which are respectively implemented with one standard and one state-of-the-art concurrency control techniques from databases. The results demonstrate that FabricSharp achieves 25% higher throughput compared to the other systems in nearly all experimental scenarios. Moreover, the FastFabricSharp's improvement over FastFabric is up to 66%.},
+  url = {https://discovery.researcher.life/article/a-transactional-perspective-on-execute-order-validate-blockchains/c39555acf89630619f118f2253e53b44},
+}
+
+@unpublished{Pingcheng_A_2020,
+  doi = {10.48550/arxiv.2003.10064},
+  title = {A Transactional Perspective on Execute-order-validate Blockchains},
+  author = {Pingcheng Ruan and Quang-Trung Ta and Meihui Zhang and Gang Chen and Dumitrel Loghin and Beng Chin Ooi},
+  journal = {arXiv (Cornell University)},
+  publisher = {Cornell University},
+  year = {2020}
+  abstract = {Smart contracts have enabled blockchain systems to evolve from simple cryptocurrency platforms, such as Bitcoin, to general transactional systems, such as Ethereum. Catering for emerging business requirements, a new architecture called execute-order-validate has been proposed in Hyperledger Fabric to support parallel transactions and improve the blockchain's throughput. However, this new architecture might render many invalid transactions when serializing them. This problem is further exaggerated as the block formation rate is inherently limited due to other factors beside data processing, such as cryptography and consensus. In this work, we propose a novel method to enhance the execute-order-validate architecture, by reducing invalid transactions to improve the throughput of blockchains. Our method is inspired by state-of-the-art optimistic concurrency control techniques in modern database systems. In contrast to existing blockchains that adopt database's preventive approaches which might abort serializable transactions, our method is theoretically more fine-grained. Specifically, unserializable transactions are aborted before ordering and the remaining transactions are guaranteed to be serializable. For evaluation, we implement our method in two blockchains respectively, FabricSharp on top of Hyperledger Fabric, and FastFabricSharp on top of FastFabric. We compare the performance of FabricSharp with vanilla Fabric and three related systems, two of which are respectively implemented with one standard and one state-of-the-art concurrency control techniques from databases. The results demonstrate that FabricSharp achieves 25% higher throughput compared to the other systems in nearly all experimental scenarios. Moreover, the FastFabricSharp's improvement over FastFabric is up to 66%.},
+  url = {https://discovery.researcher.life/article/a-transactional-perspective-on-execute-order-validate-blockchains/53341b1e336831a08b103c9c84587629},
+}
+
+@conference{Syed_Blockchain-Based_2025,
+  doi = {10.1109/gitcon65266.2025.11376802},
+  title = {Blockchain-Based Land Record Management System for Secure Property Transactions in Indian States},
+  author = {Syed Fakruddin Albeez and B R Supreeth and Geeta S Navale and Srimathi J and U D Prasan and Pradeesh S},
+  journal = {},
+  publisher = {IEEE},
+  year = {2025}
+  abstract = {A transparent and secure land record management system is crucial because India's traditional land record-keeping methods are historically ineffective, paper-based, and vulnerable to fraud and conflicts. It also renders existing systems vulnerable to illegal changes, corruption, and a backlog of data updates, which can lead to disagreements about property and property ownership. To address these issues, the paper suggests a decentralized, tamper-proof blockchain-based system that uses ML, smart contracts, Hyperledger Fabric, and cryptographic security to detect fraud. With accuracy rates of up to 99% for duplicate registrations, 97% for ownership tampering, and 98% for falsified documents utilizing the proposed system, the results show a significant improvement in fraud detection accuracy over time. Additionally, the system speeds up transactions; the new average processing times were 1.4 days instead of 9.2 days in the previous systems, demonstrating significant performance gains and supporting the ability of early adopters to spark an entire revolution in Indian real estate transactions.},
+  url = {https://discovery.researcher.life/article/blockchain-based-land-record-management-system-for-secure-property-transactions-in-indian-states/6701f92c70c73756a12af2238f35555d},
+}
+

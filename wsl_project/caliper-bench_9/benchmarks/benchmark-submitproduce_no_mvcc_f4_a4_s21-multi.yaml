@@ -1,0 +1,29 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: submitproduce_no_mvcc_f4_a4_s21_Load@500
+      description: Load @500 TPS for submitproduce_no_mvcc_f4_a4_s21
+      txDuration: 31
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cache_5/submitproduce_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel1707
+          userId: User1
+          farmerCount: 4
+          aggregatorCount: 4
+          farmerStartIndex: 21
+          aggregatorStartIndex: 21
+          aggregatorSelectionMode: paired
+          contractFunction: submitProduceNoMVCC
+          lotQueryLimit: 3000
+          maxTransactions: 3000

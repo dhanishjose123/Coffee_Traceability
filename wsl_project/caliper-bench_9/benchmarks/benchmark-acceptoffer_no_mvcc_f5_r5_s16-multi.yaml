@@ -1,0 +1,28 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: acceptoffer_no_mvcc_f5_r5_s16_Load@350
+      description: Load @350 TPS for acceptoffer_no_mvcc_f5_r5_s16
+      txDuration: 12
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 350
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel1707
+          userId: User1
+          farmerCount: 5
+          retailerCount: 5
+          farmerStartIndex: 16
+          retailerStartIndex: 16
+          retailerSelectionMode: paired
+          contractFunction: acceptOfferNoMVCC
+          lotQueryLimit: 1008

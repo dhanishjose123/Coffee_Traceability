@@ -1,0 +1,142 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 8
+  rounds:
+
+    - label: testcoffee_a8_Load@1
+      description: Load @1 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@2
+      description: Load @2 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 2
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@3
+      description: Load @3 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 3
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@4
+      description: Load @4 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@5
+      description: Load @5 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@6
+      description: Load @6 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 6
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@7
+      description: Load @7 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 7
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@8
+      description: Load @8 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 8
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8
+
+    - label: testcoffee_a8_Load@9
+      description: Load @9 TPS for testcoffee_a8
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 9
+      workload:
+        module: ./workload_9/testcoffee.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          aggregatorCount: 8

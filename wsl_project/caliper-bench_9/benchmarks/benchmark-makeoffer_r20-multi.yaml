@@ -1,0 +1,142 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 20
+  rounds:
+
+    - label: makeoffer_r20_Load@1
+      description: Load @1 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@4
+      description: Load @4 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@10
+      description: Load @10 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@20
+      description: Load @20 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@50
+      description: Load @50 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@100
+      description: Load @100 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@200
+      description: Load @200 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@400
+      description: Load @400 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 400
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20
+
+    - label: makeoffer_r20_Load@500
+      description: Load @500 TPS for makeoffer_r20
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeoffer_matrix.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2406
+          userId: User1
+          retailerCount: 20

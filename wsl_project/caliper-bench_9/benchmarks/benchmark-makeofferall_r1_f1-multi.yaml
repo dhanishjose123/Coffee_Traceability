@@ -1,0 +1,205 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 1
+  rounds:
+
+    - label: makeofferall_r1_f1_round1@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round2@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round3@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round4@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round5@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round6@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round7@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round8@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500
+
+    - label: makeofferall_r1_f1_round9@500
+      description: Load @500 TPS for makeofferall_r1_f1
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/makeofferall.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2106
+          userId: User1
+          farmerCount: 1
+          retailerCount: 1
+          farmerStartIndex: 1
+          retailerStartIndex: 1
+          minRetailerIndex: 1
+          allowedRetailerIndexes: 1
+          retailerSelectionMode: paired
+          lotQueryLimit: 1500

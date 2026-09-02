@@ -1,0 +1,160 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: acceptoffer_f4_r4_Load@1
+      description: Load @1 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 20
+
+    - label: acceptoffer_f4_r4_Load@4
+      description: Load @4 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 20
+
+    - label: acceptoffer_f4_r4_Load@10
+      description: Load @10 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 20
+
+    - label: acceptoffer_f4_r4_Load@20
+      description: Load @20 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 30
+
+    - label: acceptoffer_f4_r4_Load@50
+      description: Load @50 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 75
+
+    - label: acceptoffer_f4_r4_Load@100
+      description: Load @100 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 150
+
+    - label: acceptoffer_f4_r4_Load@200
+      description: Load @200 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 300
+
+    - label: acceptoffer_f4_r4_Load@400
+      description: Load @400 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 400
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 600
+
+    - label: acceptoffer_f4_r4_Load@500
+      description: Load @500 TPS for acceptoffer_f4_r4
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cache_5/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0307
+          userId: User1
+          farmerCount: 4
+          retailerCount: 4
+          lotQueryLimit: 750

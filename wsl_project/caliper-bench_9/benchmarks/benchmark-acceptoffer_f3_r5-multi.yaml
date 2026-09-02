@@ -1,0 +1,279 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 3
+  rounds:
+
+    - label: acceptoffer_f3_r5_Load@1
+      description: Load @1 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@2
+      description: Load @2 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 2
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@3
+      description: Load @3 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 3
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@4
+      description: Load @4 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@5
+      description: Load @5 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@6
+      description: Load @6 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 6
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@7
+      description: Load @7 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 7
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@8
+      description: Load @8 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 8
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@9
+      description: Load @9 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 9
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@10
+      description: Load @10 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@20
+      description: Load @20 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@50
+      description: Load @50 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@100
+      description: Load @100 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@200
+      description: Load @200 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@300
+      description: Load @300 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 300
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@400
+      description: Load @400 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 400
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5
+
+    - label: acceptoffer_f3_r5_Load@500
+      description: Load @500 TPS for acceptoffer_f3_r5
+      txDuration: 10
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2905
+          userId: User1
+          farmerCount: 3
+          retailerCount: 5

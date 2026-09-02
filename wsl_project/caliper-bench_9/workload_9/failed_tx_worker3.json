@@ -1,0 +1,1274 @@
+[
+  {
+    "timestamp": "2026-06-01T14:16:19.380Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-661-1780302036007",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":8,\"split\":0,\"total\":26},\"7-8mm\":{\"clean\":26,\"sick\":6,\"split\":1,\"total\":33},\"6-7mm\":{\"clean\":6,\"sick\":5,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":18,\"sick\":8,\"split\":11,\"total\":37}},\"greenPercent\":66,\"averagePercent\":10,\"fruitPercent\":18,\"belowAveragePercent\":6,\"literWeight\":348,\"moisture\":6.89,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.426Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-378-1780304528689",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":9,\"split\":13,\"total\":45},\"7-8mm\":{\"clean\":20,\"sick\":8,\"split\":1,\"total\":29},\"6-7mm\":{\"clean\":8,\"sick\":4,\"split\":4,\"total\":16},\"<6mm\":{\"clean\":13,\"sick\":2,\"split\":0,\"total\":15}},\"greenPercent\":47,\"averagePercent\":14,\"fruitPercent\":12,\"belowAveragePercent\":27,\"literWeight\":355,\"moisture\":7,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.480Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-468-1780304529578",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":31,\"sick\":14,\"split\":9,\"total\":54},\"7-8mm\":{\"clean\":10,\"sick\":3,\"split\":0,\"total\":13},\"6-7mm\":{\"clean\":16,\"sick\":6,\"split\":0,\"total\":22},\"<6mm\":{\"clean\":12,\"sick\":7,\"split\":1,\"total\":20}},\"greenPercent\":48,\"averagePercent\":0,\"fruitPercent\":7,\"belowAveragePercent\":45,\"literWeight\":331,\"moisture\":6.06,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.523Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-42-1780308915617",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":27,\"sick\":10,\"split\":12,\"total\":49},\"7-8mm\":{\"clean\":10,\"sick\":5,\"split\":2,\"total\":17},\"6-7mm\":{\"clean\":8,\"sick\":3,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":22,\"sick\":9,\"split\":0,\"total\":31}},\"greenPercent\":36,\"averagePercent\":16,\"fruitPercent\":39,\"belowAveragePercent\":9,\"literWeight\":326,\"moisture\":6.22,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.571Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-751-1780303254904",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":17,\"sick\":7,\"split\":0,\"total\":24},\"7-8mm\":{\"clean\":8,\"sick\":2,\"split\":2,\"total\":12},\"6-7mm\":{\"clean\":10,\"sick\":6,\"split\":0,\"total\":16},\"<6mm\":{\"clean\":35,\"sick\":14,\"split\":7,\"total\":56}},\"greenPercent\":67,\"averagePercent\":10,\"fruitPercent\":4,\"belowAveragePercent\":19,\"literWeight\":322,\"moisture\":7.62,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.620Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-40-1780299365838",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":9,\"split\":2,\"total\":31},\"7-8mm\":{\"clean\":13,\"sick\":8,\"split\":4,\"total\":25},\"6-7mm\":{\"clean\":11,\"sick\":5,\"split\":0,\"total\":16},\"<6mm\":{\"clean\":26,\"sick\":7,\"split\":2,\"total\":35}},\"greenPercent\":52,\"averagePercent\":1,\"fruitPercent\":27,\"belowAveragePercent\":20,\"literWeight\":336,\"moisture\":6.33,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.666Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-170-1780303803827",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":15,\"sick\":7,\"split\":6,\"total\":28},\"7-8mm\":{\"clean\":13,\"sick\":9,\"split\":4,\"total\":26},\"6-7mm\":{\"clean\":9,\"sick\":3,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":27,\"sick\":10,\"split\":0,\"total\":37}},\"greenPercent\":38,\"averagePercent\":34,\"fruitPercent\":25,\"belowAveragePercent\":3,\"literWeight\":345,\"moisture\":6.41,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.715Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-55-1780306936057",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":25,\"sick\":10,\"split\":7,\"total\":42},\"7-8mm\":{\"clean\":6,\"sick\":5,\"split\":0,\"total\":11},\"6-7mm\":{\"clean\":21,\"sick\":6,\"split\":0,\"total\":27},\"<6mm\":{\"clean\":15,\"sick\":6,\"split\":5,\"total\":26}},\"greenPercent\":51,\"averagePercent\":41,\"fruitPercent\":4,\"belowAveragePercent\":4,\"literWeight\":320,\"moisture\":6.56,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.761Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-792-1780301726938",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":15,\"sick\":9,\"split\":4,\"total\":28},\"7-8mm\":{\"clean\":10,\"sick\":4,\"split\":0,\"total\":14},\"6-7mm\":{\"clean\":10,\"sick\":7,\"split\":4,\"total\":21},\"<6mm\":{\"clean\":25,\"sick\":13,\"split\":5,\"total\":43}},\"greenPercent\":31,\"averagePercent\":39,\"fruitPercent\":17,\"belowAveragePercent\":13,\"literWeight\":355,\"moisture\":7.82,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.809Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-46-1780315651369",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":30,\"sick\":11,\"split\":12,\"total\":53},\"7-8mm\":{\"clean\":12,\"sick\":5,\"split\":5,\"total\":22},\"6-7mm\":{\"clean\":8,\"sick\":3,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":10,\"sick\":5,\"split\":3,\"total\":18}},\"greenPercent\":41,\"averagePercent\":9,\"fruitPercent\":22,\"belowAveragePercent\":28,\"literWeight\":359,\"moisture\":6.72,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.858Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-596-1780303875487",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":8,\"sick\":4,\"split\":0,\"total\":12},\"7-8mm\":{\"clean\":8,\"sick\":4,\"split\":0,\"total\":12},\"6-7mm\":{\"clean\":13,\"sick\":2,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":37,\"sick\":17,\"split\":20,\"total\":74}},\"greenPercent\":40,\"averagePercent\":22,\"fruitPercent\":3,\"belowAveragePercent\":35,\"literWeight\":341,\"moisture\":6.23,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.906Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-65-1780303801732",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":11,\"split\":12,\"total\":49},\"7-8mm\":{\"clean\":11,\"sick\":4,\"split\":0,\"total\":15},\"6-7mm\":{\"clean\":13,\"sick\":8,\"split\":2,\"total\":23},\"<6mm\":{\"clean\":18,\"sick\":8,\"split\":0,\"total\":26}},\"greenPercent\":56,\"averagePercent\":29,\"fruitPercent\":10,\"belowAveragePercent\":5,\"literWeight\":324,\"moisture\":7.95,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:19.954Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-20-1780303848182",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":6,\"split\":0,\"total\":26},\"7-8mm\":{\"clean\":23,\"sick\":10,\"split\":0,\"total\":33},\"6-7mm\":{\"clean\":16,\"sick\":8,\"split\":0,\"total\":24},\"<6mm\":{\"clean\":14,\"sick\":7,\"split\":0,\"total\":21}},\"greenPercent\":33,\"averagePercent\":48,\"fruitPercent\":15,\"belowAveragePercent\":4,\"literWeight\":336,\"moisture\":6.78,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.001Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-222-1780300984932",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":22,\"sick\":10,\"split\":5,\"total\":37},\"7-8mm\":{\"clean\":6,\"sick\":2,\"split\":0,\"total\":8},\"6-7mm\":{\"clean\":13,\"sick\":5,\"split\":8,\"total\":26},\"<6mm\":{\"clean\":24,\"sick\":8,\"split\":0,\"total\":32}},\"greenPercent\":35,\"averagePercent\":16,\"fruitPercent\":11,\"belowAveragePercent\":38,\"literWeight\":348,\"moisture\":7.56,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.049Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-60-1780302694293",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":8,\"split\":5,\"total\":33},\"7-8mm\":{\"clean\":19,\"sick\":9,\"split\":5,\"total\":33},\"6-7mm\":{\"clean\":13,\"sick\":3,\"split\":0,\"total\":16},\"<6mm\":{\"clean\":10,\"sick\":5,\"split\":3,\"total\":18}},\"greenPercent\":58,\"averagePercent\":41,\"fruitPercent\":0,\"belowAveragePercent\":1,\"literWeight\":329,\"moisture\":6.66,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.097Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-83-1780306503178",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":8,\"split\":10,\"total\":36},\"7-8mm\":{\"clean\":11,\"sick\":7,\"split\":0,\"total\":18},\"6-7mm\":{\"clean\":14,\"sick\":7,\"split\":1,\"total\":22},\"<6mm\":{\"clean\":14,\"sick\":5,\"split\":5,\"total\":24}},\"greenPercent\":38,\"averagePercent\":35,\"fruitPercent\":3,\"belowAveragePercent\":24,\"literWeight\":330,\"moisture\":7.84,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.146Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-551-1780297637237",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":25,\"sick\":10,\"split\":12,\"total\":47},\"7-8mm\":{\"clean\":6,\"sick\":2,\"split\":0,\"total\":8},\"6-7mm\":{\"clean\":21,\"sick\":6,\"split\":0,\"total\":27},\"<6mm\":{\"clean\":16,\"sick\":4,\"split\":1,\"total\":21}},\"greenPercent\":34,\"averagePercent\":7,\"fruitPercent\":30,\"belowAveragePercent\":29,\"literWeight\":337,\"moisture\":7.53,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.194Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-71-1780305751788",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":10,\"sick\":5,\"split\":0,\"total\":15},\"7-8mm\":{\"clean\":13,\"sick\":3,\"split\":0,\"total\":16},\"6-7mm\":{\"clean\":21,\"sick\":10,\"split\":5,\"total\":36},\"<6mm\":{\"clean\":30,\"sick\":8,\"split\":4,\"total\":42}},\"greenPercent\":31,\"averagePercent\":21,\"fruitPercent\":35,\"belowAveragePercent\":13,\"literWeight\":339,\"moisture\":7.63,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.242Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-863-1780303877048",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":10,\"sick\":5,\"split\":0,\"total\":15},\"7-8mm\":{\"clean\":28,\"sick\":13,\"split\":2,\"total\":43},\"6-7mm\":{\"clean\":14,\"sick\":4,\"split\":0,\"total\":18},\"<6mm\":{\"clean\":27,\"sick\":7,\"split\":3,\"total\":37}},\"greenPercent\":67,\"averagePercent\":8,\"fruitPercent\":17,\"belowAveragePercent\":8,\"literWeight\":359,\"moisture\":6.33,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.289Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-0-1780303172128",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":8,\"split\":12,\"total\":40},\"7-8mm\":{\"clean\":19,\"sick\":8,\"split\":0,\"total\":27},\"6-7mm\":{\"clean\":16,\"sick\":5,\"split\":0,\"total\":21},\"<6mm\":{\"clean\":18,\"sick\":4,\"split\":0,\"total\":22}},\"greenPercent\":58,\"averagePercent\":21,\"fruitPercent\":10,\"belowAveragePercent\":11,\"literWeight\":330,\"moisture\":7.21,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.338Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-358-1780304528536",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":10,\"split\":6,\"total\":39},\"7-8mm\":{\"clean\":6,\"sick\":1,\"split\":0,\"total\":7},\"6-7mm\":{\"clean\":15,\"sick\":8,\"split\":4,\"total\":27},\"<6mm\":{\"clean\":17,\"sick\":8,\"split\":2,\"total\":27}},\"greenPercent\":64,\"averagePercent\":22,\"fruitPercent\":1,\"belowAveragePercent\":13,\"literWeight\":342,\"moisture\":6.54,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.386Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-155-1780303803526",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":30,\"sick\":15,\"split\":8,\"total\":53},\"7-8mm\":{\"clean\":8,\"sick\":4,\"split\":2,\"total\":14},\"6-7mm\":{\"clean\":8,\"sick\":5,\"split\":0,\"total\":13},\"<6mm\":{\"clean\":18,\"sick\":8,\"split\":0,\"total\":26}},\"greenPercent\":69,\"averagePercent\":4,\"fruitPercent\":8,\"belowAveragePercent\":19,\"literWeight\":349,\"moisture\":7.62,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.435Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-450-1780304154586",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":15,\"sick\":10,\"split\":3,\"total\":28},\"7-8mm\":{\"clean\":10,\"sick\":8,\"split\":1,\"total\":19},\"6-7mm\":{\"clean\":11,\"sick\":6,\"split\":0,\"total\":17},\"<6mm\":{\"clean\":22,\"sick\":10,\"split\":8,\"total\":40}},\"greenPercent\":62,\"averagePercent\":3,\"fruitPercent\":22,\"belowAveragePercent\":13,\"literWeight\":328,\"moisture\":6.8,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.482Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-951-1780299755389",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":16,\"sick\":3,\"split\":0,\"total\":19},\"7-8mm\":{\"clean\":21,\"sick\":8,\"split\":0,\"total\":29},\"6-7mm\":{\"clean\":11,\"sick\":1,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":32,\"sick\":11,\"split\":12,\"total\":55}},\"greenPercent\":63,\"averagePercent\":33,\"fruitPercent\":2,\"belowAveragePercent\":2,\"literWeight\":351,\"moisture\":6.19,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.530Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-97-1780304179645",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":8,\"split\":7,\"total\":41},\"7-8mm\":{\"clean\":22,\"sick\":8,\"split\":2,\"total\":32},\"6-7mm\":{\"clean\":5,\"sick\":3,\"split\":0,\"total\":8},\"<6mm\":{\"clean\":15,\"sick\":6,\"split\":1,\"total\":22}},\"greenPercent\":60,\"averagePercent\":5,\"fruitPercent\":30,\"belowAveragePercent\":5,\"literWeight\":344,\"moisture\":6.46,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.578Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-110-1780301702444",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":22,\"sick\":7,\"split\":9,\"total\":38},\"7-8mm\":{\"clean\":25,\"sick\":6,\"split\":1,\"total\":32},\"6-7mm\":{\"clean\":12,\"sick\":2,\"split\":0,\"total\":14},\"<6mm\":{\"clean\":14,\"sick\":5,\"split\":1,\"total\":20}},\"greenPercent\":59,\"averagePercent\":22,\"fruitPercent\":5,\"belowAveragePercent\":14,\"literWeight\":356,\"moisture\":6.16,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.626Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-195-1780305754913",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":7,\"split\":0,\"total\":30},\"7-8mm\":{\"clean\":14,\"sick\":8,\"split\":0,\"total\":22},\"6-7mm\":{\"clean\":5,\"sick\":3,\"split\":0,\"total\":8},\"<6mm\":{\"clean\":33,\"sick\":11,\"split\":4,\"total\":48}},\"greenPercent\":69,\"averagePercent\":13,\"fruitPercent\":7,\"belowAveragePercent\":11,\"literWeight\":339,\"moisture\":7.5,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.673Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-199-1780303873276",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":11,\"split\":5,\"total\":39},\"7-8mm\":{\"clean\":12,\"sick\":8,\"split\":2,\"total\":22},\"6-7mm\":{\"clean\":15,\"sick\":9,\"split\":0,\"total\":24},\"<6mm\":{\"clean\":11,\"sick\":5,\"split\":0,\"total\":16}},\"greenPercent\":30,\"averagePercent\":21,\"fruitPercent\":18,\"belowAveragePercent\":31,\"literWeight\":345,\"moisture\":7.2,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.722Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-109-1780304124562",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":27,\"sick\":12,\"split\":3,\"total\":42},\"7-8mm\":{\"clean\":20,\"sick\":8,\"split\":0,\"total\":28},\"6-7mm\":{\"clean\":4,\"sick\":3,\"split\":2,\"total\":9},\"<6mm\":{\"clean\":19,\"sick\":6,\"split\":0,\"total\":25}},\"greenPercent\":47,\"averagePercent\":43,\"fruitPercent\":7,\"belowAveragePercent\":3,\"literWeight\":339,\"moisture\":6.51,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.770Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-732-1780299437130",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":8,\"split\":0,\"total\":22},\"7-8mm\":{\"clean\":17,\"sick\":7,\"split\":0,\"total\":24},\"6-7mm\":{\"clean\":10,\"sick\":2,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":30,\"sick\":13,\"split\":3,\"total\":46}},\"greenPercent\":35,\"averagePercent\":14,\"fruitPercent\":8,\"belowAveragePercent\":43,\"literWeight\":332,\"moisture\":6.6,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.818Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-393-1780302087315",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":34,\"sick\":11,\"split\":7,\"total\":52},\"7-8mm\":{\"clean\":7,\"sick\":1,\"split\":0,\"total\":8},\"6-7mm\":{\"clean\":17,\"sick\":6,\"split\":0,\"total\":23},\"<6mm\":{\"clean\":15,\"sick\":5,\"split\":6,\"total\":26}},\"greenPercent\":64,\"averagePercent\":4,\"fruitPercent\":19,\"belowAveragePercent\":13,\"literWeight\":328,\"moisture\":6.83,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.867Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-90-1780297585644",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":4,\"sick\":2,\"split\":1,\"total\":7},\"7-8mm\":{\"clean\":19,\"sick\":8,\"split\":3,\"total\":30},\"6-7mm\":{\"clean\":9,\"sick\":5,\"split\":0,\"total\":14},\"<6mm\":{\"clean\":25,\"sick\":11,\"split\":15,\"total\":51}},\"greenPercent\":67,\"averagePercent\":22,\"fruitPercent\":4,\"belowAveragePercent\":7,\"literWeight\":347,\"moisture\":6.73,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.914Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-24-1780300174959",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":13,\"sick\":6,\"split\":0,\"total\":19},\"7-8mm\":{\"clean\":27,\"sick\":10,\"split\":2,\"total\":39},\"6-7mm\":{\"clean\":14,\"sick\":5,\"split\":5,\"total\":24},\"<6mm\":{\"clean\":17,\"sick\":9,\"split\":0,\"total\":26}},\"greenPercent\":36,\"averagePercent\":0,\"fruitPercent\":42,\"belowAveragePercent\":22,\"literWeight\":353,\"moisture\":7.82,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:20.961Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-1-1780301981318",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":22,\"sick\":9,\"split\":2,\"total\":33},\"7-8mm\":{\"clean\":23,\"sick\":9,\"split\":2,\"total\":34},\"6-7mm\":{\"clean\":10,\"sick\":5,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":14,\"sick\":7,\"split\":6,\"total\":27}},\"greenPercent\":62,\"averagePercent\":25,\"fruitPercent\":3,\"belowAveragePercent\":10,\"literWeight\":321,\"moisture\":6.66,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.009Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-11-1-1780321251053",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":11,\"sick\":4,\"split\":0,\"total\":15},\"7-8mm\":{\"clean\":30,\"sick\":11,\"split\":5,\"total\":46},\"6-7mm\":{\"clean\":14,\"sick\":5,\"split\":2,\"total\":21},\"<6mm\":{\"clean\":16,\"sick\":6,\"split\":0,\"total\":22}},\"greenPercent\":66,\"averagePercent\":5,\"fruitPercent\":22,\"belowAveragePercent\":7,\"literWeight\":357,\"moisture\":7.64,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.057Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-451-1780299752894",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":19,\"sick\":4,\"split\":0,\"total\":23},\"7-8mm\":{\"clean\":8,\"sick\":6,\"split\":0,\"total\":14},\"6-7mm\":{\"clean\":17,\"sick\":11,\"split\":5,\"total\":33},\"<6mm\":{\"clean\":24,\"sick\":10,\"split\":3,\"total\":37}},\"greenPercent\":31,\"averagePercent\":57,\"fruitPercent\":3,\"belowAveragePercent\":9,\"literWeight\":322,\"moisture\":6.91,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.105Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-710-1780302394241",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":6,\"sick\":1,\"split\":0,\"total\":7},\"7-8mm\":{\"clean\":22,\"sick\":10,\"split\":7,\"total\":39},\"6-7mm\":{\"clean\":15,\"sick\":3,\"split\":0,\"total\":18},\"<6mm\":{\"clean\":29,\"sick\":13,\"split\":0,\"total\":42}},\"greenPercent\":33,\"averagePercent\":46,\"fruitPercent\":12,\"belowAveragePercent\":9,\"literWeight\":326,\"moisture\":7.9,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.154Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-17-1780307908436",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":11,\"split\":11,\"total\":48},\"7-8mm\":{\"clean\":11,\"sick\":3,\"split\":0,\"total\":14},\"6-7mm\":{\"clean\":14,\"sick\":3,\"split\":0,\"total\":17},\"<6mm\":{\"clean\":21,\"sick\":9,\"split\":0,\"total\":30}},\"greenPercent\":63,\"averagePercent\":13,\"fruitPercent\":19,\"belowAveragePercent\":5,\"literWeight\":335,\"moisture\":7.36,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.202Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-460-1780304154685",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":15,\"sick\":3,\"split\":0,\"total\":18},\"7-8mm\":{\"clean\":20,\"sick\":10,\"split\":1,\"total\":31},\"6-7mm\":{\"clean\":15,\"sick\":5,\"split\":6,\"total\":26},\"<6mm\":{\"clean\":18,\"sick\":7,\"split\":5,\"total\":30}},\"greenPercent\":48,\"averagePercent\":23,\"fruitPercent\":25,\"belowAveragePercent\":4,\"literWeight\":340,\"moisture\":6.11,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.249Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-136-1780306980284",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":8,\"split\":1,\"total\":35},\"7-8mm\":{\"clean\":11,\"sick\":7,\"split\":0,\"total\":18},\"6-7mm\":{\"clean\":21,\"sick\":9,\"split\":0,\"total\":30},\"<6mm\":{\"clean\":17,\"sick\":7,\"split\":0,\"total\":24}},\"greenPercent\":47,\"averagePercent\":15,\"fruitPercent\":34,\"belowAveragePercent\":4,\"literWeight\":344,\"moisture\":6.34,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.297Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-0-1780308860787",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":32,\"sick\":10,\"split\":8,\"total\":50},\"7-8mm\":{\"clean\":14,\"sick\":8,\"split\":3,\"total\":25},\"6-7mm\":{\"clean\":15,\"sick\":5,\"split\":0,\"total\":20},\"<6mm\":{\"clean\":11,\"sick\":2,\"split\":0,\"total\":13}},\"greenPercent\":30,\"averagePercent\":54,\"fruitPercent\":5,\"belowAveragePercent\":11,\"literWeight\":328,\"moisture\":6.93,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.345Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-934-1780300114677",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":15,\"sick\":4,\"split\":0,\"total\":19},\"7-8mm\":{\"clean\":8,\"sick\":7,\"split\":0,\"total\":15},\"6-7mm\":{\"clean\":6,\"sick\":2,\"split\":0,\"total\":8},\"<6mm\":{\"clean\":33,\"sick\":13,\"split\":18,\"total\":64}},\"greenPercent\":51,\"averagePercent\":31,\"fruitPercent\":13,\"belowAveragePercent\":5,\"literWeight\":326,\"moisture\":6.27,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.394Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-882-1780299437882",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":21,\"sick\":11,\"split\":3,\"total\":35},\"7-8mm\":{\"clean\":3,\"sick\":4,\"split\":0,\"total\":7},\"6-7mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17},\"<6mm\":{\"clean\":30,\"sick\":9,\"split\":4,\"total\":43}},\"greenPercent\":65,\"averagePercent\":26,\"fruitPercent\":2,\"belowAveragePercent\":7,\"literWeight\":342,\"moisture\":6.54,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.443Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-144-1780305753545",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":11,\"sick\":4,\"split\":0,\"total\":15},\"7-8mm\":{\"clean\":24,\"sick\":8,\"split\":0,\"total\":32},\"6-7mm\":{\"clean\":12,\"sick\":7,\"split\":0,\"total\":19},\"<6mm\":{\"clean\":25,\"sick\":12,\"split\":4,\"total\":41}},\"greenPercent\":49,\"averagePercent\":31,\"fruitPercent\":18,\"belowAveragePercent\":2,\"literWeight\":346,\"moisture\":7.54,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.490Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-932-1780302426969",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":17,\"sick\":8,\"split\":7,\"total\":32},\"7-8mm\":{\"clean\":8,\"sick\":2,\"split\":0,\"total\":10},\"6-7mm\":{\"clean\":4,\"sick\":5,\"split\":0,\"total\":9},\"<6mm\":{\"clean\":32,\"sick\":11,\"split\":12,\"total\":55}},\"greenPercent\":59,\"averagePercent\":36,\"fruitPercent\":3,\"belowAveragePercent\":2,\"literWeight\":352,\"moisture\":7.19,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.537Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-30-1780299320856",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":5,\"sick\":6,\"split\":0,\"total\":11},\"7-8mm\":{\"clean\":21,\"sick\":11,\"split\":3,\"total\":35},\"6-7mm\":{\"clean\":7,\"sick\":4,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":25,\"sick\":13,\"split\":9,\"total\":47}},\"greenPercent\":58,\"averagePercent\":33,\"fruitPercent\":4,\"belowAveragePercent\":5,\"literWeight\":341,\"moisture\":7.46,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.586Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-892-1780301750331",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":7,\"split\":0,\"total\":27},\"7-8mm\":{\"clean\":14,\"sick\":10,\"split\":2,\"total\":26},\"6-7mm\":{\"clean\":11,\"sick\":3,\"split\":0,\"total\":14},\"<6mm\":{\"clean\":29,\"sick\":13,\"split\":0,\"total\":42}},\"greenPercent\":64,\"averagePercent\":7,\"fruitPercent\":5,\"belowAveragePercent\":24,\"literWeight\":332,\"moisture\":6.69,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.634Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-476-1780305466611",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":21,\"sick\":6,\"split\":1,\"total\":28},\"7-8mm\":{\"clean\":14,\"sick\":5,\"split\":0,\"total\":19},\"6-7mm\":{\"clean\":13,\"sick\":6,\"split\":0,\"total\":19},\"<6mm\":{\"clean\":27,\"sick\":12,\"split\":8,\"total\":47}},\"greenPercent\":56,\"averagePercent\":13,\"fruitPercent\":12,\"belowAveragePercent\":19,\"literWeight\":333,\"moisture\":7.72,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.683Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-5-1780308964204",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":24,\"sick\":9,\"split\":8,\"total\":41},\"7-8mm\":{\"clean\":17,\"sick\":9,\"split\":4,\"total\":30},\"6-7mm\":{\"clean\":7,\"sick\":3,\"split\":2,\"total\":12},\"<6mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17}},\"greenPercent\":32,\"averagePercent\":21,\"fruitPercent\":13,\"belowAveragePercent\":34,\"literWeight\":356,\"moisture\":7.1,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.731Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-391-1780299752584",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":25,\"sick\":10,\"split\":8,\"total\":43},\"7-8mm\":{\"clean\":18,\"sick\":11,\"split\":4,\"total\":33},\"6-7mm\":{\"clean\":13,\"sick\":1,\"split\":0,\"total\":14},\"<6mm\":{\"clean\":12,\"sick\":3,\"split\":1,\"total\":16}},\"greenPercent\":34,\"averagePercent\":6,\"fruitPercent\":48,\"belowAveragePercent\":12,\"literWeight\":339,\"moisture\":6.86,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.778Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-162-1780301747072",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":11,\"split\":11,\"total\":45},\"7-8mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17},\"6-7mm\":{\"clean\":10,\"sick\":6,\"split\":0,\"total\":16},\"<6mm\":{\"clean\":20,\"sick\":8,\"split\":6,\"total\":34}},\"greenPercent\":60,\"averagePercent\":4,\"fruitPercent\":22,\"belowAveragePercent\":14,\"literWeight\":342,\"moisture\":7.3,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.826Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-50-1780297539976",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":30,\"sick\":9,\"split\":3,\"total\":42},\"7-8mm\":{\"clean\":13,\"sick\":7,\"split\":4,\"total\":24},\"6-7mm\":{\"clean\":13,\"sick\":6,\"split\":0,\"total\":19},\"<6mm\":{\"clean\":17,\"sick\":5,\"split\":0,\"total\":22}},\"greenPercent\":58,\"averagePercent\":6,\"fruitPercent\":18,\"belowAveragePercent\":18,\"literWeight\":355,\"moisture\":7.79,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.874Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-20-1780315708075",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":31,\"sick\":9,\"split\":8,\"total\":48},\"7-8mm\":{\"clean\":8,\"sick\":6,\"split\":2,\"total\":16},\"6-7mm\":{\"clean\":8,\"sick\":5,\"split\":0,\"total\":13},\"<6mm\":{\"clean\":23,\"sick\":10,\"split\":0,\"total\":33}},\"greenPercent\":32,\"averagePercent\":62,\"fruitPercent\":1,\"belowAveragePercent\":5,\"literWeight\":356,\"moisture\":6.79,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.923Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-210-1780299698878",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":11,\"sick\":5,\"split\":0,\"total\":16},\"7-8mm\":{\"clean\":29,\"sick\":12,\"split\":9,\"total\":50},\"6-7mm\":{\"clean\":10,\"sick\":2,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":20,\"sick\":7,\"split\":5,\"total\":32}},\"greenPercent\":41,\"averagePercent\":52,\"fruitPercent\":1,\"belowAveragePercent\":6,\"literWeight\":335,\"moisture\":7.94,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:21.969Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-72-1780304123749",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":25,\"sick\":11,\"split\":8,\"total\":44},\"7-8mm\":{\"clean\":23,\"sick\":9,\"split\":0,\"total\":32},\"6-7mm\":{\"clean\":9,\"sick\":6,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":15,\"sick\":7,\"split\":0,\"total\":22}},\"greenPercent\":46,\"averagePercent\":43,\"fruitPercent\":2,\"belowAveragePercent\":9,\"literWeight\":327,\"moisture\":6.46,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.018Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-458-1780304181869",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":16,\"sick\":7,\"split\":10,\"total\":33},\"7-8mm\":{\"clean\":9,\"sick\":7,\"split\":0,\"total\":16},\"6-7mm\":{\"clean\":16,\"sick\":10,\"split\":2,\"total\":28},\"<6mm\":{\"clean\":21,\"sick\":7,\"split\":0,\"total\":28}},\"greenPercent\":34,\"averagePercent\":12,\"fruitPercent\":27,\"belowAveragePercent\":27,\"literWeight\":341,\"moisture\":6.69,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.066Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-22-1780299777761",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":17,\"sick\":10,\"split\":8,\"total\":35},\"7-8mm\":{\"clean\":14,\"sick\":5,\"split\":0,\"total\":19},\"6-7mm\":{\"clean\":18,\"sick\":7,\"split\":0,\"total\":25},\"<6mm\":{\"clean\":25,\"sick\":8,\"split\":0,\"total\":33}},\"greenPercent\":44,\"averagePercent\":1,\"fruitPercent\":43,\"belowAveragePercent\":12,\"literWeight\":327,\"moisture\":6.06,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.114Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-164-1780303826565",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":13,\"split\":6,\"total\":45},\"7-8mm\":{\"clean\":11,\"sick\":5,\"split\":0,\"total\":16},\"6-7mm\":{\"clean\":9,\"sick\":5,\"split\":0,\"total\":14},\"<6mm\":{\"clean\":19,\"sick\":8,\"split\":12,\"total\":39}},\"greenPercent\":51,\"averagePercent\":38,\"fruitPercent\":7,\"belowAveragePercent\":4,\"literWeight\":342,\"moisture\":7.18,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.162Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-48-1780305751145",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":31,\"sick\":11,\"split\":7,\"total\":49},\"7-8mm\":{\"clean\":6,\"sick\":1,\"split\":1,\"total\":8},\"6-7mm\":{\"clean\":10,\"sick\":1,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":22,\"sick\":8,\"split\":8,\"total\":38}},\"greenPercent\":69,\"averagePercent\":7,\"fruitPercent\":10,\"belowAveragePercent\":14,\"literWeight\":344,\"moisture\":6.63,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.210Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-480-1780303829731",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":4,\"split\":0,\"total\":24},\"7-8mm\":{\"clean\":9,\"sick\":5,\"split\":3,\"total\":17},\"6-7mm\":{\"clean\":8,\"sick\":3,\"split\":5,\"total\":16},\"<6mm\":{\"clean\":26,\"sick\":13,\"split\":5,\"total\":44}},\"greenPercent\":52,\"averagePercent\":22,\"fruitPercent\":4,\"belowAveragePercent\":22,\"literWeight\":330,\"moisture\":6.36,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.257Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-153-1780306980425",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":27,\"sick\":9,\"split\":2,\"total\":38},\"7-8mm\":{\"clean\":18,\"sick\":6,\"split\":1,\"total\":25},\"6-7mm\":{\"clean\":15,\"sick\":6,\"split\":0,\"total\":21},\"<6mm\":{\"clean\":17,\"sick\":7,\"split\":0,\"total\":24}},\"greenPercent\":44,\"averagePercent\":2,\"fruitPercent\":5,\"belowAveragePercent\":49,\"literWeight\":334,\"moisture\":7.33,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.305Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-301-1780297679623",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":12,\"split\":7,\"total\":45},\"7-8mm\":{\"clean\":7,\"sick\":6,\"split\":2,\"total\":15},\"6-7mm\":{\"clean\":5,\"sick\":3,\"split\":1,\"total\":9},\"<6mm\":{\"clean\":25,\"sick\":8,\"split\":0,\"total\":33}},\"greenPercent\":50,\"averagePercent\":34,\"fruitPercent\":5,\"belowAveragePercent\":11,\"literWeight\":329,\"moisture\":6.92,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.354Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-21-1780300487302",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":17,\"sick\":8,\"split\":8,\"total\":33},\"7-8mm\":{\"clean\":27,\"sick\":7,\"split\":1,\"total\":35},\"6-7mm\":{\"clean\":10,\"sick\":5,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":13,\"sick\":8,\"split\":2,\"total\":23}},\"greenPercent\":56,\"averagePercent\":39,\"fruitPercent\":0,\"belowAveragePercent\":5,\"literWeight\":328,\"moisture\":7.64,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.402Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-371-1780299482838",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":7,\"split\":5,\"total\":35},\"7-8mm\":{\"clean\":20,\"sick\":10,\"split\":4,\"total\":34},\"6-7mm\":{\"clean\":12,\"sick\":3,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":19,\"sick\":8,\"split\":0,\"total\":27}},\"greenPercent\":48,\"averagePercent\":9,\"fruitPercent\":9,\"belowAveragePercent\":34,\"literWeight\":358,\"moisture\":6.53,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.451Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-23-1780316284551",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":34,\"sick\":11,\"split\":6,\"total\":51},\"7-8mm\":{\"clean\":11,\"sick\":4,\"split\":0,\"total\":15},\"6-7mm\":{\"clean\":18,\"sick\":7,\"split\":0,\"total\":25},\"<6mm\":{\"clean\":12,\"sick\":7,\"split\":0,\"total\":19}},\"greenPercent\":66,\"averagePercent\":31,\"fruitPercent\":1,\"belowAveragePercent\":2,\"literWeight\":341,\"moisture\":6.87,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.498Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-89-1780309615867",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":33,\"sick\":10,\"split\":9,\"total\":52},\"7-8mm\":{\"clean\":8,\"sick\":1,\"split\":0,\"total\":9},\"6-7mm\":{\"clean\":19,\"sick\":4,\"split\":0,\"total\":23},\"<6mm\":{\"clean\":11,\"sick\":8,\"split\":1,\"total\":20}},\"greenPercent\":39,\"averagePercent\":22,\"fruitPercent\":24,\"belowAveragePercent\":15,\"literWeight\":348,\"moisture\":6.26,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.546Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-0-1780304759862",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":29,\"sick\":11,\"split\":4,\"total\":44},\"7-8mm\":{\"clean\":12,\"sick\":7,\"split\":3,\"total\":22},\"6-7mm\":{\"clean\":15,\"sick\":8,\"split\":0,\"total\":23},\"<6mm\":{\"clean\":14,\"sick\":5,\"split\":0,\"total\":19}},\"greenPercent\":35,\"averagePercent\":60,\"fruitPercent\":2,\"belowAveragePercent\":3,\"literWeight\":329,\"moisture\":6.51,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.594Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-107-1780306503803",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":8,\"split\":1,\"total\":27},\"7-8mm\":{\"clean\":16,\"sick\":7,\"split\":0,\"total\":23},\"6-7mm\":{\"clean\":20,\"sick\":9,\"split\":0,\"total\":29},\"<6mm\":{\"clean\":21,\"sick\":8,\"split\":0,\"total\":29}},\"greenPercent\":35,\"averagePercent\":55,\"fruitPercent\":4,\"belowAveragePercent\":6,\"literWeight\":359,\"moisture\":7.95,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.641Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-115-1780304098269",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":2,\"split\":0,\"total\":16},\"7-8mm\":{\"clean\":16,\"sick\":5,\"split\":0,\"total\":21},\"6-7mm\":{\"clean\":5,\"sick\":5,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":39,\"sick\":16,\"split\":9,\"total\":64}},\"greenPercent\":34,\"averagePercent\":33,\"fruitPercent\":20,\"belowAveragePercent\":13,\"literWeight\":323,\"moisture\":7.14,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.689Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-23-1780307878396",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":8,\"split\":4,\"total\":26},\"7-8mm\":{\"clean\":17,\"sick\":7,\"split\":4,\"total\":28},\"6-7mm\":{\"clean\":7,\"sick\":2,\"split\":0,\"total\":9},\"<6mm\":{\"clean\":25,\"sick\":11,\"split\":5,\"total\":41}},\"greenPercent\":57,\"averagePercent\":28,\"fruitPercent\":2,\"belowAveragePercent\":13,\"literWeight\":345,\"moisture\":7.24,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.737Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-49-1780305751263",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":21,\"sick\":6,\"split\":3,\"total\":30},\"7-8mm\":{\"clean\":5,\"sick\":3,\"split\":0,\"total\":8},\"6-7mm\":{\"clean\":17,\"sick\":6,\"split\":8,\"total\":31},\"<6mm\":{\"clean\":19,\"sick\":9,\"split\":5,\"total\":33}},\"greenPercent\":36,\"averagePercent\":35,\"fruitPercent\":10,\"belowAveragePercent\":19,\"literWeight\":353,\"moisture\":7.73,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.785Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-15-1780309496149",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":28,\"sick\":9,\"split\":8,\"total\":45},\"7-8mm\":{\"clean\":5,\"sick\":6,\"split\":0,\"total\":11},\"6-7mm\":{\"clean\":18,\"sick\":8,\"split\":0,\"total\":26},\"<6mm\":{\"clean\":13,\"sick\":8,\"split\":2,\"total\":23}},\"greenPercent\":35,\"averagePercent\":41,\"fruitPercent\":20,\"belowAveragePercent\":4,\"literWeight\":332,\"moisture\":7.39,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.834Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-158-1780304526469",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":11,\"sick\":4,\"split\":0,\"total\":15},\"7-8mm\":{\"clean\":19,\"sick\":8,\"split\":7,\"total\":34},\"6-7mm\":{\"clean\":6,\"sick\":5,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":23,\"sick\":9,\"split\":12,\"total\":44}},\"greenPercent\":32,\"averagePercent\":49,\"fruitPercent\":18,\"belowAveragePercent\":1,\"literWeight\":343,\"moisture\":7.24,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.883Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-110-1780303802647",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":22,\"sick\":9,\"split\":5,\"total\":36},\"7-8mm\":{\"clean\":24,\"sick\":10,\"split\":0,\"total\":34},\"6-7mm\":{\"clean\":6,\"sick\":4,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":16,\"sick\":10,\"split\":2,\"total\":28}},\"greenPercent\":36,\"averagePercent\":25,\"fruitPercent\":37,\"belowAveragePercent\":2,\"literWeight\":343,\"moisture\":7.51,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.931Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-251-1780297634236",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":3,\"split\":0,\"total\":17},\"7-8mm\":{\"clean\":15,\"sick\":4,\"split\":0,\"total\":19},\"6-7mm\":{\"clean\":16,\"sick\":9,\"split\":1,\"total\":26},\"<6mm\":{\"clean\":25,\"sick\":9,\"split\":8,\"total\":42}},\"greenPercent\":54,\"averagePercent\":21,\"fruitPercent\":23,\"belowAveragePercent\":2,\"literWeight\":320,\"moisture\":6.94,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:22.978Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-11-1780304835703",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":29,\"sick\":13,\"split\":6,\"total\":48},\"7-8mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17},\"6-7mm\":{\"clean\":9,\"sick\":6,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":18,\"sick\":9,\"split\":0,\"total\":27}},\"greenPercent\":62,\"averagePercent\":7,\"fruitPercent\":20,\"belowAveragePercent\":11,\"literWeight\":325,\"moisture\":7.14,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.026Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-132-1780299778276",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":4,\"split\":0,\"total\":18},\"7-8mm\":{\"clean\":19,\"sick\":7,\"split\":0,\"total\":26},\"6-7mm\":{\"clean\":9,\"sick\":2,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":35,\"sick\":17,\"split\":12,\"total\":64}},\"greenPercent\":50,\"averagePercent\":32,\"fruitPercent\":8,\"belowAveragePercent\":10,\"literWeight\":327,\"moisture\":6.86,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.075Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-19-1780306064378",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":9,\"sick\":1,\"split\":0,\"total\":10},\"7-8mm\":{\"clean\":28,\"sick\":12,\"split\":11,\"total\":51},\"6-7mm\":{\"clean\":14,\"sick\":8,\"split\":0,\"total\":22},\"<6mm\":{\"clean\":20,\"sick\":8,\"split\":0,\"total\":28}},\"greenPercent\":65,\"averagePercent\":11,\"fruitPercent\":10,\"belowAveragePercent\":14,\"literWeight\":351,\"moisture\":6.9,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.122Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-622-1780301726119",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17},\"7-8mm\":{\"clean\":20,\"sick\":10,\"split\":0,\"total\":30},\"6-7mm\":{\"clean\":6,\"sick\":2,\"split\":0,\"total\":8},\"<6mm\":{\"clean\":30,\"sick\":11,\"split\":16,\"total\":57}},\"greenPercent\":46,\"averagePercent\":37,\"fruitPercent\":2,\"belowAveragePercent\":15,\"literWeight\":321,\"moisture\":6.74,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.170Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-0-1780304872415",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":11,\"split\":7,\"total\":41},\"7-8mm\":{\"clean\":18,\"sick\":6,\"split\":0,\"total\":24},\"6-7mm\":{\"clean\":12,\"sick\":6,\"split\":2,\"total\":20},\"<6mm\":{\"clean\":17,\"sick\":5,\"split\":0,\"total\":22}},\"greenPercent\":40,\"averagePercent\":37,\"fruitPercent\":18,\"belowAveragePercent\":5,\"literWeight\":349,\"moisture\":6.19,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.218Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-63-1780304525548",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":22,\"sick\":5,\"split\":2,\"total\":29},\"7-8mm\":{\"clean\":16,\"sick\":7,\"split\":0,\"total\":23},\"6-7mm\":{\"clean\":17,\"sick\":8,\"split\":4,\"total\":29},\"<6mm\":{\"clean\":17,\"sick\":5,\"split\":0,\"total\":22}},\"greenPercent\":51,\"averagePercent\":25,\"fruitPercent\":16,\"belowAveragePercent\":8,\"literWeight\":336,\"moisture\":6.79,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.266Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-350-1780297590864",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":16,\"sick\":9,\"split\":2,\"total\":27},\"7-8mm\":{\"clean\":19,\"sick\":7,\"split\":0,\"total\":26},\"6-7mm\":{\"clean\":11,\"sick\":6,\"split\":1,\"total\":18},\"<6mm\":{\"clean\":17,\"sick\":11,\"split\":7,\"total\":35}},\"greenPercent\":37,\"averagePercent\":14,\"fruitPercent\":36,\"belowAveragePercent\":13,\"literWeight\":328,\"moisture\":7.26,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.314Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-10-1-1780316855937",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":9,\"sick\":7,\"split\":0,\"total\":16},\"7-8mm\":{\"clean\":22,\"sick\":10,\"split\":10,\"total\":42},\"6-7mm\":{\"clean\":7,\"sick\":3,\"split\":2,\"total\":12},\"<6mm\":{\"clean\":20,\"sick\":7,\"split\":5,\"total\":32}},\"greenPercent\":61,\"averagePercent\":14,\"fruitPercent\":1,\"belowAveragePercent\":24,\"literWeight\":337,\"moisture\":6.25,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.361Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-55-1780307942092",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":9,\"sick\":4,\"split\":0,\"total\":13},\"7-8mm\":{\"clean\":21,\"sick\":9,\"split\":1,\"total\":31},\"6-7mm\":{\"clean\":12,\"sick\":5,\"split\":0,\"total\":17},\"<6mm\":{\"clean\":22,\"sick\":12,\"split\":9,\"total\":43}},\"greenPercent\":69,\"averagePercent\":9,\"fruitPercent\":14,\"belowAveragePercent\":8,\"literWeight\":322,\"moisture\":6.08,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.411Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-90-1780303780180",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":7,\"split\":8,\"total\":33},\"7-8mm\":{\"clean\":10,\"sick\":4,\"split\":4,\"total\":18},\"6-7mm\":{\"clean\":15,\"sick\":4,\"split\":0,\"total\":19},\"<6mm\":{\"clean\":24,\"sick\":10,\"split\":0,\"total\":34}},\"greenPercent\":54,\"averagePercent\":41,\"fruitPercent\":0,\"belowAveragePercent\":5,\"literWeight\":325,\"moisture\":7.73,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.458Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-722-1780299437081",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":32,\"sick\":11,\"split\":11,\"total\":54},\"7-8mm\":{\"clean\":18,\"sick\":9,\"split\":0,\"total\":27},\"6-7mm\":{\"clean\":9,\"sick\":3,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":12,\"sick\":4,\"split\":0,\"total\":16}},\"greenPercent\":45,\"averagePercent\":40,\"fruitPercent\":13,\"belowAveragePercent\":2,\"literWeight\":334,\"moisture\":6.72,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.506Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-184-1780306098348",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":29,\"sick\":13,\"split\":6,\"total\":48},\"7-8mm\":{\"clean\":14,\"sick\":5,\"split\":4,\"total\":23},\"6-7mm\":{\"clean\":13,\"sick\":5,\"split\":0,\"total\":18},\"<6mm\":{\"clean\":7,\"sick\":6,\"split\":0,\"total\":13}},\"greenPercent\":31,\"averagePercent\":3,\"fruitPercent\":57,\"belowAveragePercent\":9,\"literWeight\":352,\"moisture\":6.53,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.553Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-190-1780303804226",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":10,\"sick\":4,\"split\":0,\"total\":14},\"7-8mm\":{\"clean\":15,\"sick\":8,\"split\":0,\"total\":23},\"6-7mm\":{\"clean\":17,\"sick\":6,\"split\":4,\"total\":27},\"<6mm\":{\"clean\":27,\"sick\":12,\"split\":5,\"total\":44}},\"greenPercent\":68,\"averagePercent\":1,\"fruitPercent\":0,\"belowAveragePercent\":31,\"literWeight\":359,\"moisture\":6.39,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.602Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-753-1780300145052",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":26,\"sick\":12,\"split\":12,\"total\":50},\"7-8mm\":{\"clean\":18,\"sick\":8,\"split\":0,\"total\":26},\"6-7mm\":{\"clean\":8,\"sick\":3,\"split\":0,\"total\":11},\"<6mm\":{\"clean\":12,\"sick\":5,\"split\":3,\"total\":20}},\"greenPercent\":39,\"averagePercent\":44,\"fruitPercent\":9,\"belowAveragePercent\":8,\"literWeight\":352,\"moisture\":6.14,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.649Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-0-1780305882804",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":24,\"sick\":9,\"split\":0,\"total\":33},\"7-8mm\":{\"clean\":13,\"sick\":7,\"split\":5,\"total\":25},\"6-7mm\":{\"clean\":11,\"sick\":6,\"split\":0,\"total\":17},\"<6mm\":{\"clean\":21,\"sick\":10,\"split\":5,\"total\":36}},\"greenPercent\":65,\"averagePercent\":33,\"fruitPercent\":0,\"belowAveragePercent\":2,\"literWeight\":337,\"moisture\":6.12,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.697Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-10-13-1780320429004",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":34,\"sick\":14,\"split\":3,\"total\":51},\"7-8mm\":{\"clean\":6,\"sick\":1,\"split\":0,\"total\":7},\"6-7mm\":{\"clean\":13,\"sick\":9,\"split\":1,\"total\":23},\"<6mm\":{\"clean\":12,\"sick\":8,\"split\":0,\"total\":20}},\"greenPercent\":60,\"averagePercent\":10,\"fruitPercent\":4,\"belowAveragePercent\":26,\"literWeight\":346,\"moisture\":6.32,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.746Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-531-1780302034298",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":32,\"sick\":14,\"split\":8,\"total\":54},\"7-8mm\":{\"clean\":7,\"sick\":6,\"split\":0,\"total\":13},\"6-7mm\":{\"clean\":8,\"sick\":3,\"split\":5,\"total\":16},\"<6mm\":{\"clean\":13,\"sick\":7,\"split\":0,\"total\":20}},\"greenPercent\":44,\"averagePercent\":29,\"fruitPercent\":6,\"belowAveragePercent\":21,\"literWeight\":353,\"moisture\":6.24,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.794Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-29-1780306094781",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":34,\"sick\":11,\"split\":6,\"total\":51},\"7-8mm\":{\"clean\":6,\"sick\":6,\"split\":0,\"total\":12},\"6-7mm\":{\"clean\":14,\"sick\":6,\"split\":3,\"total\":23},\"<6mm\":{\"clean\":16,\"sick\":5,\"split\":0,\"total\":21}},\"greenPercent\":69,\"averagePercent\":16,\"fruitPercent\":5,\"belowAveragePercent\":10,\"literWeight\":333,\"moisture\":6.87,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.842Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-822-1780299782137",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":8,\"sick\":5,\"split\":1,\"total\":14},\"7-8mm\":{\"clean\":29,\"sick\":10,\"split\":3,\"total\":42},\"6-7mm\":{\"clean\":7,\"sick\":3,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":22,\"sick\":7,\"split\":9,\"total\":38}},\"greenPercent\":40,\"averagePercent\":59,\"fruitPercent\":0,\"belowAveragePercent\":1,\"literWeight\":332,\"moisture\":6.37,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.890Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-190-1780299412282",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":17,\"sick\":5,\"split\":0,\"total\":22},\"7-8mm\":{\"clean\":10,\"sick\":3,\"split\":0,\"total\":13},\"6-7mm\":{\"clean\":13,\"sick\":7,\"split\":4,\"total\":24},\"<6mm\":{\"clean\":30,\"sick\":10,\"split\":8,\"total\":48}},\"greenPercent\":50,\"averagePercent\":10,\"fruitPercent\":39,\"belowAveragePercent\":1,\"literWeight\":339,\"moisture\":6.24,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.938Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-4-1780319131285",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":11,\"split\":6,\"total\":35},\"7-8mm\":{\"clean\":22,\"sick\":11,\"split\":1,\"total\":34},\"6-7mm\":{\"clean\":7,\"sick\":3,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":18,\"sick\":5,\"split\":1,\"total\":24}},\"greenPercent\":53,\"averagePercent\":21,\"fruitPercent\":7,\"belowAveragePercent\":19,\"literWeight\":320,\"moisture\":7.32,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:23.985Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-195-1780305754870",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":18,\"sick\":9,\"split\":5,\"total\":32},\"7-8mm\":{\"clean\":17,\"sick\":8,\"split\":5,\"total\":30},\"6-7mm\":{\"clean\":17,\"sick\":9,\"split\":0,\"total\":26},\"<6mm\":{\"clean\":11,\"sick\":5,\"split\":0,\"total\":16}},\"greenPercent\":45,\"averagePercent\":3,\"fruitPercent\":15,\"belowAveragePercent\":37,\"literWeight\":335,\"moisture\":6.19,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.034Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-951-1780297641235",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":27,\"sick\":13,\"split\":13,\"total\":53},\"7-8mm\":{\"clean\":23,\"sick\":6,\"split\":0,\"total\":29},\"6-7mm\":{\"clean\":7,\"sick\":3,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":5,\"sick\":3,\"split\":2,\"total\":10}},\"greenPercent\":39,\"averagePercent\":24,\"fruitPercent\":30,\"belowAveragePercent\":7,\"literWeight\":338,\"moisture\":7.28,\"numberOfBags\":15,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.083Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-732-1780302426154",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":28,\"sick\":11,\"split\":2,\"total\":41},\"7-8mm\":{\"clean\":13,\"sick\":8,\"split\":3,\"total\":24},\"6-7mm\":{\"clean\":14,\"sick\":7,\"split\":0,\"total\":21},\"<6mm\":{\"clean\":11,\"sick\":3,\"split\":3,\"total\":17}},\"greenPercent\":51,\"averagePercent\":44,\"fruitPercent\":4,\"belowAveragePercent\":1,\"literWeight\":326,\"moisture\":6.22,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.131Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-10-11-1780318374412",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":4,\"split\":0,\"total\":18},\"7-8mm\":{\"clean\":16,\"sick\":5,\"split\":3,\"total\":24},\"6-7mm\":{\"clean\":16,\"sick\":3,\"split\":0,\"total\":19},\"<6mm\":{\"clean\":33,\"sick\":12,\"split\":4,\"total\":49}},\"greenPercent\":42,\"averagePercent\":23,\"fruitPercent\":0,\"belowAveragePercent\":35,\"literWeight\":340,\"moisture\":7.04,\"numberOfBags\":12,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.179Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-433-1780300143581",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":31,\"sick\":10,\"split\":10,\"total\":51},\"7-8mm\":{\"clean\":7,\"sick\":6,\"split\":2,\"total\":15},\"6-7mm\":{\"clean\":9,\"sick\":4,\"split\":3,\"total\":16},\"<6mm\":{\"clean\":16,\"sick\":4,\"split\":0,\"total\":20}},\"greenPercent\":37,\"averagePercent\":34,\"fruitPercent\":20,\"belowAveragePercent\":9,\"literWeight\":327,\"moisture\":6.22,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.225Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-192-1780301723950",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":11,\"sick\":2,\"split\":0,\"total\":13},\"7-8mm\":{\"clean\":13,\"sick\":3,\"split\":0,\"total\":16},\"6-7mm\":{\"clean\":11,\"sick\":7,\"split\":1,\"total\":19},\"<6mm\":{\"clean\":40,\"sick\":12,\"split\":11,\"total\":63}},\"greenPercent\":67,\"averagePercent\":28,\"fruitPercent\":2,\"belowAveragePercent\":3,\"literWeight\":356,\"moisture\":6.32,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.274Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-1-50-1780305706022",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":14,\"sick\":6,\"split\":0,\"total\":20},\"7-8mm\":{\"clean\":12,\"sick\":7,\"split\":2,\"total\":21},\"6-7mm\":{\"clean\":16,\"sick\":7,\"split\":5,\"total\":28},\"<6mm\":{\"clean\":22,\"sick\":10,\"split\":1,\"total\":33}},\"greenPercent\":41,\"averagePercent\":35,\"fruitPercent\":10,\"belowAveragePercent\":14,\"literWeight\":348,\"moisture\":6.35,\"numberOfBags\":10,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.323Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-10-1-1780316667937",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":7,\"split\":6,\"total\":33},\"7-8mm\":{\"clean\":19,\"sick\":10,\"split\":5,\"total\":34},\"6-7mm\":{\"clean\":9,\"sick\":6,\"split\":0,\"total\":15},\"<6mm\":{\"clean\":17,\"sick\":4,\"split\":0,\"total\":21}},\"greenPercent\":63,\"averagePercent\":7,\"fruitPercent\":7,\"belowAveragePercent\":23,\"literWeight\":352,\"moisture\":7.42,\"numberOfBags\":14,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.371Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-3-1780297316632",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":20,\"sick\":11,\"split\":5,\"total\":36},\"7-8mm\":{\"clean\":15,\"sick\":5,\"split\":0,\"total\":20},\"6-7mm\":{\"clean\":7,\"sick\":5,\"split\":0,\"total\":12},\"<6mm\":{\"clean\":24,\"sick\":10,\"split\":4,\"total\":38}},\"greenPercent\":50,\"averagePercent\":35,\"fruitPercent\":7,\"belowAveragePercent\":8,\"literWeight\":334,\"moisture\":6.51,\"numberOfBags\":13,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  },
+  {
+    "timestamp": "2026-06-01T14:16:24.419Z",
+    "worker": 3,
+    "function": "testCoffee",
+    "args": [
+      "LOT-0-613-1780302060775",
+      "pass",
+      "QmSampleVideoHash12345",
+      "{\"sizeGrades\":{\"8+mm\":{\"clean\":23,\"sick\":12,\"split\":11,\"total\":46},\"7-8mm\":{\"clean\":10,\"sick\":2,\"split\":0,\"total\":12},\"6-7mm\":{\"clean\":4,\"sick\":6,\"split\":0,\"total\":10},\"<6mm\":{\"clean\":23,\"sick\":9,\"split\":9,\"total\":41}},\"greenPercent\":35,\"averagePercent\":57,\"fruitPercent\":7,\"belowAveragePercent\":1,\"literWeight\":357,\"moisture\":6.98,\"numberOfBags\":11,\"netWeight\":10}"
+    ],
+    "error": "No contracts for invokerIdentity _AggregatorsMSP_User4 found. Identity and/or MspId does not exist"
+  }
+]

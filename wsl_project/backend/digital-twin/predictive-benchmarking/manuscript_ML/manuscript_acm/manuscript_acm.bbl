@@ -1,0 +1,430 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{26}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Alzahrani et~al\mbox{.}(2025)]%
+        {alzahrani_hfgin_2025}
+\bibfield{author}{\bibinfo{person}{Fawaz Alzahrani},
+  \bibinfo{person}{Mohd~Yazid Idris}, \bibinfo{person}{Mohd~Fo'Ad Rohani},
+  {and} \bibinfo{person}{Rahmat Budiarto}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Hyperledger {Fabric} {Graph} {Isomorphism}
+  {Network} for {Conflict} {Transactions} {Detection} in {Multi-Version}
+  {Concurrency} {Control}}.
+\newblock \bibinfo{journal}{\emph{IEEE Access}}  \bibinfo{volume}{13}
+  (\bibinfo{year}{2025}), \bibinfo{pages}{131314--131333}.
+\newblock
+\showISSN{2169-3536}
+\href{https://doi.org/10.1109/ACCESS.2025.3589165}{doi:\nolinkurl{10.1109/ACCESS.2025.3589165}}
+
+
+\bibitem[Androulaki et~al\mbox{.}(2018)]%
+        {androulaki_hyperledger_2018}
+\bibfield{author}{\bibinfo{person}{Elli Androulaki}, \bibinfo{person}{Artem
+  Barger}, \bibinfo{person}{Vita Bortnikov}, \bibinfo{person}{Christian
+  Cachin}, \bibinfo{person}{Konstantinos Christidis}, \bibinfo{person}{Angelo
+  De~Caro}, \bibinfo{person}{David Enyeart}, \bibinfo{person}{Christopher
+  Ferris}, \bibinfo{person}{Gennady Laventman}, \bibinfo{person}{Yacov
+  Manevich}, \bibinfo{person}{Srinivasan Muralidharan}, \bibinfo{person}{Chet
+  Murthy}, \bibinfo{person}{Binh Nguyen}, \bibinfo{person}{Manish Sethi},
+  \bibinfo{person}{Gari Singh}, \bibinfo{person}{Keith Smith},
+  \bibinfo{person}{Alessandro Sorniotti}, \bibinfo{person}{Chrysoula
+  Stathakopoulou}, \bibinfo{person}{Marko Vukoli\'{c}}, \bibinfo{person}{Sharon
+  Weed~Cocco}, {and} \bibinfo{person}{Jason Yellick}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Hyperledger {Fabric}: {A} {Distributed} {Operating}
+  {System} for {Permissioned} {Blockchains}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the {Thirteenth} {EuroSys}
+  {Conference}}}. \bibinfo{publisher}{ACM}, \bibinfo{address}{Porto, Portugal},
+  \bibinfo{pages}{1--15}.
+\newblock
+\href{https://doi.org/10.1145/3190508.3190538}{doi:\nolinkurl{10.1145/3190508.3190538}}
+
+
+\bibitem[{Anveshana India}(2019)]%
+        {anveshana_india_coffee_2019}
+\bibfield{author}{\bibinfo{person}{{Anveshana India}}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Coffee {Marketing} â€“ {A}
+  {Structural} {Reorganization} in {Auction} {System} for {Greater}
+  {Transparency}: {A} {View}}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Anveshana
+  India Publications}.
+\newblock
+\newblock
+\shownote{\url{https://publications.anveshanaindia.com/wp-content/uploads/2019/05/CARDAMOM-MARKETING-A-STRUCTURAL-REORGANIZATION-IN-AUCTION-SYSTEM-FOR-GREATER-TRANSPARENCY-A-VIEW.pdf}
+  (Accessed on 25 August 2025)}.
+
+
+\bibitem[Chen et~al\mbox{.}(2023)]%
+        {chen_ml_distributed_2023}
+\bibfield{author}{\bibinfo{person}{Wei Chen}, \bibinfo{person}{Lei Zhang},
+  \bibinfo{person}{Fei Wang}, {and} \bibinfo{person}{Hao Liu}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Machine {Learning} for {Anomaly} {Detection} and
+  {Resource} {Provisioning} in {Distributed} {Systems}: {A} {Survey}}.
+\newblock \bibinfo{journal}{\emph{IEEE Access}}  \bibinfo{volume}{11}
+  (\bibinfo{year}{2023}), \bibinfo{pages}{12045--12063}.
+\newblock
+\showISSN{2169-3536}
+\href{https://doi.org/10.1109/ACCESS.2023.3241576}{doi:\nolinkurl{10.1109/ACCESS.2023.3241576}}
+
+
+\bibitem[Debreczeni et~al\mbox{.}(2024)]%
+        {debreczeni_transaction_2024}
+\bibfield{author}{\bibinfo{person}{M\'{a}t\'{e} Debreczeni},
+  \bibinfo{person}{Attila Klenik}, {and} \bibinfo{person}{Imre Kocsis}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Transaction {Conflict} {Control} in {Hyperledger}
+  {Fabric}: {A} {Taxonomy}, {Gaps}, and {Design} for {Conflict} {Prevention}}.
+\newblock \bibinfo{journal}{\emph{IEEE Access}}  \bibinfo{volume}{12}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{18987--19008}.
+\newblock
+\showISSN{2169-3536}
+\href{https://doi.org/10.1109/ACCESS.2024.3359676}{doi:\nolinkurl{10.1109/ACCESS.2024.3359676}}
+
+
+\bibitem[El~Hajji et~al\mbox{.}(2024)]%
+        {el_hajji_optimization_2024}
+\bibfield{author}{\bibinfo{person}{Mohamed El~Hajji}, \bibinfo{person}{Youssef
+  Es-saady}, \bibinfo{person}{Mustapha Ait~Addi}, {and} \bibinfo{person}{Jilali
+  Antari}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Optimization of agrifood supply chains using
+  {Hyperledger} {Fabric} blockchain technology}.
+\newblock \bibinfo{journal}{\emph{Computers and Electronics in Agriculture}}
+  \bibinfo{volume}{227} (\bibinfo{year}{2024}), \bibinfo{pages}{109503}.
+\newblock
+\href{https://doi.org/10.1016/j.compag.2024.109503}{doi:\nolinkurl{10.1016/j.compag.2024.109503}}
+
+
+\bibitem[Gorenflo et~al\mbox{.}(2026)]%
+        {gorenflo_endtoend_2026}
+\bibfield{author}{\bibinfo{person}{Christian Gorenflo}, \bibinfo{person}{Lukasz
+  Golab}, {and} \bibinfo{person}{Srinivasan Keshav}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{End-to-{End} and {Phase-Level} {Performance}
+  {Optimization} for {Hyperledger} {Fabric}}.
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2604.27174}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{arXiv preprint arXiv:2604.27174}.
+
+
+\bibitem[Gorenflo et~al\mbox{.}(2019)]%
+        {gorenflo_fastfabric_2019}
+\bibfield{author}{\bibinfo{person}{Christian Gorenflo},
+  \bibinfo{person}{Stephen Lee}, \bibinfo{person}{Lukasz Golab}, {and}
+  \bibinfo{person}{Srinivasan Keshav}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{{FastFabric}: {Scaling} {Hyperledger} {Fabric} to
+  20,000 {Transactions} per {Second}}. In \bibinfo{booktitle}{\emph{2019 {IEEE}
+  {International} {Conference} on {Blockchain} and {Cryptocurrency} ({ICBC})}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{455--463}.
+\newblock
+\href{https://doi.org/10.1109/BLOC.2019.8751452}{doi:\nolinkurl{10.1109/BLOC.2019.8751452}}
+
+
+\bibitem[Iftekhar and Cui(2021)]%
+        {iftekhar_blockchain-based_2021}
+\bibfield{author}{\bibinfo{person}{Adnan Iftekhar} {and}
+  \bibinfo{person}{Xiaohui Cui}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Blockchain-{Based} {Traceability} {System} {That}
+  {Ensures} {Food} {Safety} {Measures} to {Protect} {Consumer} {Safety} and
+  {COVID}-19 {Free} {Supply} {Chains}}.
+\newblock \bibinfo{journal}{\emph{Foods}} \bibinfo{volume}{10},
+  \bibinfo{number}{6} (\bibinfo{date}{June} \bibinfo{year}{2021}),
+  \bibinfo{pages}{1289}.
+\newblock
+\showISSN{2304-8158}
+\href{https://doi.org/10.3390/foods10061289}{doi:\nolinkurl{10.3390/foods10061289}}
+
+
+\bibitem[Joo and Han(2021)]%
+        {joo_evidence_2021}
+\bibfield{author}{\bibinfo{person}{Jaehun Joo} {and} \bibinfo{person}{Yuming
+  Han}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{An {Evidence} of {Distributed} {Trust} in
+  {Blockchain}-{Based} {Sustainable} {Food} {Supply} {Chain}}.
+\newblock \bibinfo{journal}{\emph{Sustainability}} \bibinfo{volume}{13},
+  \bibinfo{number}{19} (\bibinfo{date}{Jan.} \bibinfo{year}{2021}),
+  \bibinfo{pages}{10980}.
+\newblock
+\showISSN{2071-1050}
+\href{https://doi.org/10.3390/su131910980}{doi:\nolinkurl{10.3390/su131910980}}
+
+
+\bibitem[Kaushal et~al\mbox{.}(2025)]%
+        {kaushal_convergence_2025}
+\bibfield{author}{\bibinfo{person}{Rajesh~Kumar Kaushal},
+  \bibinfo{person}{Naveen Kumar}, \bibinfo{person}{Ekkarat Boonchieng},
+  \bibinfo{person}{Shrikant Mapari}, \bibinfo{person}{Vinay Kukreja}, {and}
+  \bibinfo{person}{Anshul Verma}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Convergence of blockchain and {IoT} for managing
+  decentralized medical records}.
+\newblock \bibinfo{journal}{\emph{Scientific Reports}} \bibinfo{volume}{15},
+  \bibinfo{number}{1} (\bibinfo{date}{Dec.} \bibinfo{year}{2025}),
+  \bibinfo{pages}{44512}.
+\newblock
+\showISSN{2045-2322}
+\href{https://doi.org/10.1038/s41598-025-28100-8}{doi:\nolinkurl{10.1038/s41598-025-28100-8}}
+
+
+\bibitem[Keo et~al\mbox{.}(2025)]%
+        {keo_secure_2025}
+\bibfield{author}{\bibinfo{person}{Ratanak Keo}, \bibinfo{person}{Muhammad
+  Firdaus}, {and} \bibinfo{person}{Kyung-Hyune Rhee}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A secure rubber supply chain management system
+  based on hyperledger fabric blockchain: a use case in {Cambodia}}.
+\newblock \bibinfo{journal}{\emph{Frontiers in Blockchain}}
+  \bibinfo{volume}{8} (\bibinfo{date}{Sept.} \bibinfo{year}{2025}).
+\newblock
+\showISSN{2624-7852}
+\href{https://doi.org/10.3389/fbloc.2025.1474329}{doi:\nolinkurl{10.3389/fbloc.2025.1474329}}
+
+
+\bibitem[Kumar et~al\mbox{.}(2026)]%
+        {kumar_integrating_2026}
+\bibfield{author}{\bibinfo{person}{Harish Kumar}, \bibinfo{person}{Rajesh~Kumar
+  Kaushal}, \bibinfo{person}{Naveen Kumar}, \bibinfo{person}{Anshul Verma},
+  {and} \bibinfo{person}{Ekkarat Boonchieng}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Integrating transparency and privacy in grievance
+  redressal through {Hyperledger} {Fabric} with multi-organization support}.
+\newblock \bibinfo{journal}{\emph{Scientific Reports}} \bibinfo{volume}{16},
+  \bibinfo{number}{1} (\bibinfo{date}{Jan.} \bibinfo{year}{2026}),
+  \bibinfo{pages}{5574}.
+\newblock
+\showISSN{2045-2322}
+\href{https://doi.org/10.1038/s41598-026-35594-3}{doi:\nolinkurl{10.1038/s41598-026-35594-3}}
+
+
+\bibitem[Marchese and Tomarchio(2022)]%
+        {marchese_blockchain-based_2022}
+\bibfield{author}{\bibinfo{person}{Angelo Marchese} {and}
+  \bibinfo{person}{Orazio Tomarchio}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A {Blockchain}-{Based} {System} for {Agri}-{Food}
+  {Supply} {Chain} {Traceability} {Management}}.
+\newblock \bibinfo{journal}{\emph{SN Computer Science}}  \bibinfo{volume}{3}
+  (\bibinfo{year}{2022}), \bibinfo{pages}{279}.
+\newblock
+\href{https://doi.org/10.1007/s42979-022-01148-3}{doi:\nolinkurl{10.1007/s42979-022-01148-3}}
+
+
+\bibitem[Nayal et~al\mbox{.}(2021)]%
+        {nayal_antecedents_2021}
+\bibfield{author}{\bibinfo{person}{Kirti Nayal}, \bibinfo{person}{Rakesh~D.
+  Raut}, \bibinfo{person}{Balkrishna~E. Narkhede}, \bibinfo{person}{Pragati
+  Priyadarshinee}, \bibinfo{person}{Gajanan~B. Panchal}, {and}
+  \bibinfo{person}{Vidyadhar~V. Gedam}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Antecedents for blockchain technology-enabled
+  sustainable agriculture supply chain}.
+\newblock \bibinfo{journal}{\emph{Annals of Operations Research}}
+  \bibinfo{volume}{327}, \bibinfo{number}{1} (\bibinfo{year}{2021}),
+  \bibinfo{pages}{293--337}.
+\newblock
+\href{https://doi.org/10.1007/s10479-021-04423-3}{doi:\nolinkurl{10.1007/s10479-021-04423-3}}
+
+
+\bibitem[Rani et~al\mbox{.}(2025)]%
+        {rani_stp_2025}
+\bibfield{author}{\bibinfo{person}{Pritam Rani}, \bibinfo{person}{Pratima
+  Sharma}, \bibinfo{person}{Indrajeet Gupta}, {and} \bibinfo{person}{Priyanka
+  Gaba}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{STP}: a permissioned blockchain solution for
+  dynamic pricing and traceability in food supply chain}.
+\newblock \bibinfo{journal}{\emph{Peer-to-Peer Networking and Applications}}
+  \bibinfo{volume}{18}, \bibinfo{number}{4} (\bibinfo{date}{July}
+  \bibinfo{year}{2025}), \bibinfo{pages}{224}.
+\newblock
+\showISSN{1936-6450}
+\href{https://doi.org/10.1007/s12083-025-02060-2}{doi:\nolinkurl{10.1007/s12083-025-02060-2}}
+
+
+\bibitem[Shahid et~al\mbox{.}(2020)]%
+        {shahid_blockchain-based_2020}
+\bibfield{author}{\bibinfo{person}{A. Shahid}, \bibinfo{person}{A. Almogren},
+  \bibinfo{person}{N. Javaid}, \bibinfo{person}{F.A. Al-Zahrani},
+  \bibinfo{person}{M. Zuair}, {and} \bibinfo{person}{M. Alam}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Blockchain-based agri-food supply chain: a complete
+  solution}.
+\newblock \bibinfo{journal}{\emph{IEEE Access}}  \bibinfo{volume}{8}
+  (\bibinfo{year}{2020}), \bibinfo{pages}{69230--69243}.
+\newblock
+\href{https://doi.org/10.1109/ACCESS.2020.2986257}{doi:\nolinkurl{10.1109/ACCESS.2020.2986257}}
+
+
+\bibitem[Sugandh et~al\mbox{.}(2023)]%
+        {sugandh_approach_2023}
+\bibfield{author}{\bibinfo{person}{Urvashi Sugandh}, \bibinfo{person}{Swati
+  Nigam}, \bibinfo{person}{Manju Khari}, {and} \bibinfo{person}{Sanjay Misra}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{An {Approach} for {Risk} {Traceability} {Using}
+  {Blockchain} {Technology} for {Tracking}, {Tracing}, and {Authenticating}
+  {Food} {Products}}.
+\newblock \bibinfo{journal}{\emph{Information}} \bibinfo{volume}{14},
+  \bibinfo{number}{11} (\bibinfo{date}{Nov.} \bibinfo{year}{2023}),
+  \bibinfo{pages}{613}.
+\newblock
+\showISSN{2078-2489}
+\href{https://doi.org/10.3390/info14110613}{doi:\nolinkurl{10.3390/info14110613}}
+
+
+\bibitem[Talib et~al\mbox{.}(2026)]%
+        {talib_blockchain-enabled_2026}
+\bibfield{author}{\bibinfo{person}{Manar~Abu Talib}, \bibinfo{person}{Malek
+  Masmoudi}, \bibinfo{person}{Qassim Nasir}, \bibinfo{person}{Sohail Abbas},
+  \bibinfo{person}{Mohammed~Hisham Obeid}, {and} \bibinfo{person}{Takua
+  Mokhamed}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Blockchain-enabled halal food certification and
+  supply chain framework in the {UAE}}.
+\newblock \bibinfo{journal}{\emph{Results in Engineering}}
+  \bibinfo{volume}{29} (\bibinfo{date}{March} \bibinfo{year}{2026}),
+  \bibinfo{pages}{109740}.
+\newblock
+\showISSN{2590-1230}
+\href{https://doi.org/10.1016/j.rineng.2026.109740}{doi:\nolinkurl{10.1016/j.rineng.2026.109740}}
+
+
+\bibitem[Thakkar et~al\mbox{.}(2018)]%
+        {thakkar_performance_2018}
+\bibfield{author}{\bibinfo{person}{Parth Thakkar}, \bibinfo{person}{Senthil
+  Nathan}, {and} \bibinfo{person}{Balaji Viswanathan}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Performance {Benchmarking} and {Optimizing}
+  {Hyperledger} {Fabric} {Blockchain} {Platform}}. In
+  \bibinfo{booktitle}{\emph{2018 {IEEE} 26th {International} {Symposium} on
+  {Modeling}, {Analysis}, and {Simulation} of {Computer} and
+  {Telecommunication} {Systems} ({MASCOTS})}}. \bibinfo{pages}{264--276}.
+\newblock
+\showISSN{2375-0227}
+\href{https://doi.org/10.1109/MASCOTS.2018.00034}{doi:\nolinkurl{10.1109/MASCOTS.2018.00034}}
+\newblock
+\shownote{ISSN: 2375-0227}.
+
+
+\bibitem[Weerabahu et~al\mbox{.}(2022)]%
+        {weerabahu_challenges_2022}
+\bibfield{author}{\bibinfo{person}{S.K. Weerabahu}, \bibinfo{person}{P.
+  Samaranayake}, \bibinfo{person}{S.S. Dasanayaka}, {and} \bibinfo{person}{C.N.
+  Wickramasinghe}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Challenges of agri-food supply in city region food
+  systems: an emerging economy perspective}.
+\newblock \bibinfo{journal}{\emph{Journal of Agribusiness in Developing and
+  Emerging Economies}} \bibinfo{volume}{12}, \bibinfo{number}{2}
+  (\bibinfo{year}{2022}), \bibinfo{pages}{161--182}.
+\newblock
+\href{https://doi.org/10.1108/JADEE-01-2021-0004}{doi:\nolinkurl{10.1108/JADEE-01-2021-0004}}
+
+
+\bibitem[{World Wildlife Fund (WWF)}(2019)]%
+        {world_wildlife_fund_wwf_wwf_2019}
+\bibfield{author}{\bibinfo{person}{{World Wildlife Fund (WWF)}}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{The {WWF} backs blockchain to unpick messy food
+  supply chains}.
+\newblock \bibinfo{howpublished}{Wired UK}.
+\newblock
+\newblock
+\shownote{\url{https://www.wired.com/story/food-supply-chains-blockchain-wwf/}
+  (Accessed: 22 August 2025)}.
+
+
+\bibitem[Wu et~al\mbox{.}(2023)]%
+        {wu_fabricetp_2023}
+\bibfield{author}{\bibinfo{person}{Haibo Wu}, \bibinfo{person}{Hui Liu}, {and}
+  \bibinfo{person}{Jun Li}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{{FabricETP}: {A} high-throughput blockchain
+  optimization solution for resolving concurrent conflicting transactions}.
+\newblock \bibinfo{journal}{\emph{Peer-to-Peer Networking and Applications}}
+  \bibinfo{volume}{16}, \bibinfo{number}{2} (\bibinfo{year}{2023}),
+  \bibinfo{pages}{858--875}.
+\newblock
+\href{https://doi.org/10.1007/s12083-022-01401-9}{doi:\nolinkurl{10.1007/s12083-022-01401-9}}
+
+
+\bibitem[Zhang et~al\mbox{.}(2022)]%
+        {zhang_information_2022}
+\bibfield{author}{\bibinfo{person}{Xin Zhang}, \bibinfo{person}{Yue Li},
+  \bibinfo{person}{Xiangzhen Peng}, \bibinfo{person}{Zhiyao Zhao},
+  \bibinfo{person}{Jiaqi Han}, {and} \bibinfo{person}{Jiping Xu}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Information {Traceability} {Model} for the {Grain}
+  and {Oil} {Food} {Supply} {Chain} {Based} on {Trusted} {Identification} and
+  {Trusted} {Blockchain}}.
+\newblock \bibinfo{journal}{\emph{International Journal of Environmental
+  Research and Public Health}} \bibinfo{volume}{19}, \bibinfo{number}{11}
+  (\bibinfo{date}{Jan.} \bibinfo{year}{2022}), \bibinfo{pages}{6594}.
+\newblock
+\showISSN{1660-4601}
+\href{https://doi.org/10.3390/ijerph19116594}{doi:\nolinkurl{10.3390/ijerph19116594}}
+
+
+\bibitem[Zhang et~al\mbox{.}(2023)]%
+        {zhang_blockchain-based_2023}
+\bibfield{author}{\bibinfo{person}{Yuan Zhang}, \bibinfo{person}{Xuyang Wu},
+  \bibinfo{person}{Hongyi Ge}, \bibinfo{person}{Yuying Jiang},
+  \bibinfo{person}{Zhenyu Sun}, \bibinfo{person}{Xiaodi Ji},
+  \bibinfo{person}{Zhiyuan Jia}, {and} \bibinfo{person}{Guangyuan Cui}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{A {Blockchain}-{Based} {Traceability} {Model} for
+  {Grain} and {Oil} {Food} {Supply} {Chain}}.
+\newblock \bibinfo{journal}{\emph{Foods}} \bibinfo{volume}{12},
+  \bibinfo{number}{17} (\bibinfo{date}{Jan.} \bibinfo{year}{2023}),
+  \bibinfo{pages}{3235}.
+\newblock
+\showISSN{2304-8158}
+\href{https://doi.org/10.3390/foods12173235}{doi:\nolinkurl{10.3390/foods12173235}}
+
+
+\bibitem[Zhao et~al\mbox{.}(2019)]%
+        {zhao_blockchain_2019}
+\bibfield{author}{\bibinfo{person}{G. Zhao}, \bibinfo{person}{S. Liu},
+  \bibinfo{person}{C. Lopez}, \bibinfo{person}{H. Lu}, \bibinfo{person}{S.
+  Elgueta}, \bibinfo{person}{H. Chen}, {and} \bibinfo{person}{B.M. Boshkoska}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Blockchain technology in agri-food value chain
+  management: {A} synthesis of applications, challenges and future research
+  directions}.
+\newblock \bibinfo{journal}{\emph{Computers in Industry}}
+  \bibinfo{volume}{109} (\bibinfo{year}{2019}), \bibinfo{pages}{83--99}.
+\newblock
+\href{https://doi.org/10.1016/j.compind.2019.04.002}{doi:\nolinkurl{10.1016/j.compind.2019.04.002}}
+
+
+\end{thebibliography}

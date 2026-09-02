@@ -1,0 +1,81 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes.geometric, arrows.meta, calc, fit, backgrounds}
+
+\begin{document}
+\begin{tikzpicture}[
+    node distance=2.5cm and 1.5cm,
+    font=\small\sffamily,
+    ca_node/.style={draw=blue!60, fill=blue!5, thick, rounded corners=15pt, align=center, minimum width=2cm, minimum height=1cm, inner sep=5pt},
+    actor_node/.style={align=center, minimum width=1.5cm},
+    box/.style={draw=gray!60, fill=gray!5, thick, rectangle, align=center, minimum width=4cm, minimum height=1cm},
+    dapp_box/.style={draw=teal!60, fill=teal!5, thick, rectangle, align=center, minimum width=4cm, minimum height=1cm},
+    api_box/.style={draw=orange!60, fill=orange!5, thick, rectangle, align=center, minimum width=4cm, minimum height=1cm},
+    peer_box/.style={draw=purple!60, fill=purple!5, thick, rectangle, align=center, minimum width=4cm, minimum height=1cm},
+    ledger_box/.style={draw=yellow!60!black, fill=yellow!10, thick, rectangle, align=center, minimum width=3cm, minimum height=1cm},
+    arrow/.style={-{Stealth[scale=1.2]}, thick, draw=gray!80!black},
+    dotted_arrow/.style={-{Stealth[scale=1.2]}, thick, dotted, draw=gray!80!black},
+    action_text/.style={align=left, text width=2.5cm, font=\scriptsize\sffamily, text=black!80}
+]
+
+% 1. Fabric CAs
+\node[ca_node] (ca1) {Fabric CA \\ (Certification \\ Authority)};
+\node[ca_node, right=1cm of ca1] (ca2) {Fabric \\ CA};
+\node[ca_node, right=1cm of ca2] (ca3) {Fabric \\ CA};
+\node[ca_node, right=1cm of ca3] (ca4) {Fabric \\ CA};
+\node[ca_node, right=1cm of ca4] (ca5) {Fabric \\ CA};
+
+% 2. Actors
+\node[actor_node, below=2.5cm of ca1] (farmer) {\includegraphics[width=0.8cm]{farmer.png}\\[5pt] \textbf{Farmer}};
+\node[actor_node, below=2.5cm of ca2] (aggregator) {\includegraphics[width=0.8cm]{aggregator.png}\\[5pt] \textbf{Aggregator}};
+\node[actor_node, below=2.5cm of ca3] (retailor) {\includegraphics[width=0.8cm]{retailor.png}\\[5pt] \textbf{Retailor}};
+\node[actor_node, below=2.5cm of ca4] (bank) {\includegraphics[width=0.8cm]{bank.png}\\[5pt] \textbf{Bank}};
+\node[actor_node, below=2.5cm of ca5] (consumer) {\includegraphics[width=0.8cm]{consumer.png}\\[5pt] \textbf{Consumer}};
+
+% CA to Actor Arrows
+\draw[arrow] (ca1) -- node[right, align=left, text width=2cm, font=\scriptsize, pos=0.5] {issues X.509\\certificates\\used to sign\\transactions} (farmer);
+\draw[arrow] (ca2) -- (aggregator);
+\draw[arrow] (ca3) -- (retailor);
+\draw[arrow] (ca4) -- (bank);
+\draw[arrow] (ca5) -- (consumer);
+
+% 3. DApp
+\node[dapp_box, below=6.5cm of ca3, minimum width=8cm] (dapp) {\textbf{Decentralized} \\ \textbf{Application(DApp)}};
+
+% Actors to DApp Arrows with text
+\draw[arrow] (farmer) |- node[action_text, pos=0.7, right, yshift=0.8cm,xshift=-0.5cm] {Submits the\\produce and\\approve the\\offers from\\retailers} (dapp.west);
+
+\draw[arrow] (aggregator) -- node[action_text, pos=0.4, right] {Tests and\\grades the\\produce} (aggregator |- dapp.north);
+
+\draw[arrow] (retailor) -- node[action_text, pos=0.4, right] {Purchases the\\produce from\\farmer and\\packs into\\small packets} (retailor |- dapp.north);
+
+\draw[arrow] (bank) -- node[action_text, pos=0.4, right] {Creates\\wallet and\\deposits\\money in\\the users\\account} (bank |- dapp.north);
+
+\draw[arrow] (consumer) |- node[action_text, pos=0.7, right, yshift=0.8cm, xshift=-0.75 cm] {Purchases\\the packets\\and view the\\trace details} (dapp.east);
+
+% 4. API
+\node[api_box, below=1cm of dapp, minimum width=4cm] (api) {\textbf{Application} \\ \textbf{Programming Interface} \\ \textbf{(API)}};
+\draw[arrow] (dapp) -- (api);
+
+% 5. Smart Contract
+\node[align=center, below=1cm of api] (sc) {\includegraphics[width=0.8cm]{smartcontract.png}\\[2pt] \textbf{Smart Contract}};
+\node[left=0.2cm of sc, align=left, font=\scriptsize\sffamily] (sc_text) {(Deployed on peers, enforces\\access control based on MSP)};
+\draw[arrow] (api) -- (sc);
+
+% 6. Peer Nodes
+\node[peer_box, below=1.5cm of sc, minimum width=4cm] (peers) {\textbf{Peer Nodes ( Endorsers and} \\ \textbf{Committing peers)}};
+\draw[arrow] (sc) -- (peers);
+
+% 7. Fabric Ledger
+\node[ledger_box, below=1cm of peers, minimum width=3cm] (ledger) {\textbf{Fabric Ledger}};
+\draw[arrow] (peers) -- (ledger);
+
+% 8. IPFS
+\node[align=center] (ipfs) at (peers -| dapp.east) {\textcolor{teal}{\textbf{\large IPFS}}\\[5pt] \textbf{Decentralized} \\ \textbf{Storage System}};
+\draw[-{Stealth[scale=1.2]}, thick, draw=gray!80!black] (peers) -- (ipfs);
+
+% Dotted line from DApp to IPFS with attached text
+\draw[dotted_arrow] (dapp.south -| ipfs.north) -- node[right=0.1cm, pos=0.5, align=left, text width=4.2cm, font=\scriptsize\sffamily] {Stores testing and packing\\videos off-chain; their IPFS\\hashes are recorded on-chain\\for traceability} (ipfs.north);
+
+\end{tikzpicture}
+\end{document}

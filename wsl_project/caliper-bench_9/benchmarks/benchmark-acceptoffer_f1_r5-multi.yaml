@@ -1,0 +1,92 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 1
+  rounds:
+
+    - label: acceptoffer_f1_r5_Load@20
+      description: Load @20 TPS for acceptoffer_f1_r5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9_cached/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          farmerCount: 1
+          retailerCount: 5
+          lotQueryLimit: 120
+
+    - label: acceptoffer_f1_r5_Load@50
+      description: Load @50 TPS for acceptoffer_f1_r5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9_cached/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          farmerCount: 1
+          retailerCount: 5
+          lotQueryLimit: 300
+
+    - label: acceptoffer_f1_r5_Load@100
+      description: Load @100 TPS for acceptoffer_f1_r5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: ./workload_9_cached/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          farmerCount: 1
+          retailerCount: 5
+          lotQueryLimit: 600
+
+    - label: acceptoffer_f1_r5_Load@200
+      description: Load @200 TPS for acceptoffer_f1_r5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9_cached/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          farmerCount: 1
+          retailerCount: 5
+          lotQueryLimit: 1200
+
+    - label: acceptoffer_f1_r5_Load@500
+      description: Load @500 TPS for acceptoffer_f1_r5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9_cached/acceptoffer.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel2006
+          userId: User1
+          farmerCount: 1
+          retailerCount: 5
+          lotQueryLimit: 3000

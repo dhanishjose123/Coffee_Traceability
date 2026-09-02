@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty booktitle in Alexandros_Performance_2024
+Warning--empty note in Helmi_Early_2023
+You've used 23 entries,
+            1935 wiz_defined-function locations,
+            613 strings with 9427 characters,
+and the built_in function-call counts, 9828 in all, are:
+= -- 924
+> -- 517
+< -- 8
++ -- 188
+- -- 180
+* -- 892
+:= -- 1756
+add.period$ -- 70
+call.type$ -- 23
+change.case$ -- 205
+chr.to.int$ -- 23
+cite$ -- 25
+duplicate$ -- 326
+empty$ -- 618
+format.name$ -- 213
+if$ -- 1859
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 21
+newline$ -- 119
+num.names$ -- 69
+pop$ -- 169
+preamble$ -- 1
+purify$ -- 205
+quote$ -- 0
+skip$ -- 244
+stack$ -- 0
+substring$ -- 634
+swap$ -- 29
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 138
+warning$ -- 2
+while$ -- 71
+width$ -- 0
+write$ -- 297
+(There were 2 warnings)

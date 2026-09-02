@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: C:/Users/hp/Desktop/dhanish/fabric_2/results/coffee_9/manuscript_ML/manuscript_acm/manuscript_acm.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+The style file: ACM-Reference-Format.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Database file #1: references.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Warning--empty address in gorenflo_fastfabric_2019
+Warning--page numbers missing in both pages and numpages fields in keo_secure_2025
+Warning--empty publisher in thakkar_performance_2018
+Warning--empty address in thakkar_performance_2018
+You've used 26 entries,
+            6273 wiz_defined-function locations,
+            1715 strings with 26504 characters,
+and the built_in function-call counts, 32538 in all, are:
+= -- 4790
+> -- 1186
+< -- 0
++ -- 416
+- -- 398
+* -- 2488
+:= -- 3072
+add.period$ -- 134
+call.type$ -- 26
+change.case$ -- 227
+chr.to.int$ -- 26
+cite$ -- 30
+duplicate$ -- 2560
+empty$ -- 1772
+format.name$ -- 494
+if$ -- 8233
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 95
+newline$ -- 292
+num.names$ -- 182
+pop$ -- 904
+preamble$ -- 1
+purify$ -- 434
+quote$ -- 0
+skip$ -- 944
+stack$ -- 0
+substring$ -- 2303
+swap$ -- 306
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 500
+warning$ -- 4
+while$ -- 142
+width$ -- 0
+write$ -- 576
+(There were 4 warnings)

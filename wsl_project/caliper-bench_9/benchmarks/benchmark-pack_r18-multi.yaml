@@ -1,0 +1,135 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 18
+  rounds:
+
+    - label: pack_r18_Load@1
+      description: Load @1 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 20
+
+    - label: pack_r18_Load@4
+      description: Load @4 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 20
+
+    - label: pack_r18_Load@10
+      description: Load @10 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 20
+
+    - label: pack_r18_Load@20
+      description: Load @20 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 20
+
+    - label: pack_r18_Load@50
+      description: Load @50 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 20
+
+    - label: pack_r18_Load@100
+      description: Load @100 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 34
+
+    - label: pack_r18_Load@200
+      description: Load @200 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 67
+
+    - label: pack_r18_Load@500
+      description: Load @500 TPS for pack_r18
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9/pack.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0906
+          userId: User1
+          retailerCount: 18
+          lotQueryLimit: 167

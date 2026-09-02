@@ -1,0 +1,119 @@
+test:
+  name: Coffee Chaincode Load Test
+  description: Benchmarking under increasing load
+  workers:
+    type: local
+    number: 5
+  rounds:
+
+    - label: purchase_c5_Load@1
+      description: Load @1 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@4
+      description: Load @4 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 4
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@8
+      description: Load @8 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 8
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@20
+      description: Load @20 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@50
+      description: Load @50 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@200
+      description: Load @200 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000
+
+    - label: purchase_c5_Load@500
+      description: Load @500 TPS for purchase_c5
+      txDuration: 5
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: ./workload_9/purchase.js
+        arguments:
+          contractId: coffee_9
+          channel: agrochannel0106
+          userId: User1
+          consumerCount: 5
+          packetQueryLimit: 1000

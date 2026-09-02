@@ -1,0 +1,118 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, calc}
+
+\begin{document}
+\begin{tikzpicture}[
+    font=\normalsize\sffamily,
+    lifeline/.style={densely dotted, thick, draw=gray!80},
+    func_arrow/.style={draw=blue!60, -{Stealth[scale=1.2]}, thick},
+    event_arrow/.style={draw=orange!80, densely dotted, -{Stealth[scale=1.2]}, thick},
+    ipfs_arrow/.style={draw=green!60!black, densely dotted, -{Stealth[scale=1.2]}, thick},
+    msg_text/.style={font=\normalsize\sffamily, align=center, text=black},
+    icon_node/.style={align=center, font=\footnotesize\bfseries}
+]
+
+% Define X coordinates for lifelines
+\def\xCA{0}
+\def\xSC{2.5}
+\def\xBANK{5}
+\def\xFARMER{7.5}
+\def\xAGG{10}
+\def\xRET{12.5}
+\def\xCON{15}
+\def\xIPFS{17.5}
+\def\yEnd{-22}
+
+% 1. Headers & Icons
+\node[icon_node] (CA) at (\xCA, 0) {\includegraphics[width=1cm]{certificate.png}\\[5pt] FABRIC CA};
+\node[icon_node] (SC) at (\xSC, 0) {\includegraphics[width=1cm]{smartcontract.png}\\[5pt] SC};
+\node[icon_node] (BANK) at (\xBANK, 0) {\includegraphics[width=1cm]{bank.png}\\[5pt] BANK};
+\node[icon_node] (FARMER) at (\xFARMER, 0) {\includegraphics[width=1cm]{farmer.png}\\[5pt] FARMER};
+\node[icon_node] (AGG) at (\xAGG, 0) {\includegraphics[width=1cm]{retailor.png}\\[5pt] AGGREGATOR};
+\node[icon_node] (RET) at (\xRET, 0) {\includegraphics[width=1cm]{aggregator.png}\\[5pt] RETAILER};
+\node[icon_node] (CON) at (\xCON, 0) {\includegraphics[width=1cm]{consumer.png}\\[5pt] CONSUMER};
+\node[icon_node] (IPFS) at (\xIPFS, 0) {\includegraphics[width=1cm]{cloud_folder.png}\\[5pt] IPFS};
+
+% Draw lifelines
+\foreach \x in {\xCA, \xSC, \xBANK, \xFARMER, \xAGG, \xRET, \xCON, \xIPFS} {
+    \draw[lifeline] (\x, -1.2) -- (\x, \yEnd);
+}
+
+% Legend
+\node[msg_text] at (19.5, -9) {Function call};
+\draw[func_arrow] (20.5, -9.3) -- (18.5, -9.3);
+\node[msg_text] at (19.5, -10.5) {Event};
+\draw[event_arrow] (18.5, -10.8) -- (20.5, -10.8);
+
+% 2. Messages
+% Register users
+\def\y{-2.2}
+\draw[thick] (\xCA, \y) -- (\xCON, \y);
+\foreach \x in {\xBANK, \xFARMER, \xAGG, \xRET, \xCON} {
+    \filldraw[black] (\x, \y) circle (2pt);
+}
+\node[msg_text, above] at (7.5, \y) {register and enroll each user and issue certificates};
+
+% createWallet
+\def\y{-3.2}
+\draw[func_arrow] (\xBANK, \y) -- node[above, msg_text] {\textbf{createWallet()}} (\xSC, \y);
+
+% depositMoney
+\def\y{-4.2}
+\draw[func_arrow] (\xBANK, \y) -- node[above, msg_text] {\textbf{depositMoney()}} (\xSC, \y);
+
+% wallet created
+\def\y{-5.2}
+\draw[event_arrow] (\xSC, \y) -- node[above, msg_text] {wallet created and money deposited} (\xCON, \y);
+
+% submitProduce
+\def\y{-6.7}
+\draw[func_arrow] (\xFARMER, \y) -- node[above, msg_text] {farmer can submit the produce by \\ calling \textbf{submitProduce()}} (\xSC, \y);
+
+% produce submitted
+\def\y{-7.7}
+\draw[event_arrow] (\xSC, \y) -- node[above, msg_text] {produce is submitted to aggregator for testing} (\xAGG, \y);
+
+% testCoffee
+\def\y{-9.2}
+\draw[func_arrow] (\xAGG, \y) -- node[above, msg_text] {aggregator can test the produce by entering details \\ using \textbf{testCoffee()}} (\xSC, \y);
+
+% IPFS video 1
+\def\y{-10.4}
+\draw[ipfs_arrow] (\xAGG, \y) -- node[above, msg_text] {The testing video is uploaded in IPFS and the video \\ hash is stored in blockchain} (\xIPFS, \y);
+
+% produce tested
+\def\y{-11.6}
+\draw[event_arrow] (\xSC, \y) -- node[above, msg_text] {produce tested and graded and listed for purchase} (\xRET, \y);
+
+% makeOffer
+\def\y{-12.8}
+\draw[func_arrow] (\xRET, \y) -- node[above, msg_text] {Retailer can make offer to farmer using \\ \textbf{makeOffer()}} (\xSC, \y);
+
+% acceptOffer
+\def\y{-14.2}
+\draw[func_arrow] (\xFARMER, \y) -- node[above, msg_text] {Farmer can accept the offer using \\ \textbf{acceptOffer()}} (\xSC, \y);
+
+% produce sold
+\def\y{-15.4}
+\draw[event_arrow] (\xSC, \y) -- node[above, msg_text] {produce is sold to retailer if farmer approves purchase} (\xRET, \y);
+
+% packLotIntoPackets
+\def\y{-16.8}
+\draw[func_arrow] (\xRET, \y) -- node[above, msg_text] {purchased produce can be packed into small packets using \textbf{packLotIntoPackets()}} (\xSC, \y);
+
+% IPFS video 2
+\def\y{-18.0}
+\draw[ipfs_arrow] (\xRET, \y) -- node[above, msg_text] {The packing video is uploaded in IPFS and \\ the video hash is stored in blockchain} (\xIPFS, \y);
+
+% packets listed
+\def\y{-19.2}
+\draw[event_arrow] (\xSC, \y) -- node[above, msg_text] {packets produce will be listed for customer with trace details} (\xCON, \y);
+
+% purchasePacket
+\def\y{-20.4}
+\draw[func_arrow] (\xCON, \y) -- node[above, msg_text] {Consumers can purchase the packets using \textbf{purchasePacket()}} (\xSC, \y);
+
+\end{tikzpicture}
+\end{document}

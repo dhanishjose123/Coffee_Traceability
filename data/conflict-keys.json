@@ -1,0 +1,1286 @@
+{
+  "generatedAt": "2026-07-20T06:54:41.570Z",
+  "source": "/home/dhanish/fabric_2/backend/digital-twin/logs/simulation-runs.jsonl",
+  "minFailures": 1,
+  "functionFilters": [
+    "submitProduce",
+    "testCoffee",
+    "makeOffer",
+    "acceptOffer",
+    "packLotIntoPackets",
+    "purchasePacket"
+  ],
+  "replaceFunctionKeys": true,
+  "learnedConflictKeys": {
+    "acceptOffer:participant:farmers": {
+      "key": "acceptOffer:participant:farmers",
+      "functionName": "acceptOffer",
+      "conflictKey": "participant:farmers",
+      "failures": 51,
+      "firstSeenAt": "2026-07-20T06:48:52.470Z",
+      "lastSeenAt": "2026-07-20T06:50:36.360Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-438-1784360131468",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-44-1784360111784",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 952eb37102dfc77ed880d309fa5579da8e0e75e7dd6f161106e31dea01c512a6 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:50:28.092Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-44-1784360111732",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-448-1784360132021",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 4e9742c6349ba9c41b8593cc500e8374afc3323ac4676bc3efda2ac038d22647 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:50:30.158Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-449-1784360132123",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-457-1784360132354",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 555dab6f1372216789a5d72dfdf26863df249e7a98a2d6f97cc7470df2113b72 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:50:32.221Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-457-1784360132381",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-46-1784360111844",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 2985d7486b56151afe3384efe5460859194d0148d1f9c40829fed7868d3b3e21 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:50:34.284Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-458-1784358365905",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-46-1784360111909",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 8b42b63b51a6a37233560a1b6e64f6e41a7546da5dfd755a43632c571f288bff failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:50:36.360Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:farmers/User1"
+        }
+      ]
+    },
+    "submitProduce:participant:farmers": {
+      "key": "submitProduce:participant:farmers",
+      "functionName": "submitProduce",
+      "conflictKey": "participant:farmers",
+      "failures": 49,
+      "firstSeenAt": "2026-07-20T06:41:50.467Z",
+      "lastSeenAt": "2026-07-20T06:43:36.051Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980355170697",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980569713554",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction c2b0367c760dce00f9bced17f2925bf934231511ba3f34a4d82e1746a30c2e04 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:43:27.778Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980569999351",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980778938083",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 0004802bd5739cd4448b4727fc50cede15783e9db330c2c772816bc8a0cdefff failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:43:29.861Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980779077858",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980986295822",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction c3a77a6e76d73fb2a6387f42360914dee8db913e4448104d304ba7e7a984468b failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:43:31.929Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452980986484973",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452981193051180",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 92129b2f938f3806cdafb8e36decb94e47b36368b978a2b8bd007deff0da3e50 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:43:33.984Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:farmers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT17845298119317037",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452981398646511",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:farmers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 5dac0eb5fefc32eb8d11e2acaae0b6677bb796a8772b3e08b0c1e8d75589d546 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:43:36.051Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:farmers/User1"
+        }
+      ]
+    },
+    "purchasePacket:participant:retailers": {
+      "key": "purchasePacket:participant:retailers",
+      "functionName": "purchasePacket",
+      "conflictKey": "participant:retailers",
+      "failures": 22,
+      "firstSeenAt": "2026-07-20T06:53:58.067Z",
+      "lastSeenAt": "2026-07-20T06:54:41.360Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "consumers/User3",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-38",
+              "consumerId": "User3",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User2",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-49",
+              "consumerId": "User2",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 5b035332fd375635bfcd3469f30c984ee9d7899ad0fca38e2b08a8ed47bbeaa9 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:54:33.112Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User3",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-47",
+              "consumerId": "User3",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-6",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction f15744a606858850648150ceed81824048f63956cd960700eb7fb3d292446b88 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:54:35.177Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User4",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-57",
+              "consumerId": "User4",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User5",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-42",
+              "consumerId": "User5",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction eb13a24628577b9c48d5e1906e440320b154a91cc945b575ffb17c14c97ed5eb failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:54:37.236Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User3",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-40",
+              "consumerId": "User3",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-53",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 061c347fdf3e748a2354bbcbd1fe394d210059d4f309cf59f7b27ea4792e10d6 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:54:39.301Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-55",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User3",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-42",
+              "consumerId": "User3",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction ff353c67ffe7812bb808191d43cb0ba8c538fab1ffcd4f7a6099193dafc63475 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:54:41.360Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:retailers/User1"
+        }
+      ]
+    },
+    "submitProduce:participant:aggregators": {
+      "key": "submitProduce:participant:aggregators",
+      "functionName": "submitProduce",
+      "conflictKey": "participant:aggregators",
+      "failures": 20,
+      "firstSeenAt": "2026-07-20T06:43:43.378Z",
+      "lastSeenAt": "2026-07-20T06:44:23.619Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985157649295",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985363541572",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction d5e4348bcff2ba72faaa7653f38a9ab0defa57d4cafccce6e1af106bb0a80fa6 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:44:15.682Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:aggregators/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT17845298536377211",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985569180702",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction ada8963c0757ad8c4fd9f74bd76e0a852d81f4bf5399fb00dc097d85ee9a1045 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:44:17.441Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:aggregators/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT17845298556933887",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985744833295",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 7cfa07544a4f58eb08a24d1b5ba9c445cb8602356cd6a5148c9e7d0077d79c40 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:44:19.493Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:aggregators/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985744715115",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985950664303",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 24f805b2fbe26b08712d62183a224218c4b2298287477fe5ac7d386258e3d263 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:44:21.557Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:aggregators/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452985950449687",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "submitProduce",
+              "lotId": "LOT178452986156573362",
+              "farmerId": "User1",
+              "aggregatorId": "User1",
+              "conflictKeys": [
+                "participant:aggregators/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 0422f7b9d097446c8734d8f1ce98a7d47dccca510befdaeff0a7094dd3cf3fc8 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:44:23.619Z",
+          "functionName": "submitProduce",
+          "reason": "failure submitProduce conflict with shared key participant:aggregators/User1"
+        }
+      ]
+    },
+    "purchasePacket:participant:consumers": {
+      "key": "purchasePacket:participant:consumers",
+      "functionName": "purchasePacket",
+      "conflictKey": "participant:consumers",
+      "failures": 19,
+      "firstSeenAt": "2026-07-20T06:53:15.332Z",
+      "lastSeenAt": "2026-07-20T06:53:52.807Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-27",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-28",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction d767d0409b4759dce2a97247cecd7e73ba644e8951d89dc09ef30ccb11cece82 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:44.492Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:consumers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-28",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-29",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction de429b7a7efe9fead35adfd9cf6468074fa344b7488be09132f8eb31a349a52f failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:46.608Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:consumers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-29",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-3",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction de06566421ea7a505b6cdb7a4fe51454f413e106d0a9d0bc98e5353830e1e05b failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:48.662Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:consumers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-3",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-30",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 5e245f66c878267a7d1fe917775804abb67188674e15265bafb9658a0ef7a8c3 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:50.730Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:consumers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-30",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-31",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:consumers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 48bd6d10f6d0e1b57ff05d4bbaef30105bc8ebde006450ad53431828a1d02be3 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:52.807Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key participant:consumers/User1"
+        }
+      ]
+    },
+    "acceptOffer:participant:retailers": {
+      "key": "acceptOffer:participant:retailers",
+      "functionName": "acceptOffer",
+      "conflictKey": "participant:retailers",
+      "failures": 13,
+      "firstSeenAt": "2026-07-20T06:48:18.061Z",
+      "lastSeenAt": "2026-07-20T06:48:44.035Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-1263-1784358386056",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-1284-1784358386585",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 544b5ead942c385a5241c94ce56f2ed478c4b0921026bdac8640a13c62c9dc5d failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:48:35.661Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-1277-1784358386461",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-130-1784360116567",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction a262970d076fd551b5fc6ce3153af895bcdcc0d7c1ad609b6b32d744ae20bf0b failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:48:37.728Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-13-1784360110162",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-138-1784360116971",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 687503352772b5c9966563834d15fa93eec9d59bc961ab289d65a8215bb017b5 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:48:39.784Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-135-1784360116851",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-147-1784358358726",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 874ae2cd4966f2bc81157cd0ca435ed9e7e5b82136fdaa5328b04692e76da853 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:48:41.888Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:retailers/User1"
+        },
+        {
+          "previous": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-158-1784358358961",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "farmers/User1",
+            "details": {
+              "functionName": "acceptOffer",
+              "lotId": "LOT-0-161-1784358359008",
+              "farmerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "participant:retailers/User1"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 9380dc226b1cd808e0a2970e6890ba7c2ffc723c6b74e7a4372c254c0e752517 failed on peer peer0.farmers.example.com:7051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:48:44.035Z",
+          "functionName": "acceptOffer",
+          "reason": "failure acceptOffer conflict with shared key participant:retailers/User1"
+        }
+      ]
+    },
+    "makeOffer:lot": {
+      "key": "makeOffer:lot",
+      "functionName": "makeOffer",
+      "conflictKey": "lot",
+      "failures": 12,
+      "firstSeenAt": "2026-07-20T06:45:04.595Z",
+      "lastSeenAt": "2026-07-20T06:45:27.408Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "retailers/User2",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User2",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "retailers/User3",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User3",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction af8a562180c99cb7eca9bcc237b207cf704edb5c598b10e21090adcbb5728631 failed on peer peer0.retailers.example.com:9051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:45:19.053Z",
+          "functionName": "makeOffer",
+          "reason": "failure makeOffer conflict with shared key lot-LOT-0-100-1784358357838"
+        },
+        {
+          "previous": {
+            "stakeholder": "retailers/User3",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User3",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "retailers/User4",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 610cae48b4582a28958d56de6b6680f7c902107fe7f64630c660fd67a581ac93 failed on peer peer0.retailers.example.com:9051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:45:21.140Z",
+          "functionName": "makeOffer",
+          "reason": "failure makeOffer conflict with shared key lot-LOT-0-100-1784358357838"
+        },
+        {
+          "previous": {
+            "stakeholder": "retailers/User4",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "retailers/User3",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User3",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 3fe5930132dd419d2b0920fcea11a72a02e87e7e76cd9f74e37c111fe5563114 failed on peer peer0.retailers.example.com:9051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:45:23.192Z",
+          "functionName": "makeOffer",
+          "reason": "failure makeOffer conflict with shared key lot-LOT-0-100-1784358357838"
+        },
+        {
+          "previous": {
+            "stakeholder": "retailers/User3",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User3",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "retailers/User5",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User5",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 553851fe946497c94a43e506518e4f962bb2d1592e26ff0daf65aff2e22075f1 failed on peer peer0.retailers.example.com:9051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:45:25.300Z",
+          "functionName": "makeOffer",
+          "reason": "failure makeOffer conflict with shared key lot-LOT-0-100-1784358357838"
+        },
+        {
+          "previous": {
+            "stakeholder": "retailers/User4",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "retailers/User5",
+            "details": {
+              "functionName": "makeOffer",
+              "lotId": "LOT-0-100-1784358357838",
+              "retailerId": "User5",
+              "conflictKeys": [
+                "lot-LOT-0-100-1784358357838"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 3d745fba674fe5f376454d042fab1001af54a1061e6f1e6d66885dbf3a2b61bc failed on peer peer0.retailers.example.com:9051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:45:27.408Z",
+          "functionName": "makeOffer",
+          "reason": "failure makeOffer conflict with shared key lot-LOT-0-100-1784358357838"
+        }
+      ]
+    },
+    "purchasePacket:packet": {
+      "key": "purchasePacket:packet",
+      "functionName": "purchasePacket",
+      "conflictKey": "packet",
+      "failures": 10,
+      "firstSeenAt": "2026-07-20T06:52:11.721Z",
+      "lastSeenAt": "2026-07-20T06:53:08.029Z",
+      "evidence": [
+        {
+          "previous": {
+            "stakeholder": "consumers/User3",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784352368557-PKT-47",
+              "consumerId": "User3",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784352368557-PKT-47"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User4",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784352368557-PKT-47",
+              "consumerId": "User4",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784352368557-PKT-47"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 13a5de73c10b68efb7d447decb05dd9c9db958f244720a30526ad8fefd28e4d0 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:52:47.055Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key packet-LOT-0-0-1784352368557-PKT-47"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784352368557-PKT-51",
+              "consumerId": "User1",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784352368557-PKT-51"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User5",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784352368557-PKT-51",
+              "consumerId": "User5",
+              "retailerId": "User4",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784352368557-PKT-51"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction e186d361aea44711a4d6657994b869a32638987a295caa4622a7eb403e234664 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:52:51.177Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key packet-LOT-0-0-1784352368557-PKT-51"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User4",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-10",
+              "consumerId": "User4",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-10"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User5",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-10",
+              "consumerId": "User5",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-10"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction d00d9b1bf1e7b39911208c2fa36a2680c35a911424b8c118587104f16edc56e0 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:03.781Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key packet-LOT-0-0-1784358355616-PKT-10"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-11",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-11"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User2",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-11",
+              "consumerId": "User2",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-11"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 861d82d4fe1ca9b9d8f1e13e92cd50d360d61bd98373b4dc9f6569b613909d0f failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:05.968Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key packet-LOT-0-0-1784358355616-PKT-11"
+        },
+        {
+          "previous": {
+            "stakeholder": "consumers/User1",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-12",
+              "consumerId": "User1",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-12"
+              ]
+            }
+          },
+          "current": {
+            "stakeholder": "consumers/User5",
+            "details": {
+              "functionName": "purchasePacket",
+              "packetId": "LOT-0-0-1784358355616-PKT-12",
+              "consumerId": "User5",
+              "retailerId": "User1",
+              "conflictKeys": [
+                "packet-LOT-0-0-1784358355616-PKT-12"
+              ]
+            }
+          },
+          "lastError": "Commit of transaction 1b8618d4929dad5f0a4cc6464beb0bdf49f6077e23c471d7fd4b99d0769c4289 failed on peer peer0.consumers.example.com:10051 with status MVCC_READ_CONFLICT",
+          "detectedAt": "2026-07-20T06:53:08.029Z",
+          "functionName": "purchasePacket",
+          "reason": "failure purchasePacket conflict with shared key packet-LOT-0-0-1784358355616-PKT-12"
+        }
+      ]
+    }
+  }
+}
