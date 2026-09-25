@@ -1,0 +1,13 @@
+function,target_tps,n_runs,send_rate_mean,throughput_mean,throughput_sd,avg_latency_mean_s,failure_rate_mean_pct
+submitProduce,50,2,32.83,2.1666,0.1571,2.122,0.0
+submitProduce,100,2,63.86,2.1318,0.2262,2.124,0.0
+submitProduce,200,2,124.11,2.0653,0.119,2.187,0.0
+makeOffer,50,2,26.3,0.4595,0.0008,2.091,0.0
+makeOffer,100,2,52.58,0.4437,0.0211,2.205,0.0
+makeOffer,200,2,104.97,0.4493,0.0055,2.147,0.0
+acceptOffer,50,2,26.45,2.0375,0.1196,2.167,0.0
+acceptOffer,100,2,63.11,2.0859,0.0527,2.184,0.0
+acceptOffer,200,2,124.45,2.0665,0.0013,2.213,0.0
+purchasePacket,50,2,26.02,2.0539,0.117,2.196,0.0
+purchasePacket,100,2,50.89,2.069,0.0882,2.151,0.0
+purchasePacket,200,2,127.17,2.0949,0.3042,2.065,0.0
